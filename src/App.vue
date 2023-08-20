@@ -21,4 +21,8 @@ export default {
   width: 0;
   background: transparent;
 }
+
+#home {
+   font-family: 'Poppins', sans-serif;
+ }
 </style>
