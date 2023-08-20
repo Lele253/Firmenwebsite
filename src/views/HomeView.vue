@@ -1,7 +1,10 @@
 <template>
-<div>
-<h1 > Hello  </h1>
-</div>
+  <div style="position: fixed;">
+    <div class="body">
+
+    </div>
+  </div>
+
 </template>
 
 <script>
@@ -11,5 +14,11 @@ export default {
 </script>
 
 <style scoped>
+.body{
+  height: 432vh;
+  width: 100vw;
+  background-image: url("../assets/Hintergrund.png");
+  background-size: cover;
 
+}
 </style>
