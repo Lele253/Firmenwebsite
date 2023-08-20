@@ -1,9 +1,10 @@
 <template>
-  <div style="position: fixed;">
+  <div style=" height: 100vh">
     <div class="body">
 
     </div>
   </div>
+
 
 </template>
 
@@ -19,6 +20,5 @@ export default {
   width: 100vw;
   background-image: url("../assets/Hintergrund.png");
   background-size: cover;
-
 }
 </style>

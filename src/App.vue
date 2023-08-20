@@ -1,7 +1,7 @@
 <template>
   <v-app id="home">
-    <v-main>
-      <router-view/>
+    <v-main style="position: fixed">
+      <router-view style="overflow-y: scroll"/>
     </v-main>
   </v-app>
 </template>
