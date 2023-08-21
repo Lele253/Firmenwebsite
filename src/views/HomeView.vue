@@ -17,9 +17,11 @@
           </div>
         </v-col>
         <v-col  cols="1">
-          <div class="d-flex justify-center align-center login-button">
-            <h4 v-if="!user" @click="$router.push('/login')">Login</h4>
-            <h4 v-if="user">Logout</h4>
+          <div v-if="!user" @click="$router.push('/login')" class="d-flex justify-center align-center login-button">
+            <h4>Login</h4>
+          </div>
+          <div v-if="user" @click="logout" class="d-flex justify-center align-center login-button">
+            <h2>Profil</h2>
           </div>
         </v-col>
       </v-row>
@@ -32,11 +34,30 @@
 
 <script>
 import {mapGetters} from "vuex";
+import axios from "axios";
 
 export default {
   name: "HomeView",
   computed:{
     ...mapGetters(['user'])
+  },
+  mounted() {
+    this.getUser()
+  },
+  methods:{
+    logout() {
+      localStorage.removeItem('token');
+      this.$store.dispatch('user', null);
+      location.reload(); // Soll woanders weitergeleitet werden?
+    },
+    async getUser() {
+      try {
+        const user = await axios.get('/user')
+        this.$store.dispatch('user', user.data)
+      } catch (error) {
+        console.log(error)
+      }
+    },
   }
 
 }

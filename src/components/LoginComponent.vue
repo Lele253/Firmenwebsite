@@ -40,12 +40,12 @@
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
               <v-btn
-                  
+                  @click="$router.push('/')"
                   variant="text">
                 Abbrechen
               </v-btn>
               <v-btn
-                  
+
                   type="submit">
                 Einloggen
               </v-btn>
@@ -81,6 +81,13 @@ export default {
               // Eventuell weitere Attribute
             });
         await localStorage.setItem('token', response.data)
+
+        console.log(response)
+       this.email = ''
+       this.password = ''
+        this.$store.state.user = true
+        this.$router.push('/')
+
         // Was soll danach passieren? Wohin weiterleiten?
       } catch (error) {
 
@@ -94,32 +101,21 @@ export default {
 
       }
     },
-    logout() {
-      localStorage.removeItem('token');
-      this.$store.dispatch('user', null);
-      location.reload(); // Soll woanders weitergeleitet werden?
-    },
-    async getUser() {
-      try {
-        const user = await axios.get('/user')
-        this.$store.dispatch('user', user.data)
-      } catch (error) {
-        console.log(error)
-      }
-    },
+
+
   },
 
 }
 </script>
 
-<style>
+<style scoped>
 .card {
   background-color: rgba(255, 255, 255, 0.10);
   border-top: 1px solid rgba(255, 255, 255, 0.75);
   border-left: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 30px;
   backdrop-filter: blur(4px);
-  box-shadow: 5px 5px 10px #2c2a2a;
+  box-shadow: 5px 5px 10px #000000;
   height: 350px;
   width: 600px;
 }
