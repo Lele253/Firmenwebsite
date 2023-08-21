@@ -121,7 +121,7 @@ export default {
 
 }
 .img{
-  background-image: url("../assets/backgroundLogin.jpg");
+  background-image: url("../assets/background.jpg");
   background-size: cover;
 }
 </style>
