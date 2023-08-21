@@ -34,7 +34,6 @@
       </v-row>
     </div>
 
-    https://looka.com/editor/143618238
 
   </div>
 
