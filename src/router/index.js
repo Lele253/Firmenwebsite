@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
+import LoginView from "@/views/LoginView";
 
 const routes = [
   {
@@ -19,6 +20,12 @@ const routes = [
     name: 'datenschutz',
     component: DatenschutzView
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+
   {
     path: '/:catchAll(.*)', component: HomeView
   },
