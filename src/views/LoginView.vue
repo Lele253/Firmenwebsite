@@ -2,14 +2,12 @@
   <div class="body d-flex justify-center align-center">
     <v-row style="width: 100%" class="mx-0" justify="center">
       <v-col class="d-flex justify-center">
-    <LoginComponent class="mx-10"></LoginComponent>
+        <LoginComponent class="mx-10"></LoginComponent>
       </v-col>
       <v-col class="d-flex justify-center">
-    <RegistrierenComponent></RegistrierenComponent>
-
+        <RegistrierenComponent></RegistrierenComponent>
       </v-col>
     </v-row>
-
   </div>
 </template>
 

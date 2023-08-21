@@ -85,7 +85,8 @@ export default {
   background-size: cover;
 }
 .header{
-  background-color: #333333;
+  background: linear-gradient(to left, #333333, #000000);
+
   height: 70px;
   width: 100%;
   border-radius: 60px;
