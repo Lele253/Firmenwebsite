@@ -9,6 +9,16 @@
           <v-row class="d-flex justify-center" style="width: 100%">
             <v-col
                 cols="12">
+              <v-text-field v-model="username"
+                            class=""
+                            label="Name"
+                            persistent-hint
+                            required
+                            variant="outlined"
+              ></v-text-field>
+            </v-col>
+            <v-col
+                cols="12">
               <v-text-field v-model="email"
                             class=""
                             label="Email"
@@ -26,6 +36,7 @@
                             variant="outlined"
               ></v-text-field>
             </v-col>
+
           </v-row>
         </v-container>
       </v-card-text>
@@ -54,6 +65,7 @@ export default {
   data: () => ({
     email: null,
     password: '',
+    username:''
   }),
 
   components: {
@@ -65,9 +77,10 @@ export default {
   methods: {
     async registrieren() {
       try {
-        await axios.post('https://localhost:8080/auth/regist', {
+        await axios.post('Regist', {
           email: this.email,
           password: this.password,
+          username: this.username
           // Weitere Attribute
         });
         // Was soll danach passieren?
@@ -96,7 +109,7 @@ export default {
   border-radius: 30px;
   backdrop-filter: blur(4px);
   box-shadow: 5px 5px 10px #000000;
-  height: 350px;
+  height: 500px;
   width: 600px;
 }
 </style>
