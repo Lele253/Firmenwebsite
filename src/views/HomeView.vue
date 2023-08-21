@@ -6,8 +6,10 @@
           <div class="header">
             <v-row style="width: 100%; height: 100%" class="justify-center align-center my-0 mx-0">
               <v-col cols="4" class="d-flex justify-center">
-                logo
-                <h2>NameVonUns</h2>
+                logo &nbsp;
+
+                <h4>Name</h4>
+                <span>Vonuns</span>
               </v-col>
               <v-col class="d-flex justify-center">test2</v-col>
               <v-col class="d-flex justify-center">test3</v-col>
@@ -21,7 +23,7 @@
             <h4>Login</h4>
           </div>
           <div v-if="user" @click="logout" class="d-flex justify-center align-center login-button">
-            <h2>Profil</h2>
+            <h2>{{initials}}</h2>
           </div>
         </v-col>
       </v-row>
@@ -39,6 +41,16 @@ import axios from "axios";
 export default {
   name: "HomeView",
   computed:{
+    initials: function (){
+      const splitted = this.$store.state.user.username.split(' ')
+      try {
+      return splitted[0].charAt(0) + splitted[1].charAt(0)
+      }
+      catch{
+        return splitted[0].charAt(0)
+      }
+
+    },
     ...mapGetters(['user'])
   },
   mounted() {
