@@ -1,6 +1,6 @@
 <template>
-  <div style=" height: 100vh">
-    <div class="body pt-10" >
+  <div class="img" style=" height: 100vh">
+    <div class="body pt-10" style="z-index: 90002; " >
       <v-row justify="center" style="width: 100%" class=" mx-0">
         <v-col cols="10">
           <div class="cols-header header">
@@ -33,11 +33,7 @@
         </v-col>
       </v-row>
     </div>
-
-
   </div>
-
-
 </template>
 
 <script>
@@ -93,23 +89,22 @@ export default {
   height: 70px;
   width: 100%;
   border-radius: 60px;
-  box-shadow: 1px 1px 6px #b2afaf;
+  box-shadow: 1px 1px 3px #b2afaf;
 }
 .login-button{
   background-color: #333333;
   border-radius: 200px;
   height: 70px;
   width: 100%;
-  box-shadow: 1px 1px 6px #b2afaf;
+  box-shadow: 1px 1px 3px #b2afaf;
   color: #CBB26A;
 }
 .login-button:hover{
   border-radius: 200px;
-  border: solid black 3px;
   height: 70px;
   width: 100%;
-  background-color: #262424;
-  box-shadow: 2px 2px 5px black;
+  background-color: #333333;
+  box-shadow: 1px 1px 3px #b2afaf;
   cursor: pointer;
   color: #CBB26A;
 
@@ -117,15 +112,16 @@ export default {
 
 .login-button:active{
   border-radius: 200px;
-  border: solid black 3px;
   height: 70px;
   width: 100%;
-  background-color: white;
+  background-color: #262424;
   box-shadow: 0 0 0px black;
   cursor: pointer;
   color: #CBB26A;
 
 }
-.cols-header{
+.img{
+  background-image: url("../assets/backgroundLogin.jpg");
+  background-size: cover;
 }
 </style>
