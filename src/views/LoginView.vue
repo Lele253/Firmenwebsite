@@ -6,7 +6,6 @@
         <LoginComponent></LoginComponent>
   </div>
 </template>
-
 <script>
 import LoginComponent from "@/components/LoginComponent";
 
@@ -20,7 +19,7 @@ export default {
 
 <style scoped>
 .background{
-  filter: brightness(70%);
+  filter: brightness(80%);
   background-image: url("../assets/backgroundLogin.jpg");
   background-size: cover;
   height: 100vh;

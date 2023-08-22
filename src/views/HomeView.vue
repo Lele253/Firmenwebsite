@@ -2,26 +2,28 @@
   <div class="img" style=" height: 100vh">
     <div class="background pt-10">
     <HeaderComponent></HeaderComponent>
-      <v-row  style="width: 100%; margin-top: 130px" class="mx-0 justify-center">
+      <v-row  style="width: 100%; height: 35vh; margin-top: 200px" class="mx-0 justify-center">
         <v-col cols="5">
           <div>
             <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
             <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine <br> Softwarelösung, SEO
               oder eine Website?
               <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
-
             <v-btn class="routbutton mt-5 ">Zur Website</v-btn>
             <v-btn class="routbutton mt-5 ml-16">Zum Kurs</v-btn>
           </div>
         </v-col>
         <v-col class="d-flex justify-center" cols="5">
           <div class="laptop">
-
           </div>
         </v-col>
-
       </v-row>
-
+      <v-row   style="width: 100%; margin-top: 150px"  class="hidden-sm-and-down mx-0">
+          <v-col :cols="tabletHorizontal ? 8 : 10" >
+            <h3 class="text-white text-center">Auf unserer Website können Sie in Echtzeit verfolgen,<br>wie Ihr Design entsteht und sich entwickelt.
+               Erleben Sie hautnah, <br> wie Ihre Webseite gestaltet wird.</h3>
+          </v-col>
+      </v-row>
       <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
     </div>
   </div>
@@ -40,9 +42,12 @@ export default {
 
   data(){
     return{
+      mobile: false,
+      tabletHorizontal: false
     }
   },
   computed:{
+
 
     initials: function (){
       const splitted = this.$store.state.user.username.split(' ')
@@ -58,8 +63,26 @@ export default {
   },
   mounted() {
     this.getUser()
+    this.checkMobileView()
   },
   methods:{
+    checkMobileView() {
+      if (window.innerWidth <= 850) {
+        this.mobile = true;
+        this.$store.state.mobile = true;
+      } else {
+        this.mobile = false;
+        this.$store.state.mobile = false;
+
+      }
+      if (window.innerWidth <= 1300) {
+        this.tabletHorizontal = false
+        this.$store.state.tablet = false
+      } else {
+        this.tabletHorizontal = true
+        this.$store.state.tablet = true
+      }
+    },
     logout() {
       localStorage.removeItem('token');
       this.$store.dispatch('user', null);
@@ -96,7 +119,7 @@ export default {
 }
 .laptop{
   height: 100%;
-  width: 250px;
+  width: 100%;
   background-image: url("../assets/background.jpg");
   background-size: cover;
 }
