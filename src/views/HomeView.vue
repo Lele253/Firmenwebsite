@@ -1,7 +1,8 @@
 <template>
-  <div class="img" style=" height: 100vh">
-    <div class="background pt-10">
+  <div class="img pb-0" style=" height: 100vh">
+    <div class="background pt-10 pb-0">
       <HeaderComponent></HeaderComponent>
+    <div style="height: 1080px">
       <v-row  style="width: 100%; height: 35vh; margin-top: 200px" class="mx-0 justify-center">
         <v-col cols="5">
           <div>
@@ -19,32 +20,34 @@
         </v-col>
       </v-row>
       <v-row   style="width: 100%; margin-top: 150px"  class="hidden-sm-and-down mx-0">
-          <v-col :cols="tabletHorizontal ? 8 : 10" >
-            <h3 class="text-white text-center">Auf unserer Website können Sie in Echtzeit verfolgen,<br>wie Ihr Design entsteht und sich entwickelt.
-               Erleben Sie hautnah, <br> wie Ihre Webseite gestaltet wird.</h3>
-          </v-col>
+        <v-col :cols="tabletHorizontal ? 8 : 10" >
+          <h3 class="text-white text-center">Auf unserer Website können Sie in Echtzeit verfolgen,<br>wie Ihr Design entsteht und sich entwickelt.
+            Erleben Sie hautnah, <br> wie Ihre Webseite gestaltet wird.</h3>
+        </v-col>
       </v-row>
-      <v-row style="width: 100%;position: relative;  z-index: 90000; top:360px" class="mx-0">
-            <v-col style="max-width: 350px" cols="6">
-              <v-card class="cart-curs">
+    </div>
+    <div>
+      <v-row style="width: 100%;" class="mx-0">
+        <v-col style="max-width: 350px" cols="6">
+          <v-card class="cart-curs">
+          </v-card>
+        </v-col>
+        <v-col cols="8">
+          <v-card class="cart-curs">
+          </v-card>
+        </v-col>
+        <v-col style="max-width: 350px" cols="5">
+          <v-card class="cart-curs">
+          </v-card>
+        </v-col>
+        <v-col  cols="8">
+          <v-card class="cart-curs">
 
-              </v-card>
-            </v-col>
-            <v-col cols="8">
-              <v-card class="cart-curs">
-              </v-card>
-            </v-col>
-            <v-col style="max-width: 350px" cols="5">
-              <v-card class="cart-curs">
-
-              </v-card>
-            </v-col>
-            <v-col  cols="8">
-              <v-card class="cart-curs">
-
-              </v-card>
-            </v-col>
+          </v-card>
+        </v-col>
       </v-row>
+    </div>
+
 
       <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
 
@@ -136,6 +139,7 @@ export default {
   background-size: cover;
 }
 .cart-curs{
+  margin-left:60px ;
   height: 200px;
   width: 300px;
   background-color: rgba(255, 255, 255, 0.17);
