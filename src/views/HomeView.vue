@@ -37,7 +37,7 @@
           <div class="ml-16">
             <h1 class="text-white"> Dein IT-DIenstleister <br> des Vertrauens</h1>
             <p class="mt-2 text-white">Du hast Interesse an einem Coding Curs <br> oder dein Unternehmen benötigt eine <br> Softwarelösung, SEO oder eine Webiste?
-              <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
+              <br> dann Kontaktiere uns oder Trage dichsdas <br> in einen Kurs ein.</p>
           </div>
         </v-col>
         <v-col  cols="3">
