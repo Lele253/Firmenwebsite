@@ -32,18 +32,23 @@
           </div>
         </v-col>
       </v-row>
-      <v-row  style="width: 100%; margin-top: 130px" class="ml-11 mx-0">
-        <v-col cols="12">
+      <v-row  style="width: 100%; margin-top: 130px" class="mx-0">
+        <v-col class="ml-11" cols="5">
           <div class="ml-16">
             <h1 class="text-white"> Dein IT-DIenstleister <br> des Vertrauens</h1>
             <p class="mt-2 text-white">Du hast Interesse an einem Coding Curs <br> oder dein Unternehmen benötigt eine <br> Softwarelösung, SEO oder eine Webiste?
               <br> dann Kontaktiere uns oder Trage dichsdas <br> in einen Kurs ein.</p>
           </div>
         </v-col>
-        <v-col  cols="3">
+        <v-col class="d-flex justify-center" cols="6">
+          <div class="laptop ml-16">
+
+          </div>
+        </v-col>
+        <v-col class="ml-11" cols="3">
           <div class="d-flex justify-space-between ml-16">
-          <v-btn class="routbutton">Zur Website</v-btn>
-          <v-btn class="routbutton">Zum Kurs</v-btn>
+          <v-btn class="routbutton ">Zur Website</v-btn>
+          <v-btn class="routbutton ml-16">Zum Kurs</v-btn>
           </div>
         </v-col>
 
@@ -151,5 +156,11 @@ export default {
   width: 130px;
   background-color: #014285;
   color: white;
+}
+.laptop{
+  height: 100%;
+  width: 250px;
+  background-image: url("../assets/logo.png");
+  background-size: cover;
 }
 </style>
