@@ -1,6 +1,6 @@
 <template>
   <div class="img" style=" height: 100vh">
-    <div class="body pt-10" style="z-index: 90002; " >
+    <div class="body pt-10">
       <v-row justify="center" style="width: 100%" class=" mx-0">
         <v-col cols="10">
           <div class="cols-header header">
@@ -32,6 +32,7 @@
           </div>
         </v-col>
       </v-row>
+        <h1 style="position: fixed"> {{$store.state.scrollwert}}</h1>
     </div>
   </div>
 </template>
@@ -42,7 +43,12 @@ import axios from "axios";
 
 export default {
   name: "HomeView",
+  data(){
+    return{
+    }
+  },
   computed:{
+
     initials: function (){
       const splitted = this.$store.state.user.username.split(' ')
       try {
@@ -86,7 +92,6 @@ export default {
 }
 .header{
   background: linear-gradient(to left, #333333, #000000);
-
   height: 70px;
   width: 100%;
   border-radius: 60px;

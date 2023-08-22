@@ -3,7 +3,8 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     user: false,
-    contentDelta: ''
+    contentDelta: '',
+    scrollwert: 0
   },
 
   getters: {
