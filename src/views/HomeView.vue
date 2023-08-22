@@ -6,7 +6,7 @@
       <HeaderComponent></HeaderComponent>
       <div style="height: 110vh">
         <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 200px">
-          <v-col cols="5">
+          <v-col cols="4">
             <div>
               <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
               <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
@@ -17,7 +17,7 @@
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
             </div>
           </v-col>
-          <v-col class="d-flex justify-center" cols="5">
+          <v-col style="border: gold solid 3px" class="d-flex justify-center" cols="6">
             <div class="laptop">
             </div>
           </v-col>
