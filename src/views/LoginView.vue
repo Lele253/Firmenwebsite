@@ -22,6 +22,7 @@ export default {
 <style scoped>
 .body{
   background-image: url("../assets/backgroundLogin.jpg");
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 }

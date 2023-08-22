@@ -2,7 +2,7 @@
         <v-form @submit.prevent="login">
           <v-card class="card">
             <v-card-title class="text-center">
-              <span class="text-h5 ">Einloggen</span>
+              <span class="text-h5 text-white">Einloggen</span>
             </v-card-title>
             <v-card-text>
               <v-container>
@@ -10,16 +10,20 @@
                   <v-col
                       cols="12">
                     <v-text-field v-model="email"
-                                  class=""
-                                  label="Email"
                                   required
+                                  label="Email"
+                                  class="text-white"
+                                  base-color="white"
+                                  color="white"
                                   variant="outlined"
                     ></v-text-field>
                   </v-col>
                   <v-col
                       cols="12">
                     <v-text-field v-model="password"
-                                  class=""
+                                  class="text-white"
+                                  base-color="white"
+                                  color="white"
                                   label="Passwort"
                                   persistent-hint
                                   required
@@ -28,24 +32,16 @@
                   </v-col>
                 </v-row>
               </v-container>
-              <v-alert v-if="error === 'AxiosError: Request failed with status code 401'"
-                       class="text-center text-black" type="error">
-                Benutzername oder Passwort ist falsch.
-              </v-alert>
-
-              <v-alert v-if="error !== 'AxiosError: Request failed with status code 401' && error != null"
-                       class="text-center text-black" type="error">
-                Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Administrator.
-              </v-alert>
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
               <v-btn
                   @click="$router.push('/')"
+                  color="white"
                   variant="text">
                 Abbrechen
               </v-btn>
               <v-btn
-
+                  color="white"
                   type="submit">
                 Einloggen
               </v-btn>
@@ -110,7 +106,7 @@ export default {
 
 <style scoped>
 .card {
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgba(70, 68, 68, 0.1);
   border-top: 1px solid rgba(255, 255, 255, 0.75);
   border-left: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 30px;
