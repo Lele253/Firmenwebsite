@@ -41,7 +41,7 @@
           </div>
         </v-col>
         <v-col class="d-flex justify-center" cols="6">
-          <div class="laptop ml-16">
+          <div class="laptop">
 
           </div>
         </v-col>
