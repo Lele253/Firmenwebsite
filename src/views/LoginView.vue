@@ -1,10 +1,9 @@
 <template>
-  <div class="body d-flex justify-center align-center">
-    <v-row style="width: 100%" class="mx-0" justify="center">
-      <v-col class="d-flex justify-center">
-        <LoginComponent class="mx-10"></LoginComponent>
-      </v-col>
-    </v-row>
+
+  <div class="background"/>
+
+  <div class="divOverBackground">
+        <LoginComponent></LoginComponent>
   </div>
 </template>
 
@@ -20,10 +19,17 @@ export default {
 </script>
 
 <style scoped>
-.body{
+.background{
+  filter: brightness(70%);
   background-image: url("../assets/backgroundLogin.jpg");
   background-size: cover;
   height: 100vh;
   width: 100vw;
+}
+.divOverBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:fixed; top: 0; height: 100vh; width: 100vw
 }
 </style>

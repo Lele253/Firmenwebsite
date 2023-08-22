@@ -1,6 +1,6 @@
 <template>
   <div class="img" style=" height: 100vh">
-    <div class="body pt-10">
+    <div class="background pt-10">
     <HeaderComponent></HeaderComponent>
       <v-row  style="width: 100%; margin-top: 130px" class="mx-0 justify-center">
         <v-col cols="5">
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style scoped>
-.body{
+.background{
   height: 432vh;
   width: 100vw;
   background-image: url("../assets/Hintergrund.png");
