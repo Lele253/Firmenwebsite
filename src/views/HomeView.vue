@@ -47,18 +47,6 @@ export default {
     }
   },
   computed:{
-
-
-    initials: function (){
-      const splitted = this.$store.state.user.username.split(' ')
-      try {
-      return splitted[0].charAt(0) + splitted[1].charAt(0)
-      }
-      catch{
-        return splitted[0].charAt(0)
-      }
-
-    },
     ...mapGetters(['user'])
   },
   mounted() {
@@ -120,7 +108,7 @@ export default {
 .laptop{
   height: 100%;
   width: 100%;
-  background-image: url("../assets/background.jpg");
+  background-image: url("../assets/Monitor.png");
   background-size: cover;
 }
 </style>
