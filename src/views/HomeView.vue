@@ -32,7 +32,7 @@
           </div>
         </v-col>
       </v-row>
-        <h1 style="position: fixed"> {{$store.state.scrollwert}}</h1>
+        <h1 style="position: fixed"> Folgender Scrollwert {{$store.state.scrollwert}}</h1>
     </div>
   </div>
 </template>
