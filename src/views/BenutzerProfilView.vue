@@ -22,6 +22,10 @@
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
           takimata sanctus est Lorem ipsum dolor sit amet.
 
+          <v-btn @click="logout">
+            Ausloggen
+          </v-btn>
+
         </h1>
       </v-card-item>
     </v-card>
@@ -46,6 +50,12 @@ export default {
     this.checkUser()
   },
   methods: {
+    logout() {
+      localStorage.removeItem('token');
+      this.$store.dispatch('user', null);
+      this.$router.push('/')
+      // Soll woanders weitergeleitet werden?
+    },
     async checkUser() {
       await this.getUser()
       if (this.user === false) {
