@@ -1,7 +1,7 @@
 <template>
   <div class="img" style=" height: 100vh">
     <div class="background pt-10">
-    <HeaderComponent></HeaderComponent>
+      <HeaderComponent></HeaderComponent>
       <v-row  style="width: 100%; height: 35vh; margin-top: 200px" class="mx-0 justify-center">
         <v-col cols="5">
           <div>
@@ -24,8 +24,32 @@
                Erleben Sie hautnah, <br> wie Ihre Webseite gestaltet wird.</h3>
           </v-col>
       </v-row>
+      <v-row style="width: 100%;position: relative;  z-index: 90000; top:360px" class="mx-0">
+            <v-col style="max-width: 350px" cols="6">
+              <v-card class="cart-curs">
+
+              </v-card>
+            </v-col>
+            <v-col cols="8">
+              <v-card class="cart-curs">
+              </v-card>
+            </v-col>
+            <v-col style="max-width: 350px" cols="5">
+              <v-card class="cart-curs">
+
+              </v-card>
+            </v-col>
+            <v-col  cols="8">
+              <v-card class="cart-curs">
+
+              </v-card>
+            </v-col>
+      </v-row>
+
       <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
+
     </div>
+
   </div>
 </template>
 
@@ -106,9 +130,17 @@ export default {
   color: white;
 }
 .laptop{
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 480px;
   background-image: url("../assets/Monitor.png");
   background-size: cover;
+}
+.cart-curs{
+  height: 200px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(4px) !important;
+  border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
+  border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
 }
 </style>
