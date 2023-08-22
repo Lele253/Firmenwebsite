@@ -5,9 +5,9 @@
     <div class="background pt-10 pb-0">
       <HeaderComponent></HeaderComponent>
       <div style="height: 110vh">
-        <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 200px">
-          <v-col cols="4">
-            <div>
+        <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
+          <v-col class="d-flex  justify-center" cols="4">
+            <div class="mr-11 pl-0">
               <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
               <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
                 <br> Softwarelösung, SEO
@@ -17,10 +17,11 @@
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
             </div>
           </v-col>
-          <v-col style="border: gold solid 3px" class="d-flex justify-center" cols="6">
+          <v-col style="border: gold solid 1px" class="pr-0 mr-6 d-flex justify-center" cols="6">
             <div class="laptop">
             </div>
           </v-col>
+          <v-col cols="1"></v-col>
         </v-row>
         <v-row class="hidden-sm-and-down mx-0" style="width: 100%; margin-top: 150px">
           <v-col :cols="tabletHorizontal ? 8 : 10">
@@ -152,5 +153,6 @@ export default {
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
+  box-shadow: 3px 3px 5px black ;
 }
 </style>

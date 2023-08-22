@@ -33,7 +33,7 @@
                 </v-row>
               </v-container>
               <v-alert v-if="error === 'AxiosError: Request failed with status code 401'"
-                       class="text-center text-black mx-5" type="error">
+                       class="text-center text-black mx-5" type="warning">
                 Benutzername oder Passwort ist falsch.
               </v-alert>
 
