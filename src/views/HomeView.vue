@@ -4,7 +4,7 @@
 
     <div class="background pt-10 pb-0">
       <HeaderComponent></HeaderComponent>
-    <div style="height: 1080px">
+    <div style="height: 110vh">
       <v-row  style="width: 100%; height: 35vh; margin-top: 200px" class="mx-0 justify-center">
         <v-col cols="5">
           <div>
