@@ -1,5 +1,7 @@
 <template>
   <div class="img pb-0" style=" height: 100vh">
+    <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
+
     <div class="background pt-10 pb-0">
       <HeaderComponent></HeaderComponent>
     <div style="height: 1080px">
@@ -49,7 +51,6 @@
     </div>
 
 
-      <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
 
     </div>
 
