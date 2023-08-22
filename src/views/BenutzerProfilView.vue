@@ -1,10 +1,10 @@
 <template>
-<div>
-  <HeaderComponent/>
-  <div style="height: 100vh" class="d-flex align-center">
-  <h1 class=" ml-16"> user: {{this.$store.state.user}}</h1>
+  <div class="img"/>
+
+  <div class="divOverBackground">
+    <HeaderComponent class="pt-10"/>
   </div>
-</div>
+
 </template>
 
 <script>
@@ -48,5 +48,12 @@ export default {
 </script>
 
 <style scoped>
-
+.img{
+  position: fixed;
+  background-image: url("../assets/background.jpg");
+  filter: brightness(60%);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
 </style>

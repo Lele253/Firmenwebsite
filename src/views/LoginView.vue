@@ -1,10 +1,10 @@
 <template>
+    <div class="background"></div>
 
-  <div class="background"/>
-
-  <div class="divOverBackground">
+    <div class="divOverBackground">
         <LoginComponent></LoginComponent>
-  </div>
+    </div>
+
 </template>
 <script>
 import LoginComponent from "@/components/LoginComponent";
@@ -29,6 +29,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  position:fixed; top: 0; height: 100vh; width: 100vw
+  height: 100vh;
+  width: 100vw;
 }
 </style>
