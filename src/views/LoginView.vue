@@ -4,22 +4,17 @@
       <v-col class="d-flex justify-center">
         <LoginComponent class="mx-10"></LoginComponent>
       </v-col>
-      <v-col class="d-flex justify-center">
-        <RegistrierenComponent></RegistrierenComponent>
-      </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
 import LoginComponent from "@/components/LoginComponent";
-import RegistrierenComponent from "@/components/RegistrierenComponent";
 
 export default {
   name: "LoginView",
   components:{
     LoginComponent,
-    RegistrierenComponent
   }
 }
 </script>
