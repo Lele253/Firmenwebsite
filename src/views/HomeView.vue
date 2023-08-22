@@ -32,7 +32,7 @@
           </div>
         </v-col>
       </v-row>
-        <h1 style="position: fixed"> Höhe {{$store.state.scrollwert}}</h1>
+        <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
     </div>
   </div>
 </template>
