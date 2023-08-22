@@ -32,6 +32,15 @@
                   </v-col>
                 </v-row>
               </v-container>
+              <v-alert v-if="error === 'AxiosError: Request failed with status code 401'"
+                       class="text-center text-black mx-5" type="error">
+                Benutzername oder Passwort ist falsch.
+              </v-alert>
+
+              <v-alert v-if="error !== 'AxiosError: Request failed with status code 401' && error != null"
+                       class="text-center text-black mx-5" type="error">
+                Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Administrator.
+              </v-alert>
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
               <v-btn
@@ -59,6 +68,7 @@ export default {
   data: () => ({
     email: null,
     password: '',
+    error: null
 }),
 
   components: {
@@ -78,22 +88,15 @@ export default {
             });
         await localStorage.setItem('token', response.data)
 
-        console.log(response)
-       this.email = ''
-       this.password = ''
+        this.email = ''
+        this.password = ''
         this.$store.state.user = true
         this.$router.push('/')
 
         // Was soll danach passieren? Wohin weiterleiten?
       } catch (error) {
 
-        if(error === 'AxiosError: Request failed with status code 401') {
-          alert('Benutzername oder Passwort ist falsch.')
-        }
-
-        if(error !== 'AxiosError: Request failed with status code 401' && error != null) {
-          alert('Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Administrator.')
-        }
+        this.error = error.toString()
 
       }
     },
@@ -112,7 +115,9 @@ export default {
   border-radius: 30px;
   backdrop-filter: blur(4px);
   box-shadow: 5px 5px 10px #000000;
-  height: 350px;
-  width: 600px;
+  min-height: 350px;
+  width: 50vw;
+  max-width: 600px;
+  min-width: 350px;
 }
 </style>
