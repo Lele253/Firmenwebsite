@@ -32,7 +32,24 @@
           </div>
         </v-col>
       </v-row>
-        <h1 style="position: fixed"> {{$store.state.scrollwert}}</h1>
+      <v-row  style="width: 100%; margin-top: 130px" class="ml-11 mx-0">
+        <v-col cols="12">
+          <div class="ml-16">
+            <h1 class="text-white"> Dein IT-DIenstleister <br> des Vertrauens</h1>
+            <p class="mt-2 text-white">Du hast Interesse an einem Coding Curs <br> oder dein Unternehmen benötigt eine <br> Softwarelösung, SEO oder eine Webiste?
+              <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
+          </div>
+        </v-col>
+        <v-col  cols="3">
+          <div class="d-flex justify-space-between ml-16">
+          <v-btn class="routbutton">Zur Website</v-btn>
+          <v-btn class="routbutton">Zum Kurs</v-btn>
+          </div>
+        </v-col>
+
+      </v-row>
+
+      <h1 style="position: fixed"> Test Höhe {{$store.state.scrollwert}}</h1>
     </div>
   </div>
 </template>
@@ -129,5 +146,10 @@ export default {
 .img{
   background-image: url("../assets/background.jpg");
   background-size: cover;
+}
+.routbutton{
+  width: 130px;
+  background-color: #014285;
+  color: white;
 }
 </style>
