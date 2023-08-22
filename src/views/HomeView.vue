@@ -2,23 +2,21 @@
   <div class="img" style=" height: 100vh">
     <div class="body pt-10">
     <HeaderComponent></HeaderComponent>
-      <v-row  style="width: 100%; margin-top: 130px" class="mx-0">
-        <v-col class="ml-11" cols="5">
-          <div class="ml-16">
+      <v-row  style="width: 100%; margin-top: 130px" class="mx-0 justify-center">
+        <v-col cols="5">
+          <div>
             <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
-            <p class="mt-2 text-white">Du hast g Interesse an einem Coding Curs <br> oder dein Unternehmen benötigt eine <br> Softwarelösung, SEO oder eine Webiste?
+            <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine <br> Softwarelösung, SEO
+              oder eine Website?
               <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
+
+            <v-btn class="routbutton mt-5 ">Zur Website</v-btn>
+            <v-btn class="routbutton mt-5 ml-16">Zum Kurs</v-btn>
           </div>
         </v-col>
-        <v-col class="d-flex justify-center" cols="6">
+        <v-col class="d-flex justify-center" cols="5">
           <div class="laptop">
 
-          </div>
-        </v-col>
-        <v-col class="ml-11" cols="3">
-          <div class="d-flex justify-space-between ml-16">
-          <v-btn class="routbutton ">Zur Website</v-btn>
-          <v-btn class="routbutton ml-16">Zum Kurs</v-btn>
           </div>
         </v-col>
 
@@ -99,7 +97,7 @@ export default {
 .laptop{
   height: 100%;
   width: 250px;
-  /*background-image: url("../assets/logo.png");*/
+  background-image: url("../assets/background.jpg");
   background-size: cover;
 }
 </style>
