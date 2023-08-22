@@ -1,8 +1,30 @@
 <template>
+
   <div class="img"/>
+  <HeaderComponent class="pt-10"/>
+
 
   <div class="divOverBackground">
-    <HeaderComponent class="pt-10"/>
+    <v-card class="card">
+      <v-card-item>
+        <h1 class="text-white">
+          tesasdfasdfa
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+
+        </h1>
+      </v-card-item>
+    </v-card>
   </div>
 
 </template>
@@ -48,12 +70,33 @@ export default {
 </script>
 
 <style scoped>
-.img{
+.card {
+  border-radius: 20px;
+  background: linear-gradient(to right, black, #494747);
+  height: 80%;
+  width: 80%
+}
+
+.img {
   position: fixed;
   background-image: url("../assets/background.jpg");
   filter: brightness(60%);
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  z-index: 0;
+}
+
+.divOverBackground {
+  overflow-y: scroll !important;
+  position: fixed;
+  top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88vh;
+  width: 100vw;
+  background-color: transparent;
+  z-index: 100;
 }
 </style>

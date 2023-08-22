@@ -1,9 +1,13 @@
 <template>
-    <div class="background"></div>
 
-    <div class="divOverBackground">
+  <div class="background"/>
+
+  <div class="divOverBackground">
         <LoginComponent></LoginComponent>
-    </div>
+    <v-card style="background-color: #014285; height: 800px">
+      sadfsaf
+    </v-card>
+  </div>
 
 </template>
 <script>
@@ -24,12 +28,15 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  z-index: 0;
 }
 .divOverBackground {
   display: flex;
   align-items: center;
   justify-content: center;
+  position:fixed; top: 0;
   height: 100vh;
   width: 100vw;
+  z-index: 1;
 }
 </style>
