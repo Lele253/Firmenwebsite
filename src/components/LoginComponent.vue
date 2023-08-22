@@ -84,24 +84,22 @@ export default {
             {
               email: this.email,
               password: this.password
-              // Eventuell weitere Attribute
             });
+        this.$store.state.user = {
+          email: 'admin',
+          usename: 'admin'
+        }
         await localStorage.setItem('token', response.data)
 
         this.email = ''
         this.password = ''
-        this.$store.state.user = true
-        this.$router.push('/')
+        this.$router.push('/benutzerprofil')
 
         // Was soll danach passieren? Wohin weiterleiten?
       } catch (error) {
-
         this.error = error.toString()
-
       }
     },
-
-
   },
 
 }

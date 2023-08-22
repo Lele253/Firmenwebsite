@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
 import LoginView from "@/views/LoginView";
+import BenutzerProfilView from "@/views/BenutzerProfilView";
 
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
     name: 'login',
     component: LoginView
   },
+  {
+    path: '/benutzerprofil',
+    name: 'profile',
+    component: BenutzerProfilView
+  },
+
 
   {
     path: '/:catchAll(.*)', component: HomeView
