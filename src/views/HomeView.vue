@@ -17,7 +17,7 @@
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
             </div>
           </v-col>
-          <v-col style="border: gold solid 1px" class="pr-0 mr-6 d-flex justify-center" cols="6">
+          <v-col style="border: #CBB26A solid 1px" class="pr-0 mr-6 d-flex justify-center" cols="6">
             <div class="laptop">
             </div>
           </v-col>
@@ -31,7 +31,7 @@
           </v-col>
         </v-row>
       </div>
-      <div>
+      <div style="height: 100vh">
         <v-row class="mx-0" style="width: 100%;">
           <v-col cols="6" style="max-width: 350px">
             <v-card class="cart-curs">
@@ -51,11 +51,101 @@
             </v-card>
           </v-col>
         </v-row>
+        <div style="margin-left: 75px">
+          <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
+          <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
+          <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kentnisstand und setzen da an wo du stehst.</p>
+        </div>
       </div>
+      <div style="height: 80vh">
+        <v-row justify="center" style="width: 100%" class="mx-0">
+          <v-col cols="7">
+            <v-card class="ml-n3 websitebox">
+              <div v-if="websiteformular" class="websitebox-innerdiv">
+                <v-row style="width: 100%" class="ma-0">
+                    <h3 style="width: 100vh" class=" my-4 text-white text-center">Füllen SIe das Formular aus und wir melden uns bei zeitnah bei Ihnen.</h3>
+                  <v-col cols="6">
+                    <v-text-field  class="text-white"
+                                   base-color="white"
+                                   color="white"
+                                   label="Passwort"
+                                   persistent-hint
+                                   required
+                                   variant="outlined">
 
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field  class="text-white"
+                                   base-color="white"
+                                   color="white"
+                                   label="Passwort"
+                                   persistent-hint
+                                   required
+                                   variant="outlined">
 
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field  class="text-white mt-n5"
+                                   base-color="white"
+                                   color="white"
+                                   label="Passwort"
+                                   persistent-hint
+                                   required
+                                   variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field  class="text-white mt-n5"
+                                   base-color="white"
+                                   color="white"
+                                   label="Passwort"
+                                   persistent-hint
+                                   required
+                                   variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field  class="text-white mt-n5"
+                                   base-color="white"
+                                   color="white"
+                                   label="Passwort"
+                                   persistent-hint
+                                   required
+                                   variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field  class="text-white mt-n5"
+                                   base-color="white"
+                                   color="white"
+                                   label="Passwort"
+                                   persistent-hint
+                                   required
+                                   variant="outlined"
+                                   >
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col class=" d-flex justify-center" cols="12">
+                    <v-btn class="routebutton">
+                      Absenden
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-card>
+          </v-col>
+          <v-col  cols="4">
+test
+          </v-col>
+        </v-row>
+      </div>
     </div>
-
   </div>
 </template>
 
@@ -72,6 +162,7 @@ export default {
 
   data() {
     return {
+      websiteformular: true,
       mobile: false,
       tabletHorizontal: false
     }
@@ -120,6 +211,23 @@ export default {
 </script>
 
 <style scoped>
+.websitebox-innerdiv{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(2, 2, 2, 0.9);
+  backdrop-filter: blur(1px);
+}
+.websitebox{
+  width: 83%;
+  height: 50vh;
+  background-color: #7c7b7b;
+  box-shadow: 5px 5px 11px black ;
+  transition: ease-in-out 0.4s;
+  border-left: 2px solid rgba(255, 255, 255, 0.78);
+  border-top: 2px solid rgba(255, 255, 255, 0.78);
+  background-image: url("../assets/websitebackground.png");
+  background-size: cover;
+}
 .background {
   height: 432vh;
   width: 100vw;
@@ -154,6 +262,7 @@ export default {
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
   box-shadow: 3px 3px 5px black ;
+  transition: ease-in-out 0.4s;
 }
 .cart-curs:hover {
   margin-left: 60px;
@@ -164,6 +273,7 @@ export default {
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
   box-shadow: 3px 3px 5px black ;
-  transform: scale(1.2);
+  transform: scale(1.16);
+
 }
 </style>
