@@ -1,62 +1,64 @@
 <template>
-        <v-form @submit.prevent="login">
-          <v-card class="card">
-            <v-card-title class="text-center">
-              <span class="text-h5 text-white">Einloggen</span>
-            </v-card-title>
-            <v-card-text>
-              <v-container>
-                <v-row class="d-flex justify-center" style="width: 100%">
-                  <v-col
-                      cols="12">
-                    <v-text-field v-model="email"
-                                  required
-                                  label="Email"
-                                  class="text-white"
-                                  base-color="white"
-                                  color="white"
-                                  variant="outlined"
-                    ></v-text-field>
-                  </v-col>
-                  <v-col
-                      cols="12">
-                    <v-text-field v-model="password"
-                                  class="text-white"
-                                  base-color="white"
-                                  color="white"
-                                  label="Passwort"
-                                  persistent-hint
-                                  required
-                                  variant="outlined"
-                    ></v-text-field>
-                  </v-col>
-                </v-row>
-              </v-container>
-              <v-alert v-if="error === 'AxiosError: Request failed with status code 401'"
-                       class="text-center text-black mx-5" type="warning">
-                Benutzername oder Passwort ist falsch.
-              </v-alert>
+  <v-form @submit.prevent="login">
+    <v-card class="card">
+      <v-card-title class="text-center">
+        <span class="text-h5 text-white">Einloggen</span>
+      </v-card-title>
+      <v-card-text>
+        <v-container>
+          <v-row class="d-flex justify-center" style="width: 100%">
+            <v-col
+                cols="12">
+              <v-text-field v-model="email"
+                            base-color="white"
+                            class="text-white"
+                            color="white"
+                            label="Email"
+                            required
+                            type="email"
+                            variant="outlined"
+              ></v-text-field>
+            </v-col>
+            <v-col
+                cols="12">
+              <v-text-field v-model="password"
+                            base-color="white"
+                            class="text-white"
+                            color="white"
+                            label="Passwort"
+                            persistent-hint
+                            required
+                            type="password"
+                            variant="outlined"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-alert v-if="error === 'AxiosError: Request failed with status code 401'"
+                 class="text-center text-black mx-5" type="warning">
+          Benutzername oder Passwort ist falsch.
+        </v-alert>
 
-              <v-alert v-if="error !== 'AxiosError: Request failed with status code 401' && error != null"
-                       class="text-center text-black mx-5" type="error">
-                Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Administrator.
-              </v-alert>
-            </v-card-text>
-            <v-card-actions class="d-flex justify-center">
-              <v-btn
-                  @click="$router.push('/')"
-                  color="white"
-                  variant="text">
-                Abbrechen
-              </v-btn>
-              <v-btn
-                  color="white"
-                  type="submit">
-                Einloggen
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-form>
+        <v-alert v-if="error !== 'AxiosError: Request failed with status code 401' && error != null"
+                 class="text-center text-black mx-5" type="error">
+          Einloggen ist momentan nicht möglich. Bitte wenden Sie sich an den Administrator.
+        </v-alert>
+      </v-card-text>
+      <v-card-actions class="d-flex justify-center">
+        <v-btn
+            color="white"
+            variant="text"
+            @click="$router.push('/')">
+          Abbrechen
+        </v-btn>
+        <v-btn
+            color="white"
+            type="submit">
+          Einloggen
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-form>
 </template>
 
 <script>
@@ -69,16 +71,15 @@ export default {
     email: null,
     password: '',
     error: null
-}),
+  }),
 
-  components: {
-
-  },
+  components: {},
   computed: {
     ...mapGetters(['user'])
   },
   methods: {
     async login() {
+      this.error = null
       try {
         const response = await axios.post('/login',
             {

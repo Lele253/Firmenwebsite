@@ -53,13 +53,25 @@
         </div>
       </v-col>
       <v-col cols="1">
+
         <div v-if="!user" class="d-flex justify-center align-center login-button" @click="$router.push('/login')">
           <h4>Login</h4>
         </div>
-        <div v-if="user" class="d-flex justify-center align-center login-button"
-             @click="$router.push('/benutzerprofil')">
-          <h2>{{ initials }}</h2>
+
+        <div v-else-if="$route.path === '/benutzerprofil'" class="d-flex justify-center align-center login-button"
+             @click="logout">
+          <h4>
+            Logout
+          </h4>
         </div>
+
+        <div v-else class="d-flex justify-center align-center login-button"
+             @click="$router.push('/benutzerprofil')">
+          <h3>
+            {{ initials }}
+          </h3>
+        </div>
+
       </v-col>
     </v-row>
   </div>
@@ -93,6 +105,11 @@ export default {
     this.getUser()
   },
   methods: {
+    async logout() {
+      localStorage.removeItem('token')
+      this.$store.dispatch('user', null)
+      await location.reload()
+    },
     async getUser() {
       try {
         const user = await axios.get('/user')
