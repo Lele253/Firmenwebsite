@@ -155,4 +155,15 @@ export default {
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
   box-shadow: 3px 3px 5px black ;
 }
+.cart-curs:hover {
+  margin-left: 60px;
+  height: 200px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.17);
+  backdrop-filter: blur(4px) !important;
+  border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
+  border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
+  box-shadow: 3px 3px 5px black ;
+  transform: scale(1.2);
+}
 </style>
