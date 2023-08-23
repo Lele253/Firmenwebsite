@@ -4,7 +4,7 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1459745930869-b3d0d72c3cbb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa1" style="">
               <div class="desc">
                 <h2>Welcome this is an epic title</h2>
                 <p>website</p>
@@ -71,7 +71,7 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1530035415911-95194de4ebcc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa-leandro">
               <div class="desc">
                 <h2>Welcome this is an epic title</h2>
                 <p>website</p>
@@ -185,7 +185,14 @@ export default {
 body {
   background: #fff;
 }
-
+.hexa1{
+  background: url('../assets/bg-werl.png') center no-repeat;
+  background-size: cover;
+}
+.hexa-leandro{
+  background: url('../assets/leandro.png') center no-repeat;
+  background-size: cover;
+}
 section {
   margin: 0 auto;
   text-align: center;

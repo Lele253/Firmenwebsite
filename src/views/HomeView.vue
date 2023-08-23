@@ -31,7 +31,7 @@
         </v-row>
       </div>
       <div style="height: 100vh">
-        <v-row class="mx-0" style="width: 100%;">
+        <v-row class="mx-0 " style="padding-left: 110px; width: 100%;">
           <v-col cols="6" style="max-width: 350px">
             <v-card class="cart-curs">
             </v-card>
@@ -50,16 +50,16 @@
             </v-card>
           </v-col>
         </v-row>
-        <div style="margin-left: 75px">
+        <div style="margin-left: 185px">
           <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
           <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
-          <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kentnisstand und setzen da an wo du stehst.</p>
+          <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du stehst.</p>
         </div>
       </div>
       <div style="height: 80vh">
         <v-row justify="center" style="width: 100%" class="mx-0">
-          <v-col cols="7">
-            <v-card class="ml-n3 websitebox">
+          <v-col :cols="tabletHorizontal ? 5:6 ">
+            <v-card class="websitebox">
               <div v-if="websiteformular" class="websitebox-innerdiv">
                 <v-row style="width: 100%" class="ma-0">
                     <h3 style="width: 100vh" class=" my-4 text-white text-center">Füllen SIe das Formular aus und wir melden uns bei zeitnah bei Ihnen.</h3>
@@ -139,17 +139,19 @@
               </div>
             </v-card>
           </v-col>
-          <v-col  cols="4">
-            <div style="margin-left: -130px">
-            <h2 class="text-white">Ihre Webseite, Ihr Erfolg: Maßgeschneiderte Designs von Expertenhand
+          <v-col cols="5">
+            <div class="mt-n1">
+            <h2 v-if="tabletHorizontal" class="text-white">Ihre Webseite, Ihr Erfolg: Maßgeschneiderte Designs von Expertenhand
             </h2>
+              <h3 v-if="!tabletHorizontal" class="text-white">Ihre Webseite, Ihr Erfolg: Maßgeschneiderte Designs von Expertenhand
+              </h3>
             <p class="mt-1 text-white">Willkommen bei FastGlobe IT – Ihrem Partner für erstklassige Webseiten. Wir verwandeln Ideen in ansprechende Online-Präsenzen, die Ihre Marke zum Leuchten bringen. Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden zu lassen.</p>
             <h2 class="mt-3 text-white">Warum wir?</h2>
             <p class="text-white"> Unsere Stärke liegt in maßgeschneidertem Webdesign, das Ästhetik und Funktionalität vereint. Wir optimieren für alle Geräte, integrieren modernste Technologien und sorgen für Sichtbarkeit durch SEO.</p>
             <h2 v-if="tabletHorizontal"  class="mt-4 text-white">Bereit für den ersten Schritt?</h2>
             <p v-if="tabletHorizontal" class="text-white">Setzen Sie sich mit uns in Verbindung! Klicken Sie unten, um ein Beratungsgespräch zu vereinbaren. Gemeinsam finden wir die besten Lösungen für Ihre Webseite.     </p>
-            <h4 v-if="tabletHorizontal" >Jetzt kostenlose Beratung sichern</h4>
-            <v-btn @click="websiteformular = !websiteformular" class="routebutton">Beratung</v-btn>
+            <h4 v-if="tabletHorizontal"  class="mt-2 text-white" >Jetzt kostenlose Beratung sichern</h4>
+            <v-btn @click="websiteformular = !websiteformular" class="mt-3 routebutton">Beratung</v-btn>
             </div>
           </v-col>
         </v-row>
@@ -229,14 +231,14 @@ export default {
   backdrop-filter: blur(1px);
 }
 .websitebox{
-  width: 84%;
+  width: 100%;
   height: 50vh;
   background-color: #7c7b7b;
   box-shadow: 5px 5px 11px black ;
   transition: ease-in-out 0.4s;
   border-left: 2px solid rgba(255, 255, 255, 0.78);
   border-top: 2px solid rgba(255, 255, 255, 0.78);
-  background-image: url("../assets/websitebackground.png");
+  background-image: url("../assets/websitebackground.jpg");
   background-size: cover;
 }
 .background {
