@@ -116,7 +116,7 @@
 
             <v-col class="mt-n3" cols="4">
               <h4 v-if="!user"
-                  class="d-flex justify-center align-center"
+                  class="d-flex justify-center align-center text-white"
                   @click="$router.push('/login')">
                 Login
               </h4>
@@ -174,7 +174,6 @@ export default {
   },
 
   computed: {
-
     initials: function () {
       try {
         const splitted = this.$store.state.user.username.split(' ')
@@ -192,8 +191,26 @@ export default {
   },
   mounted() {
     this.getUser()
+    this.checkMobileView()
   },
   methods: {
+    checkMobileView() {
+      if (window.innerWidth <= 850) {
+        this.handy = true;
+        this.$store.state.handy = true;
+      } else {
+        this.handy = false;
+        this.$store.state.handy = false;
+
+      }
+      if (window.innerWidth <= 1300) {
+        this.tabletHorizontal = false
+        this.$store.state.tablet = false
+      } else {
+        this.tabletHorizontal = true
+        this.$store.state.tablet = true
+      }
+    },
     async logout() {
       localStorage.removeItem('token')
       this.$store.dispatch('user', null)
