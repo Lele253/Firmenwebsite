@@ -218,7 +218,7 @@ export default {
   backdrop-filter: blur(1px);
 }
 .websitebox{
-  width: 83%;
+  width: 84%;
   height: 50vh;
   background-color: #7c7b7b;
   box-shadow: 5px 5px 11px black ;
