@@ -39,14 +39,37 @@
         </v-window-item>
 
         <v-window-item class="text-white" style="overflow-y: scroll" value="3">
-          <div class="d-flex justify-center align-center mt-5">
+          <div class="d-flex justify-center align-center ml-10 mt-5">
             <div>
-              <h4 class="text-center">Ansicht Auf dem Handy</h4>
-              <iframe :src="url" class="iframeHandy"/>
+              <h4 class="text-center" @click="handyAnsichtFertig = !handyAnsichtFertig">Ansicht Auf dem Handy</h4>
+              <iframe v-if="handyAnsichtFertig" :src="url" class="iframeHandy"/>
+              <v-card v-else class="iframeHandy d-flex align-center justify-center"
+                      style="background-color: #b69351">
+                <v-card-item>
+                  <h3>
+                    Diese Ansicht ist noch in Arbeit
+                  </h3>
+                </v-card-item>
+                <v-card-items>
+                  <Icon icon="svg-spinners:12-dots-scale-rotate" style="font-size: 30px"/>
+                </v-card-items>
+              </v-card>
             </div>
+
             <div>
-              <h4 class="text-center">Ansicht Auf dem Handy</h4>
-              <iframe :src="url" class="iframeTablet"/>
+              <h4 class="text-center" @click="tabletAnsichtFertig = !tabletAnsichtFertig">Ansicht Auf dem Tablet</h4>
+              <iframe v-if="tabletAnsichtFertig" :src="url" class="iframeTablet"/>
+              <v-card v-else class="iframeTablet d-flex align-center justify-center"
+                      style="background-color: #b69351">
+                <v-card-item>
+                  <h3>
+                    Diese Ansicht ist noch in Arbeit
+                  </h3>
+                </v-card-item>
+                <v-card-items>
+                  <Icon icon="svg-spinners:12-dots-scale-rotate" style="font-size: 30px"/>
+                </v-card-items>
+              </v-card>
             </div>
           </div>
         </v-window-item>
@@ -60,17 +83,21 @@
 import HeaderComponent from "@/components/HeaderComponent";
 import {mapGetters} from "vuex";
 import axios from "axios";
+import {Icon} from '@iconify/vue';
 
 export default {
   name: "BenutzerProfilView",
   data() {
     return {
       tab: '3',
-      url: 'https://leandro-graf.de'
+      url: 'https://leandro-graf.de',
+
+      handyAnsichtFertig: true,
+      tabletAnsichtFertig: true,
     }
   },
   components: {
-    HeaderComponent,
+    HeaderComponent, Icon
   },
   computed: {
     ...mapGetters(['user'])
@@ -112,7 +139,7 @@ export default {
   /*height: 700px;
   width: 400px;*/
   height: 75vh;
-  width: 25vw;
+  width: 20vw;
   transform: scale(0.9);
   border-radius: 20px;
   border: #CBB26A 3px solid;
@@ -122,7 +149,7 @@ export default {
   /*height: 700px;
   width: 1000px;*/
   height: 75vh;
-  width: 55vw;
+  width: 60vw;
   transform: scale(0.9);
   border-radius: 20px;
   border: #CBB26A 3px solid;
