@@ -19,7 +19,8 @@ export default {
 
 <style scoped>
 .background {
-  filter: brightness(80%);
+  filter: brightness(70%) blur(0px);;
+
   background-image: url("../assets/backgroundLogin.jpg");
   background-size: cover;
   height: 100vh;
@@ -31,7 +32,7 @@ export default {
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 0;
+  top: 0px;
   height: 100vh;
   width: 100vw
 }
