@@ -18,9 +18,14 @@
 
       <v-window v-model="tab" style="overflow-y: scroll">
 
-        <v-window-item class="text-white" value="0">
-          {{ user }}
-          {{ tab }}
+        <v-window-item class="text-white mt-10" value="0">
+          <div class=" d-flex justify-center">
+            <div style="width: 500px">
+              <v-alert style="width: 500px" type="info">
+                Das Angebot der Kurse zur Zeit noch in Arbeit...
+              </v-alert>
+            </div>
+          </div>
         </v-window-item>
 
         <v-window-item class="text-white" style="overflow-y: scroll" value="1">
@@ -36,7 +41,7 @@
         <v-window-item class="text-white" style="overflow-y: scroll" value="3">
           <v-row class="mt-5">
             <v-col cols="5">
-              <p class="text-center">
+              <p class=" text-center mr-5">
                 Ansicht Auf dem Handy
               </p>
             </v-col>
@@ -66,12 +71,12 @@ export default {
   name: "BenutzerProfilView",
   data() {
     return {
-      tab: '2',
+      tab: '0',
       url: 'https://leandro-graf.de'
     }
   },
   components: {
-    HeaderComponent
+    HeaderComponent,
   },
   computed: {
     ...mapGetters(['user'])

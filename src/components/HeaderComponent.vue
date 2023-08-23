@@ -5,8 +5,8 @@
         <div class="header">
           <v-row class="justify-center align-center my-0 mx-0" style="width: 100%; height: 100%">
             <v-col class=" pt-0 d-flex justify-center" cols="4" @click="$router.push('/')">
-              <svg class="css-1j8o68f" height="69.16933316395921" viewBox="0 0 369.6551724137931 59.60093654188913"
-                   width="320">
+              <svg class="css-1j8o68f" height="69.16933316395921" style="cursor: pointer"
+                   viewBox="0 0 369.6551724137931 59.60093654188913" width="320">
                 <defs id="SvgjsDefs7931">
                   <linearGradient id="SvgjsLinearGradient7936">
                     <stop id="SvgjsStop7937" offset="0" stop-color="#8f5e25"></stop>
