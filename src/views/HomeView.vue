@@ -139,19 +139,17 @@
               </div>
             </v-card>
           </v-col>
-          <v-col cols="5">
-            <div class="mt-n1">
-            <h2 v-if="tabletHorizontal" class="text-white">Ihre Webseite, Ihr Erfolg: Maßgeschneiderte Designs von Expertenhand
-            </h2>
-              <h3 v-if="!tabletHorizontal" class="text-white">Ihre Webseite, Ihr Erfolg: Maßgeschneiderte Designs von Expertenhand
+          <v-col class="d-flex justify-center align-center" cols="5">
+            <div style="max-width: 80%" class="ml-12 mt-n1">
+
+              <h3  class="text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
               </h3>
-            <p class="mt-1 text-white">Willkommen bei FastGlobe IT – Ihrem Partner für erstklassige Webseiten. Wir verwandeln Ideen in ansprechende Online-Präsenzen, die Ihre Marke zum Leuchten bringen. Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden zu lassen.</p>
-            <h2 class="mt-3 text-white">Warum wir?</h2>
-            <p class="text-white"> Unsere Stärke liegt in maßgeschneidertem Webdesign, das Ästhetik und Funktionalität vereint. Wir optimieren für alle Geräte, integrieren modernste Technologien und sorgen für Sichtbarkeit durch SEO.</p>
-            <h2 v-if="tabletHorizontal"  class="mt-4 text-white">Bereit für den ersten Schritt?</h2>
-            <p v-if="tabletHorizontal" class="text-white">Setzen Sie sich mit uns in Verbindung! Klicken Sie unten, um ein Beratungsgespräch zu vereinbaren. Gemeinsam finden wir die besten Lösungen für Ihre Webseite.     </p>
-            <h4 v-if="tabletHorizontal"  class="mt-2 text-white" >Jetzt kostenlose Beratung sichern</h4>
-            <v-btn @click="websiteformular = !websiteformular" class="mt-3 routebutton">Beratung</v-btn>
+            <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten.  Wir verwandeln Ideen in ansprechende Online-Präsenzen, die Ihre Marke
+             zum Leuchten bringen.
+               Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden zu lassen.</p>
+
+            <h4 class="mt-12 " style="color:#CBB26A;" >Jetzt kostenlose Beratung sichern</h4>
+            <v-btn @click="websiteformular = !websiteformular" class="mt-8 routebutton">Beratung</v-btn>
             </div>
           </v-col>
         </v-row>

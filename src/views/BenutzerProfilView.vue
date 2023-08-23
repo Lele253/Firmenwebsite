@@ -90,8 +90,7 @@ export default {
   data() {
     return {
       tab: '3',
-      url: 'https://leandro-graf.de',
-
+      url: 'https://brickau.de',
       handyAnsichtFertig: true,
       tabletAnsichtFertig: true,
     }

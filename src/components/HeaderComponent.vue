@@ -53,7 +53,6 @@
         </div>
       </v-col>
       <v-col cols="1">
-
         <div v-if="!user" class="d-flex justify-center align-center login-button" @click="$router.push('/login')">
           <h4>Login</h4>
         </div>

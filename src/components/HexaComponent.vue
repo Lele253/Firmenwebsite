@@ -6,8 +6,8 @@
           <div class="hex1">
             <div class="hex2 hexa1" style="">
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>Vue.JS 3</h2>
+                <h6>Web-Framework</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -17,10 +17,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa2" >
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>Angular</h2>
+                <h6>Web-Framework</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -30,10 +30,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1513569143478-b38b2c0ef97f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa3" >
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2 class="ml-n2">Springboot</h2>
+                <h6>Java-Backend <br> Framework</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -45,10 +45,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1509914398892-963f53e6e2f1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa4">
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>CSS</h2>
+                <h6>Sylesheet <br> Language</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -58,10 +58,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1505937059382-aab581fd88c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa-leandro" >
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>Stefan</h2>
+                <h3>Franke</h3>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -73,8 +73,8 @@
           <div class="hex1">
             <div class="hex2 hexa-leandro">
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>Leandro</h2>
+                <h3>Graf</h3>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -84,10 +84,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1519789110007-0e751882be76?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa5">
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>HTML</h2>
+                <h6>Markup <br> language</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -100,10 +100,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1470093717298-580960d32547?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa6" >
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>Java</h2>
+                <h6>object-oriented <br> programming <br> language </h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -113,10 +113,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1529824928094-f9909a073398?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa7">
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2  style="margin-left: 6px">javascript</h2>
+                <h6> interpreted programming language</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -126,10 +126,10 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2" style="background: url('https://images.unsplash.com/photo-1518200485539-027af735541e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center no-repeat">
+            <div class="hex2 hexa8">
               <div class="desc">
-                <h2>Welcome this is an epic title</h2>
-                <p>website</p>
+                <h2>Vuetify 3</h2>
+                <h6>CSS-Framework</h6>
               </div>
             </div><!--/hex2-->
           </div><!--/hex1-->
@@ -186,13 +186,42 @@ body {
   background: #fff;
 }
 .hexa1{
-  background: url('../assets/bg-werl.png') center no-repeat;
+  background: url('../assets/vue.png') center no-repeat;
+  background-size: cover;
+}
+.hexa2{
+  background: url('../assets/Angular.png') center no-repeat;
+  background-size: cover;
+}
+.hexa3{
+  background: url('../assets/Springboot.png') center no-repeat;
+  background-size: cover;
+}
+.hexa4{
+  background: url('../assets/CSS.png') center no-repeat;
   background-size: cover;
 }
 .hexa-leandro{
   background: url('../assets/leandro.png') center no-repeat;
   background-size: cover;
 }
+.hexa5{
+  background: url('../assets/html.png') center no-repeat;
+  background-size: cover;
+}
+.hexa6{
+  background: url('../assets/java.png') center no-repeat;
+  background-size: cover;
+}
+.hexa7{
+   background: url('../assets/JavaScript.png') center no-repeat;
+   background-size: cover;
+ }
+.hexa8{
+  background: url('../assets/logo.png') center no-repeat;
+  background-size: cover;
+}
+
 section {
   margin: 0 auto;
   text-align: center;
