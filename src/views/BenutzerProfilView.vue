@@ -50,11 +50,10 @@ export default {
     this.checkUser()
   },
   methods: {
-    logout() {
-      localStorage.removeItem('token');
-      this.$store.dispatch('user', null);
-      this.$router.push('/')
-      // Soll woanders weitergeleitet werden?
+    async logout() {
+      localStorage.removeItem('token')
+      this.$store.dispatch('user', null)
+      await location.reload()
     },
     async checkUser() {
       await this.getUser()
