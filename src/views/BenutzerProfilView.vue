@@ -46,7 +46,7 @@
               </p>
             </v-col>
           </v-row>
-          <div class="d-flex justify-center">
+          <div class="d-flex justify-center align-center">
             <iframe :src="url" class="iframeHandy"/>
             <iframe :src="url" class="iframeTablet"/>
           </div>
@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       tab: '2',
-      url: 'https://fastglobeit.de'
+      url: 'https://leandro-graf.de'
     }
   },
   components: {
@@ -114,7 +114,7 @@ export default {
   width: 400px;
   scale: 0.9;
   border-radius: 20px;
-  border-color: #CBB26A
+  border: #CBB26A 3px solid;
 }
 
 .iframeTablet {
@@ -122,22 +122,24 @@ export default {
   width: 1000px;
   scale: 0.9;
   border-radius: 20px;
-  border-color: #CBB26A
+  border: #CBB26A 3px solid;
 }
 
 .iframe {
-  height: 800px;
-  width: 1400px;
+  /*height: 800px;
+  width: 1400px;*/
+  height: 80vh;
+  width: 80vw;
   scale: 0.9;
   border-radius: 20px;
-  border-color: #CBB26A !important;
+  border: #CBB26A 3px solid;
 }
 
 .card {
   /*overflow-y: scroll;*/
   border-radius: 20px;
   background: linear-gradient(to bottom, black, #494747);
-  height: 80%;
+  height: 95%;
   width: 80%
 }
 
