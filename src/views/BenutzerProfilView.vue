@@ -20,8 +20,8 @@
 
         <v-window-item class="text-white " value="0">
           <div class=" d-flex justify-center mt-10">
-            <div style="width: 500px">
-              <v-alert style="width: 500px" type="info">
+            <div>
+              <v-alert class="alert" type="info">
                 Das Angebot der Kurse zur Zeit noch in Arbeit...
               </v-alert>
             </div>
@@ -41,35 +41,13 @@
         <v-window-item class="text-white" style="overflow-y: scroll" value="3">
           <div class="d-flex justify-center align-center ml-10 mt-5">
             <div>
-              <h4 class="text-center" @click="handyAnsichtFertig = !handyAnsichtFertig">Ansicht Auf dem Handy</h4>
-              <iframe v-if="handyAnsichtFertig" :src="url" class="iframeHandy"/>
-              <v-card v-else class="iframeHandy d-flex align-center justify-center"
-                      style="background-color: #b69351">
-                <v-card-item>
-                  <h3>
-                    Diese Ansicht ist noch in Arbeit
-                  </h3>
-                </v-card-item>
-                <v-card-items>
-                  <Icon icon="svg-spinners:12-dots-scale-rotate" style="font-size: 30px"/>
-                </v-card-items>
-              </v-card>
+              <h4 class="text-center">Ansicht Auf dem Handy</h4>
+              <iframe :src="url" class="iframeHandy"/>
             </div>
 
             <div>
-              <h4 class="text-center" @click="tabletAnsichtFertig = !tabletAnsichtFertig">Ansicht Auf dem Tablet</h4>
-              <iframe v-if="tabletAnsichtFertig" :src="url" class="iframeTablet"/>
-              <v-card v-else class="iframeTablet d-flex align-center justify-center"
-                      style="background-color: #b69351">
-                <v-card-item>
-                  <h3>
-                    Diese Ansicht ist noch in Arbeit
-                  </h3>
-                </v-card-item>
-                <v-card-items>
-                  <Icon icon="svg-spinners:12-dots-scale-rotate" style="font-size: 30px"/>
-                </v-card-items>
-              </v-card>
+              <h4 class="text-center">Ansicht Auf dem Tablet</h4>
+              <iframe :src="url" class="iframeTablet"/>
             </div>
           </div>
         </v-window-item>
@@ -83,20 +61,17 @@
 import HeaderComponent from "@/components/HeaderComponent";
 import {mapGetters} from "vuex";
 import axios from "axios";
-import {Icon} from '@iconify/vue';
 
 export default {
   name: "BenutzerProfilView",
   data() {
     return {
-      tab: '3',
-      url: 'https://brickau.de',
-      handyAnsichtFertig: true,
-      tabletAnsichtFertig: true,
+      tab: '0',
+      url: 'https://leandro-graf.de',
     }
   },
   components: {
-    HeaderComponent, Icon
+    HeaderComponent,
   },
   computed: {
     ...mapGetters(['user'])
@@ -131,6 +106,7 @@ export default {
     },
   }
 }
+
 </script>
 
 <style scoped>
@@ -168,8 +144,14 @@ export default {
   /*overflow-y: scroll;*/
   border-radius: 20px;
   background: linear-gradient(to bottom, black, #494747);
+  
   height: 95%;
   width: 80%
+}
+
+.alert {
+  max-width: 500px;
+  width: 50vw;
 }
 
 .img {
