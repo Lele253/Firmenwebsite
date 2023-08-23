@@ -17,9 +17,8 @@
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
             </div>
           </v-col>
-          <v-col style="border: #CBB26A solid 1px" class="pr-0 mr-6 d-flex justify-center" cols="6">
-            <div class="laptop">
-            </div>
+          <v-col style=" margin-top: -270px" class="pr-0 mr-6 d-flex justify-center" cols="7">
+            <HexaComponent class="hexagon1"></HexaComponent>
           </v-col>
           <v-col cols="1"></v-col>
         </v-row>
@@ -153,11 +152,13 @@ test
 import {mapGetters} from "vuex";
 import axios from "axios";
 import HeaderComponent from "@/components/HeaderComponent";
+import HexaComponent from "@/components/HexaComponent";
 
 export default {
   name: "HomeView",
   components: {
-    HeaderComponent
+    HeaderComponent,HexaComponent
+
   },
 
   data() {
@@ -274,6 +275,9 @@ export default {
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
   box-shadow: 3px 3px 5px black ;
   transform: scale(1.16);
+}
 
+.hexagon1{
+  transform: scale(0.75);
 }
 </style>
