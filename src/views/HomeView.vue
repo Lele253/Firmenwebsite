@@ -17,7 +17,7 @@
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
             </div>
           </v-col>
-          <v-col style=" margin-top: -270px" class="pr-0 mr-6 d-flex justify-center" cols="7">
+          <v-col style=" margin-top: -200px" class="pr-0 mr-6 d-flex justify-center" cols="7">
             <HexaComponent class="hexagon1"></HexaComponent>
           </v-col>
           <v-col cols="1"></v-col>
