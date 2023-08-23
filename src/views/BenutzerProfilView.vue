@@ -1,7 +1,7 @@
 <template>
 
-  <div class="img"/>
-  <HeaderComponent class="pt-10"/>
+  <div class="img t-10"/>
+  <HeaderComponent class="mt-10"/>
 
 
   <div class="divOverBackground">
@@ -144,7 +144,7 @@ export default {
   /*overflow-y: scroll;*/
   border-radius: 20px;
   background: linear-gradient(to bottom, black, #494747);
-  
+
   height: 95%;
   width: 80%
 }

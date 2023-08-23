@@ -75,7 +75,7 @@
     </v-row>
   </div>
 
-  <div v-if="handy" class="pt-3">
+  <div v-if="handy">
     <v-row align="center" class=" mx-0" justify="center" style="width: 100%; position:fixed; z-index: 10">
       <v-col class="d-flex justify-center" cols="10">
         <div class="headerMobile">
@@ -121,19 +121,15 @@
                 Login
               </h4>
 
-              <v-btn v-else-if="$route.path === '/benutzerprofil'" class="d-flex justify-center align-center"
-                     @click="logout">
-                <h4>
-                  Logout
-                </h4>
-              </v-btn>
+              <h4 v-else-if="$route.path === '/benutzerprofil'" class="d-flex justify-center align-center"
+                  @click="logout">
+                Logout
+              </h4>
 
-              <v-btn v-else class="d-flex justify-center align-center"
-                     @click="$router.push('/benutzerprofil')">
-                <h3>
-                  {{ initials }}
-                </h3>
-              </v-btn>
+              <h3 v-else class="d-flex justify-center align-center"
+                  @click="$router.push('/benutzerprofil')">
+                {{ initials }}
+              </h3>
             </v-col>
           </v-row>
         </div>

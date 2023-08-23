@@ -1,6 +1,6 @@
 <template>
   <div class="img pb-0" style=" height: 100vh">
-    <h1 style="position: fixed"> Test Höhe {{ $store.state.scrollwert }}</h1>
+    <!--    <h1 style="position: fixed"> Test Höhe {{ $store.state.scrollwert }}</h1>-->
 
     <div class="background pt-10 pb-0">
       <HeaderComponent></HeaderComponent>
@@ -17,7 +17,7 @@
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
             </div>
           </v-col>
-          <v-col style=" margin-top: -200px"  cols="7">
+          <v-col cols="7" style=" margin-top: -200px">
             <HexaComponent :class="tabletHorizontal? 'hexagon1':' hexagon2'"></HexaComponent>
           </v-col>
           <v-col cols="1"></v-col>
@@ -53,80 +53,82 @@
         <div style="margin-left: 185px">
           <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
           <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
-          <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du stehst.</p>
+          <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du
+            stehst.</p>
         </div>
       </div>
       <div style="height: 80vh">
-        <v-row justify="center" style="width: 100%" class="mx-0">
+        <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col :cols="tabletHorizontal ? 5:6 ">
             <v-card class="websitebox">
               <div v-if="websiteformular" class="websitebox-innerdiv">
-                <v-row style="width: 100%" class="ma-0">
-                    <h3 style="width: 100vh" class=" my-4 text-white text-center">Füllen SIe das Formular aus und wir melden uns bei zeitnah bei Ihnen.</h3>
+                <v-row class="ma-0" style="width: 100%">
+                  <h3 class=" my-4 text-white text-center" style="width: 100vh">Füllen SIe das Formular aus und wir
+                    melden uns bei zeitnah bei Ihnen.</h3>
                   <v-col cols="6">
-                    <v-text-field  class="text-white"
-                                   base-color="white"
-                                   color="white"
-                                   label="Passwort"
-                                   persistent-hint
-                                   required
-                                   variant="outlined">
+                    <v-text-field base-color="white"
+                                  class="text-white"
+                                  color="white"
+                                  label="Passwort"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
 
                     </v-text-field>
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field  class="text-white"
-                                   base-color="white"
-                                   color="white"
-                                   label="Passwort"
-                                   persistent-hint
-                                   required
-                                   variant="outlined">
+                    <v-text-field base-color="white"
+                                  class="text-white"
+                                  color="white"
+                                  label="Passwort"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
 
                     </v-text-field>
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field  class="text-white mt-n5"
-                                   base-color="white"
-                                   color="white"
-                                   label="Passwort"
-                                   persistent-hint
-                                   required
-                                   variant="outlined">
+                    <v-text-field base-color="white"
+                                  class="text-white mt-n5"
+                                  color="white"
+                                  label="Passwort"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
 
                     </v-text-field>
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field  class="text-white mt-n5"
-                                   base-color="white"
-                                   color="white"
-                                   label="Passwort"
-                                   persistent-hint
-                                   required
-                                   variant="outlined">
+                    <v-text-field base-color="white"
+                                  class="text-white mt-n5"
+                                  color="white"
+                                  label="Passwort"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
 
                     </v-text-field>
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field  class="text-white mt-n5"
-                                   base-color="white"
-                                   color="white"
-                                   label="Passwort"
-                                   persistent-hint
-                                   required
-                                   variant="outlined">
+                    <v-text-field base-color="white"
+                                  class="text-white mt-n5"
+                                  color="white"
+                                  label="Passwort"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
 
                     </v-text-field>
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field  class="text-white mt-n5"
-                                   base-color="white"
-                                   color="white"
-                                   label="Passwort"
-                                   persistent-hint
-                                   required
-                                   variant="outlined"
-                                   >
+                    <v-text-field base-color="white"
+                                  class="text-white mt-n5"
+                                  color="white"
+                                  label="Passwort"
+                                  persistent-hint
+                                  required
+                                  variant="outlined"
+                    >
 
                     </v-text-field>
                   </v-col>
@@ -140,16 +142,18 @@
             </v-card>
           </v-col>
           <v-col class="d-flex justify-center align-center" cols="5">
-            <div style="max-width: 80%" class="ml-12 mt-n1">
+            <div class="ml-12 mt-n1" style="max-width: 80%">
 
-              <h3  class="text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+              <h3 class="text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
               </h3>
-            <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten.  Wir verwandeln Ideen in ansprechende Online-Präsenzen, die Ihre Marke
-             zum Leuchten bringen.
-               Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden zu lassen.</p>
+              <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten. Wir verwandeln Ideen
+                in ansprechende Online-Präsenzen, die Ihre Marke
+                zum Leuchten bringen.
+                Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden
+                zu lassen.</p>
 
-            <h4 class="mt-12 " style="color:#CBB26A;" >Jetzt kostenlose Beratung sichern</h4>
-            <v-btn @click="websiteformular = !websiteformular" class="mt-8 routebutton">Beratung</v-btn>
+              <h4 class="mt-12 " style="color:#CBB26A;">Jetzt kostenlose Beratung sichern</h4>
+              <v-btn class="mt-8 routebutton" @click="websiteformular = !websiteformular">Beratung</v-btn>
             </div>
           </v-col>
         </v-row>
@@ -167,7 +171,7 @@ import HexaComponent from "@/components/HexaComponent";
 export default {
   name: "HomeView",
   components: {
-    HeaderComponent,HexaComponent
+    HeaderComponent, HexaComponent
 
   },
 
@@ -222,23 +226,25 @@ export default {
 </script>
 
 <style scoped>
-.websitebox-innerdiv{
+.websitebox-innerdiv {
   height: 100%;
   width: 100%;
   background-color: rgba(2, 2, 2, 0.9);
   backdrop-filter: blur(1px);
 }
-.websitebox{
+
+.websitebox {
   width: 100%;
   height: 50vh;
   background-color: #7c7b7b;
-  box-shadow: 5px 5px 11px black ;
+  box-shadow: 5px 5px 11px black;
   transition: ease-in-out 0.4s;
   border-left: 2px solid rgba(255, 255, 255, 0.78);
   border-top: 2px solid rgba(255, 255, 255, 0.78);
   background-image: url("../assets/websitebackground.jpg");
   background-size: cover;
 }
+
 .background {
   height: 432vh;
   width: 100vw;
@@ -272,9 +278,10 @@ export default {
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
-  box-shadow: 3px 3px 5px black ;
+  box-shadow: 3px 3px 5px black;
   transition: ease-in-out 0.4s;
 }
+
 .cart-curs:hover {
   margin-left: 60px;
   height: 200px;
@@ -283,16 +290,17 @@ export default {
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
-  box-shadow: 3px 3px 5px black ;
+  box-shadow: 3px 3px 5px black;
   transform: scale(1.16);
 }
 
-.hexagon1{
+.hexagon1 {
   transform: scale(0.75);
   margin-left: -40px;
   margin-top: -30px;
 }
-.hexagon2{
+
+.hexagon2 {
   margin-left: -140px;
   margin-top: -70px;
   transform: scale(0.6);
