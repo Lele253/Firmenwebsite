@@ -18,8 +18,8 @@
 
       <v-window v-model="tab" style="overflow-y: scroll">
 
-        <v-window-item class="text-white mt-10" value="0">
-          <div class=" d-flex justify-center">
+        <v-window-item class="text-white " value="0">
+          <div class=" d-flex justify-center mt-10">
             <div style="width: 500px">
               <v-alert style="width: 500px" type="info">
                 Das Angebot der Kurse zur Zeit noch in Arbeit...
@@ -39,21 +39,15 @@
         </v-window-item>
 
         <v-window-item class="text-white" style="overflow-y: scroll" value="3">
-          <v-row class="mt-5">
-            <v-col cols="5">
-              <p class=" text-center mr-5">
-                Ansicht Auf dem Handy
-              </p>
-            </v-col>
-            <v-col cols="5">
-              <p class="text-center">
-                Ansicht Auf dem Tablet
-              </p>
-            </v-col>
-          </v-row>
-          <div class="d-flex justify-center align-center">
-            <iframe :src="url" class="iframeHandy"/>
-            <iframe :src="url" class="iframeTablet"/>
+          <div class="d-flex justify-center align-center mt-5">
+            <div>
+              <h4 class="text-center">Ansicht Auf dem Handy</h4>
+              <iframe :src="url" class="iframeHandy"/>
+            </div>
+            <div>
+              <h4 class="text-center">Ansicht Auf dem Handy</h4>
+              <iframe :src="url" class="iframeTablet"/>
+            </div>
           </div>
         </v-window-item>
       </v-window>
@@ -71,7 +65,7 @@ export default {
   name: "BenutzerProfilView",
   data() {
     return {
-      tab: '0',
+      tab: '3',
       url: 'https://leandro-graf.de'
     }
   },
@@ -115,17 +109,21 @@ export default {
 
 <style scoped>
 .iframeHandy {
-  height: 700px;
-  width: 400px;
-  scale: 0.9;
+  /*height: 700px;
+  width: 400px;*/
+  height: 75vh;
+  width: 25vw;
+  transform: scale(0.9);
   border-radius: 20px;
   border: #CBB26A 3px solid;
 }
 
 .iframeTablet {
-  height: 700px;
-  width: 1000px;
-  scale: 0.9;
+  /*height: 700px;
+  width: 1000px;*/
+  height: 75vh;
+  width: 55vw;
+  transform: scale(0.9);
   border-radius: 20px;
   border: #CBB26A 3px solid;
 }
@@ -133,6 +131,8 @@ export default {
 .iframe {
   height: 80vh;
   width: 80vw;
+  max-width: 1920px;
+  max-height: 1080px;
   scale: 0.9;
   border-radius: 20px;
   border: #CBB26A 3px solid;
