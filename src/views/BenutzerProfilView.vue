@@ -126,11 +126,12 @@ export default {
 }
 
 .iframe {
-  /*height: 800px;
-  width: 1400px;*/
-  height: 80vh;
-  width: 80vw;
-  scale: 0.9;
+  margin-top: -130px;
+  height: 1080px;
+  width: 1920px;
+  /*height: 80vh;
+  width: 80vw;*/
+  scale: 0.7;
   border-radius: 20px;
   border: #CBB26A 3px solid;
 }
