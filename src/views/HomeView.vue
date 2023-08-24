@@ -7,6 +7,9 @@
         <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
           <v-col class="d-flex  justify-center" cols="5">
             <div class="mr-11 pl-0">
+              <div class="test">
+
+              </div>
               <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
               <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
                 <br> Softwarelösung, SEO
@@ -189,9 +192,25 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 62vh; width: 100vw;"></div>
+      <div  style="height: 62vh; width: 100vw;padding-top: 200px">
 
-      <div style="height: 8vh; width: 100vw;  background-color: black"></div>
+
+      </div>
+      <div class="pt-6" style="height: 8vh; width: 100vw;  background-color: black">
+        <v-row class="mx-0  justify-center" style="width: 100%">
+          <v-col @click="$router.push('/impressum')" style="cursor: pointer" cols="1">
+            <h3 class="text-center text-white">Impressum</h3>
+          </v-col>
+          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" cols="1">
+            <h3 class="text-center text-white">Datenschutz</h3>
+          </v-col>
+          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+          <v-col style="cursor: pointer" cols="1">
+            <h3 class="text-center text-white">Kontakt</h3>
+          </v-col>
+        </v-row>
+      </div>
 
     </div>
   </div>
@@ -359,5 +378,23 @@ background-color: transparent;
   margin-left: -140px;
   margin-top: -70px;
   transform: scale(0.6);
+}
+.test:hover{
+  height: 100px;
+  width: 100px;
+  background-color: black ;
+  margin-left: 200px;
+  border-radius: 100px;
+  border: solid 2px #ffffff;
+  box-shadow: 0px 0px 10px #eee1bf inset, 0px 0px 10px #dabe6e inset, 2px 2px 10px #eabf43, 2px 2px 40px #debc5b,2px 2px 100px #e76464
+}
+.test{
+  height: 100px;
+  width: 100px;
+  background-color: black ;
+  margin-left: 200px;
+  border-radius: 100px;
+  border: solid 0px ;
+  box-shadow: 0px 0px 0px #eee1bf inset, 0px 0px 0px #dabe6e inset, 0 0 0 #eabf43, 0 0 0 #e1aa0c,0 0 0px #e76464
 }
 </style>

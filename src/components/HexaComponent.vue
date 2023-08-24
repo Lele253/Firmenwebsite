@@ -58,7 +58,7 @@
       <div class="center">
         <div class="hexagon">
           <div class="hex1">
-            <div class="hex2 hexa-leandro" >
+            <div class="hex2 hexa-stefan" >
               <div class="desc">
                 <h2>Stefan</h2>
                 <h3>Franke</h3>
@@ -203,6 +203,10 @@ body {
 }
 .hexa-leandro{
   background: url('../assets/leandro.png') center no-repeat;
+  background-size: cover;
+}
+.hexa-stefan{
+  background: url('../assets/stefan1.png') center no-repeat;
   background-size: cover;
 }
 .hexa5{
