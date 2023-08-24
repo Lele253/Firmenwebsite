@@ -189,8 +189,9 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 9vh"></div>
-      <div style="height: 5vh; background-color: black"></div>
+      <div style="height: 14vh; width: 100vw;"></div>
+
+      <div style="height: 8vh; width: 100vw;  background-color: black"></div>
 
     </div>
   </div>
