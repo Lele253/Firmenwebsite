@@ -3,7 +3,6 @@
   <div class="img t-10"/>
   <HeaderComponent class="mt-10"/>
 
-
   <div class="divOverBackground">
     <v-card class="card">
       <v-tabs
@@ -15,7 +14,6 @@
         <v-tab :value="2" color="#b69351">Laptop</v-tab>
         <v-tab :value="3" color="#b69351">Ipad & Handy</v-tab>
       </v-tabs>
-
       <v-window v-model="tab" style="overflow-y: scroll">
 
         <v-window-item class="text-white " value="0">

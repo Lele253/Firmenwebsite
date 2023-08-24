@@ -1,7 +1,6 @@
 <template>
   <div class="img pb-0" style=" height: 100vh">
     <!--    <h1 style="position: fixed"> Test Höhe {{ $store.state.scrollwert }}</h1>-->
-
     <div class="background pt-10 pb-0">
       <HeaderComponent></HeaderComponent>
       <div style="height: 110vh">
@@ -57,7 +56,7 @@
             stehst.</p>
         </div>
       </div>
-      <div style="height: 80vh">
+      <div style="height: 70vh">
         <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col :cols="tabletHorizontal ? 5:6 ">
             <v-card class="websitebox">
@@ -69,7 +68,7 @@
                     <v-text-field base-color="white"
                                   class="text-white"
                                   color="white"
-                                  label="Passwort"
+                                  label="Name"
                                   persistent-hint
                                   required
                                   variant="outlined">
@@ -80,7 +79,7 @@
                     <v-text-field base-color="white"
                                   class="text-white"
                                   color="white"
-                                  label="Passwort"
+                                  label="Firmenname"
                                   persistent-hint
                                   required
                                   variant="outlined">
@@ -91,7 +90,7 @@
                     <v-text-field base-color="white"
                                   class="text-white mt-n5"
                                   color="white"
-                                  label="Passwort"
+                                  label="Telefonnummer"
                                   persistent-hint
                                   required
                                   variant="outlined">
@@ -102,36 +101,28 @@
                     <v-text-field base-color="white"
                                   class="text-white mt-n5"
                                   color="white"
-                                  label="Passwort"
+                                  label="Email"
                                   persistent-hint
                                   required
                                   variant="outlined">
 
                     </v-text-field>
                   </v-col>
-                  <v-col cols="6">
-                    <v-text-field base-color="white"
-                                  class="text-white mt-n5"
-                                  color="white"
-                                  label="Passwort"
-                                  persistent-hint
-                                  required
-                                  variant="outlined">
+                  <v-col class="mt-n5" cols="12">
+                    <v-radio-group inline v-model="auswahl">
+                      <v-row>
+                        <v-col>
+                      <v-radio  style="color: white" label="Es besteht bereits eine Website"  value="Es besteht bereits eine Website"></v-radio>
 
-                    </v-text-field>
-                  </v-col>
-                  <v-col cols="6">
-                    <v-text-field base-color="white"
-                                  class="text-white mt-n5"
-                                  color="white"
-                                  label="Passwort"
-                                  persistent-hint
-                                  required
-                                  variant="outlined"
-                    >
+                        </v-col>
+                        <v-col>
 
-                    </v-text-field>
+                          <v-radio style="color: white"  label="Es besteht keine Website"  value="Es besteht keine Website"></v-radio>
+                        </v-col>
+                      </v-row>
+                    </v-radio-group>
                   </v-col>
+
                   <v-col class=" d-flex justify-center" cols="12">
                     <v-btn class="routebutton">
                       Absenden
@@ -144,7 +135,9 @@
           <v-col class="d-flex justify-center align-center" cols="5">
             <div class="ml-12 mt-n1" style="max-width: 80%">
 
-              <h3 class="text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+              <h1 v-if="tabletHorizontal" class="mb-6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+              </h1>
+              <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
               </h3>
               <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten. Wir verwandeln Ideen
                 in ansprechende Online-Präsenzen, die Ihre Marke
@@ -158,6 +151,45 @@
           </v-col>
         </v-row>
       </div>
+      <div style="height: 70vh">
+        <v-row class="mx-0" justify="center" style="width: 100%">
+          <v-col class="d-flex align-center" cols="5">
+            <div class=" mt-n1" style="max-width: 60%">
+
+              <h1 class="text-white">Warum wir?
+              </h1>
+              <p class="mt-10 text-white">Unsere Stärke liegt in maßgeschneidertem Webdesign, das Ästhetik und Funktionalität vereint. Wir optimieren für alle Geräte, integrieren modernste Technologien und sorgen für Sichtbarkeit durch SEO.</p>
+
+            </div>
+          </v-col>
+          <v-col :cols="tabletHorizontal ? 5:6 ">
+            <v-card class="websitebox1">
+            </v-card>
+          </v-col>
+
+        </v-row>
+      </div>
+      <div style="height: 50vh">
+        <v-row class="mx-0" justify="center" style="width: 100%">
+          <v-col :cols="tabletHorizontal ? 5:6 ">
+            <v-card class="websitebox3">
+            </v-card>
+          </v-col>
+          <v-col class="d-flex justify-center align-center" cols="5">
+            <div class="ml-12 mt-n1" style="max-width: 80%">
+
+              <h1 v-if="tabletHorizontal" class="mb-6 text-white"> Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
+
+              </h1>
+              <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">"Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
+
+              </h3>
+              <p class="mt-10 text-white"> Verpassen Sie keine Entwicklungsschritte Ihrer Webseite! Mit unserem Live-Entwicklungs-Tracker halten wir Sie kontinuierlich auf dem Laufenden. Tauchen Sie in den Fortschritt ein, während Ihre Webseite Form annimmt – in einem beeindruckenden Zusammenspiel aus Kreativität und Technologie.</p>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
+
     </div>
   </div>
 </template>
@@ -177,6 +209,7 @@ export default {
 
   data() {
     return {
+      auswahl:',ajenfaefkabk',
       websiteformular: false,
       mobile: false,
       tabletHorizontal: false
@@ -239,9 +272,27 @@ export default {
   background-color: #7c7b7b;
   box-shadow: 5px 5px 11px black;
   transition: ease-in-out 0.4s;
-  border-left: 2px solid rgba(255, 255, 255, 0.78);
-  border-top: 2px solid rgba(255, 255, 255, 0.78);
+  border-left: 2px solid #CBB26A;
+  border-top: 2px solid #CBB26A;
   background-image: url("../assets/websitebackground.jpg");
+  background-size: cover;
+}
+.websitebox1 {
+  width: 100%;
+  height: 50vh;
+  transition: ease-in-out 0.4s;
+background-color: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  background-image: url("../assets/SEO.png");
+  background-size: cover;
+}
+.websitebox3 {
+  width: 100%;
+  height: 50vh;
+  transition: ease-in-out 0.4s;
+  background-color: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  background-image: url("../assets/vorschau.png");
   background-size: cover;
 }
 
