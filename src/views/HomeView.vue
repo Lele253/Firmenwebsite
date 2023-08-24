@@ -29,7 +29,7 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 100vh">
+      <div style="height: 90vh">
         <v-row class="mx-0 " style="padding-left: 110px; width: 100%;">
           <v-col cols="6" style="max-width: 350px">
             <v-card class="cart-curs">
@@ -56,7 +56,7 @@
             stehst.</p>
         </div>
       </div>
-      <div style="height: 70vh">
+      <div style="height: 60vh">
         <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col :cols="tabletHorizontal ? 5:6 ">
             <v-card class="websitebox">
@@ -151,7 +151,7 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 70vh">
+      <div style="height: 60vh">
         <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col class="d-flex align-center" cols="5">
             <div class=" mt-n1" style="max-width: 60%">
@@ -189,7 +189,7 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 14vh; width: 100vw;"></div>
+      <div style="height: 60vh; width: 100vw;"></div>
 
       <div style="height: 8vh; width: 100vw;  background-color: black"></div>
 
@@ -301,7 +301,7 @@ background-color: transparent;
 }
 
 .background {
-  height: 432vh;
+  height: 450vh;
   width: 100vw;
   background-image: url("../assets/Hintergrund.png");
   background-size: cover;
