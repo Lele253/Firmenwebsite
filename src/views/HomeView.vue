@@ -189,7 +189,7 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 60vh; width: 100vw;"></div>
+      <div style="height: 62vh; width: 100vw;"></div>
 
       <div style="height: 8vh; width: 100vw;  background-color: black"></div>
 
