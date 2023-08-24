@@ -290,10 +290,9 @@ background-color: transparent;
   background-size: cover;
 }
 .websitebox3 {
-  min-width: 900px;
+  width: 900px;
   margin-left: -50px;
-  width: 100%;
-  height: 50vh;
+  height: 510px;
   transition: ease-in-out 0.4s;
   background-color: transparent;
   box-shadow: 0px 0px 0px transparent;
