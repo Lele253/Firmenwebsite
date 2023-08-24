@@ -51,14 +51,15 @@
                             color="green"
                             readonly>
                     <template v-slot:label>
+                      <Icon v-if="!todo.isFinished" class="mr-3" icon="svg-spinners:3-dots-fade"/>
                       {{ todo.name }}
-                      <v-progress-circular
-                          v-if="!todo.isFinished"
-                          :indeterminate="!todo.isFinished"
-                          class="ml-5"
-                          size="30"
-                          style="color: #CBB26A"
-                      ></v-progress-circular>
+                      <!--                      <v-progress-circular
+                                                v-if="!todo.isFinished"
+                                                :indeterminate="!todo.isFinished"
+                                                class="ml-5"
+                                                size="30"
+                                                style="color: #CBB26A"
+                                            ></v-progress-circular>-->
                     </template>
                   </v-switch>
                 </v-card-item>
@@ -98,6 +99,7 @@
 import HeaderComponent from "@/components/HeaderComponent";
 import {mapGetters} from "vuex";
 import axios from "axios";
+import {Icon} from '@iconify/vue';
 
 export default {
   name: "BenutzerProfilView",
@@ -109,7 +111,7 @@ export default {
     }
   },
   components: {
-    HeaderComponent,
+    HeaderComponent, Icon
   },
   computed: {
     ...mapGetters(['user']),
