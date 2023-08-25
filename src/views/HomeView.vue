@@ -36,10 +36,34 @@
         <v-row class="mx-0 " style="padding-left: 110px; width: 100%;">
           <v-col cols="6" style="max-width: 350px">
             <v-card class="cart-curs">
+              <v-card-title class="text-center">
+             <b>
+                Einsteiger
+             </b>
+              </v-card-title>
+              <v-card-subtitle class="text-center">
+                <b>
+                Java oder Webentwicklung
+                </b>
+              </v-card-subtitle>
+              <v-row class="mt-2 justify-center">
+                <v-col>
+                  <p class="ml-7">- Java</p>
+                  <p class="ml-7">- HTML</p>
+                  <p class="ml-7">- CSS</p>
+                  <p class="ml-7">- Javascript</p>
+                </v-col>
+                <v-col>
+                  <h2>4 Stunden <br></h2>
+                  <h2  class="text-center mt-7 text-red-darken-3">  150 Euro</h2>
+                </v-col>
+              </v-row>
+
             </v-card>
           </v-col>
           <v-col cols="8">
             <v-card class="cart-curs">
+
             </v-card>
           </v-col>
           <v-col cols="5" style="max-width: 350px">
@@ -309,9 +333,9 @@ background-color: transparent;
   background-size: cover;
 }
 .websitebox3 {
-  width: 900px;
+  width: 700px;
   margin-left: -50px;
-  height: 510px;
+  height: 410px;
   transition: ease-in-out 0.4s;
   background-color: transparent;
   box-shadow: 0px 0px 0px transparent;
@@ -348,7 +372,7 @@ background-color: transparent;
   margin-left: 60px;
   height: 200px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.17);
+  background-color: rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
@@ -357,10 +381,11 @@ background-color: transparent;
 }
 
 .cart-curs:hover {
+  cursor: pointer;
   margin-left: 60px;
   height: 200px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.17);
+  background-color: rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
