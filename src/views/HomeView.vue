@@ -6,10 +6,8 @@
       <div style="height: 110vh">
         <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
           <v-col class="d-flex  justify-center" cols="5">
-            <div class="mr-11 pl-0">
-              <div class="test">
+            <div :class="wide ? 'nonscale': 'scale' " class="mr-11 pl-0">
 
-              </div>
               <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
               <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
                 <br> Softwarelösung, SEO
@@ -55,7 +53,7 @@
                 </v-col>
                 <v-col>
                   <h2>4 Stunden <br></h2>
-                  <h2  class="text-center mt-7 text-red-darken-3">  150 Euro</h2>
+                  <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  160 Euro</h2>
                 </v-col>
               </v-row>
 
@@ -216,9 +214,37 @@
           </v-col>
         </v-row>
       </div>
-      <div  style="height: 62vh; width: 100vw;padding-top: 200px">
+      <div style="height: 60vh">
+        <v-row class="mx-0" justify="center" style="width: 100%">
+          <v-col class="d-flex align-center" style="padding-top: 150px" cols="5">
+            <div class=" mt-n1" style=" max-width: 75%">
 
 
+              <h1 v-if="tabletHorizontal" class="mb-6 text-white"> Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
+
+
+
+              </h1>
+              <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
+
+
+
+              </h3>
+              <p class="mt-10 text-white">
+               - Kreative Webanwendungen <br>
+               - Maßgeschneiderte Softwarelösungen <br>
+               - Ansprechende Webseiten mit SEO-Optimierung <br>
+               - Inspirierende Kurse in HTML, CSS, Java, Vue.Js und Spring Boot
+              </p>
+
+            </div>
+          </v-col>
+          <v-col :cols="tabletHorizontal ? 5:6 ">
+            <v-card class="websitebox4">
+            </v-card>
+          </v-col>
+
+        </v-row>
       </div>
       <div class="pt-6" style="height: 8vh; width: 100vw;  background-color: black">
         <v-row class="mx-0  justify-center" style="width: 100%">
@@ -258,7 +284,8 @@ export default {
       auswahl:',ajenfaefkabk',
       websiteformular: false,
       mobile: false,
-      tabletHorizontal: false
+      tabletHorizontal: false,
+      wide: false
     }
   },
   computed: {
@@ -270,6 +297,14 @@ export default {
   },
   methods: {
     checkMobileView() {
+      if (window.innerWidth >= 1800) {
+        this.wide = true;
+        this.$store.state.wide = true;
+      } else {
+        this.wide = false;
+        this.$store.state.wide = false;
+
+      }
       if (window.innerWidth <= 850) {
         this.mobile = true;
         this.$store.state.mobile = true;
@@ -333,13 +368,23 @@ background-color: transparent;
   background-size: cover;
 }
 .websitebox3 {
-  width: 700px;
+  width: 770px;
   margin-left: -50px;
-  height: 410px;
+  height: 440px;
   transition: ease-in-out 0.4s;
   background-color: transparent;
   box-shadow: 0px 0px 0px transparent;
-  background-image: url("../assets/vorschau.png");
+  background-image: url("../assets/vorschau-removebg-preview.png");
+  background-size: cover;
+}
+.websitebox4 {
+  width: 770px;
+  margin-left: -50px;
+  height: 440px;
+  transition: ease-in-out 0.4s;
+  background-color: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  background-image: url("../assets/Mac.png");
   background-size: cover;
 }
 
@@ -372,7 +417,7 @@ background-color: transparent;
   margin-left: 60px;
   height: 200px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.37);
+  background-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
@@ -385,7 +430,7 @@ background-color: transparent;
   margin-left: 60px;
   height: 200px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.37);
+  background-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
@@ -404,22 +449,12 @@ background-color: transparent;
   margin-top: -70px;
   transform: scale(0.6);
 }
-.test:hover{
-  height: 100px;
-  width: 100px;
-  background-color: black ;
-  margin-left: 200px;
-  border-radius: 100px;
-  border: solid 2px #ffffff;
-  box-shadow: 0px 0px 10px #eee1bf inset, 0px 0px 10px #dabe6e inset, 2px 2px 10px #eabf43, 2px 2px 40px #debc5b,2px 2px 100px #e76464
+.scale{
+  transform: scale(1.4);
 }
-.test{
-  height: 100px;
-  width: 100px;
-  background-color: black ;
-  margin-left: 200px;
-  border-radius: 100px;
-  border: solid 0px ;
-  box-shadow: 0px 0px 0px #eee1bf inset, 0px 0px 0px #dabe6e inset, 0 0 0 #eabf43, 0 0 0 #e1aa0c,0 0 0px #e76464
+.nonscale{
+  transform: scale(1.2);
+
 }
+
 </style>
