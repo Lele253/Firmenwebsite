@@ -4,8 +4,6 @@
     <div class="background pt-10 pb-0">
 
       <!--   Headder-->
-
-
       <div v-if="!mobile">
         <v-row align="center" class=" mx-0" justify="center" style="width: 100%; position:fixed; z-index: 10">
           <v-col cols="10">
@@ -83,9 +81,6 @@
         </v-row>
       </div>
       <div v-if="mobile">
-
-
-
         <v-row align="center" class=" mx-0" justify="center" style="width: 100%; position:fixed; z-index: 10">
           <v-col class="d-flex justify-center" cols="10">
             <div class="headerMobile">
@@ -316,7 +311,8 @@
             stehst.</p>
         </div>
       </div>
-      <div style="height: 60vh">
+      <div id="Website" style="height: 15vh"></div>
+      <div style="height: 55vh">
         <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col :cols="tabletHorizontal ? 5:6 ">
             <v-card class="websitebox">
@@ -412,7 +408,7 @@
         </v-row>
       </div>
 
-      <div style="height: 60vh">
+      <div style="height: 55vh">
         <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col class="d-flex align-center" cols="5">
             <div class=" mt-n1" style="max-width: 60%">
@@ -450,7 +446,7 @@
           </v-col>
         </v-row>
       </div>
-      <div style="height: 60vh">
+      <div style="height: 55vh">
         <v-row class="mx-0" justify="center" style="width: 100%">
           <v-col class="d-flex align-center" style="padding-top: 150px" cols="5">
             <div class=" mt-n1" style=" max-width: 75%">
