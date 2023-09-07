@@ -56,22 +56,89 @@
                   <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  160 Euro</h2>
                 </v-col>
               </v-row>
-
             </v-card>
           </v-col>
           <v-col cols="8">
-            <v-card class="cart-curs">
-
+            <v-card class="cart-curs-green cart-curs">
+              <v-card-title class="text-center">
+                <b>
+                  Fortgeschritten
+                </b>
+              </v-card-title>
+              <v-card-subtitle class="text-center">
+                <b>
+                  Java oder Webentwicklung
+                </b>
+              </v-card-subtitle>
+              <v-row class="mt-2 justify-center">
+                <v-col>
+                  <p class="ml-7">- Java</p>
+                  <p class="ml-7">- HTML</p>
+                  <p class="ml-7">- CSS</p>
+                  <p class="ml-7">- Javascript</p>
+                </v-col>
+                <v-col>
+                  <h2>8 Stunden <br></h2>
+                  <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  300 Euro</h2>
+                </v-col>
+              </v-row>
             </v-card>
           </v-col>
           <v-col cols="5" style="max-width: 350px">
             <v-card class="cart-curs">
+              <v-card-title class="text-center">
+                <b>
+                  Einsteiger Framework
+                </b>
+              </v-card-title>
+              <v-card-subtitle class="text-center">
+                <b>
+                  Java oder Webentwicklung
+                </b>
+              </v-card-subtitle>
+              <v-row class="mt-2 justify-center">
+                <v-col>
+                  <p class="ml-7">- Springboot</p>
+                  <p class="ml-7">- Vue.js</p>
+                  <p class="ml-7">- Vuetify</p>
+                  <p class="ml-7">- Angular</p>
+                </v-col>
+                <v-col>
+                  <h2>4 Stunden <br></h2>
+                  <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  200 Euro</h2>
+                </v-col>
+              </v-row>
+
             </v-card>
           </v-col>
           <v-col cols="8">
-            <v-card class="cart-curs">
-
+            <v-card class="cart-curs-green cart-curs">
+              <v-card-title class=" text-center">
+                <b >
+                  Fortgeschritten Framework
+                </b>
+              </v-card-title>
+              <v-card-subtitle class="text-center">
+                <b>
+                  Java oder Webentwicklung
+                </b>
+              </v-card-subtitle>
+              <v-row class="mt-2 justify-center">
+                <v-col>
+                  <p class="ml-7">- Springboot</p>
+                  <p class="ml-7">- Vue.js</p>
+                  <p class="ml-7">- Vuetify</p>
+                  <p class="ml-7">- Angular</p>
+                </v-col>
+                <v-col>
+                  <h2>8 Stunden <br></h2>
+                  <h2  class=" text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  350 Euro</h2>
+                </v-col>
+              </v-row>
             </v-card>
+            <div class="pt-2 " style="background-color: black; height: 35px; width: 340px ;margin-left: 90px; border-radius: 5px;">
+              <p class="text-center " style="color: #dabe6e">Best Price</p>
+            </div>
           </v-col>
         </v-row>
         <div style="margin-left: 185px">
@@ -296,6 +363,7 @@ export default {
     this.checkMobileView()
   },
   methods: {
+
     checkMobileView() {
       if (window.innerWidth >= 1800) {
         this.wide = true;
@@ -414,9 +482,9 @@ background-color: transparent;
 }
 
 .cart-curs {
-  margin-left: 60px;
+  margin-left: 90px;
   height: 200px;
-  width: 300px;
+  width: 340px;
   background-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
@@ -424,12 +492,19 @@ background-color: transparent;
   box-shadow: 3px 3px 5px black;
   transition: ease-in-out 0.4s;
 }
+.cart-curs-green{
+  background-color: rgba(83, 211, 40, 0.55);
 
+}
+.cart-curs-green:hover{
+  background-color: rgba(83, 211, 40, 0.55) !important;
+
+}
 .cart-curs:hover {
   cursor: pointer;
   margin-left: 60px;
   height: 200px;
-  width: 300px;
+  width: 340px;
   background-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(4px) !important;
   border-left: rgba(255, 255, 255, 0.76) 1px solid !important;

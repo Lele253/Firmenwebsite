@@ -38,17 +38,17 @@
               </svg>
             </v-col>
             <v-col class=" pt-0 d-flex justify-center"><h4 class="text-white">
-              hallo awkhdgawkud
+              <button @click=" $store.state.scrollwert = 1.18;scrollDown();">Kurse</button>
 
             </h4></v-col>
             <v-col class=" pt-0 d-flex justify-center"><h4 class="text-white">
-              test
+              <button @click=" $store.state.scrollwert = 2.08;scrollDown();">Webiste</button>
             </h4></v-col>
             <v-col class=" pt-0 d-flex justify-center"><h4 class="text-white">
-              test
+              <button @click=" $store.state.scrollwert = 1000;scrollDown();">Kurse</button>
             </h4></v-col>
             <v-col class=" pt-0 d-flex justify-center"><h4 class="text-white">
-              test
+              <button @click=" $store.state.scrollwert = 1000;scrollDown();">Kurse</button>
             </h4></v-col>
           </v-row>
         </div>
@@ -159,7 +159,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import {mapGetters, mapMutations} from "vuex";
 import axios from "axios";
 
 export default {
@@ -191,6 +191,8 @@ export default {
     this.checkMobileView()
   },
   methods: {
+    ...mapMutations(['scrollDown']),
+
     checkMobileView() {
       if (window.innerWidth <= 850) {
         this.handy = true;

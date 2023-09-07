@@ -1,7 +1,7 @@
 <template>
   <v-app id="home">
     <v-main style="position: fixed; z-index: 9000">
-      <router-view style="overflow-y: scroll" @scroll="handleScroll"/>
+      <router-view id="test" style="overflow-y: scroll"/>
     </v-main>
   </v-app>
 </template>
@@ -11,9 +11,7 @@
 export default {
   name: 'App',
   methods: {
-    handleScroll(event) {
-      this.$store.state.scrollwert = event.target.scrollTop;
-    }
+
   },
 
   data: () => ({
