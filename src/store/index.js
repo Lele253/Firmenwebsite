@@ -44,19 +44,6 @@ export default createStore({
         user(state, user) {
             state.user = user
         },
-        scrollDown() {
-            const elementWithId = document.getElementById('test');
-            console.log(this.state.scrollwert)
-            const vhValue = window.innerHeight * this.state.scrollwert; // 90% der Viewport-Höhe in Pixel umgerechnet
-
-            if (elementWithId) {
-
-                elementWithId.scrollTo({
-                    top: elementWithId.scrollTop + vhValue,
-                    behavior: 'smooth'
-                });
-            }
-        },
     },
     actions: {
 

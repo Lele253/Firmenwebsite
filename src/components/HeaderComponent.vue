@@ -166,7 +166,7 @@ export default {
   name: "HeaderComponent",
   data() {
     return {
-      handy: true
+      handy: false
     }
   },
 
