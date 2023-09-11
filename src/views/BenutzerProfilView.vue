@@ -32,40 +32,153 @@
 
           <v-row class="d-flex justify-center align-center mx-0"
                  style="width: 100%; height: 80vh">
-            <v-col cols="6">
+            <v-col cols="7">
               <v-card class="cardWebsite">
                 <v-card-title class="text-center mt-2">
                   Ihr gebuchtes Paket
                 </v-card-title>
+
+                <div style="overflow-y: scroll; height: 100%; padding-bottom: 80px">
+                  <v-card-item>
+
+                    <!--                Webanwendung-->
+                    <v-card
+                        class="gebuchtesPaketCard">
+                      <v-card-title>
+                        Webanwendung
+                      </v-card-title>
+                      <v-card-item
+                          v-for="produkt in webanwendung"
+                          :key="produkt"
+                          class="pt-0">
+                        <v-row>
+                          <v-col class="text-center" cols="1">
+                            -
+                          </v-col>
+                          <v-col cols="9">
+                            {{ produkt.titel }}
+                          </v-col>
+                          <v-col cols="2">
+                            {{ produkt.preis }} €
+                          </v-col>
+                        </v-row>
+                      </v-card-item>
+                    </v-card>
+
+                    <!--                    Datenhaltung-->
+                    <v-card
+                        class="gebuchtesPaketCard">
+                      <v-card-title>
+                        Datenhaltung
+                      </v-card-title>
+                      <v-card-item
+                          v-for="produkt in datenhaltung"
+                          :key="produkt"
+                          class="pt-0">
+                        <v-row>
+                          <v-col class="text-center" cols="1">
+                            -
+                          </v-col>
+                          <v-col cols="9">
+                            {{ produkt.titel }}
+                          </v-col>
+                          <v-col cols="2">
+                            {{ produkt.preis }} €
+                          </v-col>
+                        </v-row>
+                      </v-card-item>
+                    </v-card>
+
+                    <!--                    Strato-->
+                    <v-card
+                        class="gebuchtesPaketCard">
+                      <v-card-title>
+                        Strato
+                      </v-card-title>
+                      <v-card-item
+                          v-for="produkt in strato"
+                          :key="produkt"
+                          class="pt-0">
+                        <v-row>
+                          <v-col class="text-center" cols="1">
+                            -
+                          </v-col>
+                          <v-col cols="9">
+                            {{ produkt.titel }}
+                          </v-col>
+                          <v-col cols="2">
+                            {{ produkt.preis }} €
+                          </v-col>
+                        </v-row>
+                      </v-card-item>
+                    </v-card>
+
+                    <!--                    Server-->
+                    <v-card
+                        class="gebuchtesPaketCard">
+                      <v-card-title>
+                        Server
+                      </v-card-title>
+                      <v-card-item
+                          v-for="produkt in server"
+                          :key="produkt"
+                          class="pt-0">
+                        <v-row>
+                          <v-col class="text-center" cols="1">
+                            -
+                          </v-col>
+                          <v-col cols="9">
+                            {{ produkt.titel }}
+                          </v-col>
+                          <v-col cols="2">
+                            {{ produkt.preis }} €
+                          </v-col>
+                        </v-row>
+                      </v-card-item>
+                    </v-card>
+
+                  </v-card-item>
+                </div>
+
+                <div
+                    style="height: 20px; width: 20px; position:absolute; bottom: 10px; left: 48%">
+                  <Icon icon="line-md:download-outline-loop" style="font-size: 40px;color: #29a829"/>
+                </div>
               </v-card>
             </v-col>
 
             <v-col cols="4">
-              <v-card class="cardWebsite" style="overflow-y: scroll; width: 100%">
+              <v-card class="cardWebsite">
                 <v-card-title class="text-center mt-2">
                   Ihr aktueller Status
                 </v-card-title>
-                <v-card-item v-for="todo in sortedTodos" :key="todo"
-                             class="mb-n10">
-                  <v-switch v-model="todo.isFinished"
-                            color="green"
-                            readonly>
-                    <template v-slot:label>
-                      <Icon v-if="!todo.isFinished" class="mr-3" icon="svg-spinners:3-dots-fade"/>
-                      {{ todo.name }}
-                      <!--                      <v-progress-circular
-                                                v-if="!todo.isFinished"
-                                                :indeterminate="!todo.isFinished"
-                                                class="ml-5"
-                                                size="30"
-                                                style="color: #CBB26A"
-                                            ></v-progress-circular>-->
-                    </template>
-                  </v-switch>
-                </v-card-item>
+
+                <div style="overflow-y: scroll; height: 100%; padding-bottom: 100px">
+                  <v-card-item v-for="todo in sortedTodos" :key="todo"
+                               class="mb-n10 mt-n5">
+                    <v-switch v-model="todo.isFinished"
+                              color="green"
+                              readonly>
+                      <template v-slot:label>
+                        <Icon v-if="!todo.isFinished" class="mr-3" icon="svg-spinners:3-dots-fade"/>
+                        {{ todo.name }}
+                      </template>
+                    </v-switch>
+                  </v-card-item>
+
+
+                  <div
+                      style="height: 20px; width: 20px; position:absolute !important; bottom: 10px; left: 48%">
+                    <Icon icon="line-md:download-outline-loop" style="font-size: 40px;color: #29a829"/>
+                  </div>
+                </div>
+
+                <div
+                    style="height: 20px; width: 20px; position:absolute; bottom: 10px; left: 48%">
+                  <Icon icon="line-md:download-outline-loop" style="font-size: 40px;color: #29a829"/>
+                </div>
               </v-card>
             </v-col>
-
           </v-row>
 
         </v-window-item>
@@ -108,6 +221,67 @@ export default {
       tab: '1',
       url: 'https://leandro-graf.de',
       switchMe: false,
+
+      webanwendung: [
+        {
+          titel: 'Produkt 1',
+          preis: 19
+        },
+        {
+          titel: 'Produkt 2',
+          preis: 29
+        },
+        {
+          titel: 'Produkt 3',
+          preis: 14
+        },
+        {
+          titel: 'Produkt 4',
+          preis: 24
+        },
+        {
+          titel: 'Produkt 5',
+          preis: 9
+        }
+      ],
+      datenhaltung: [
+        {
+          titel: 'Datenhaltung 1',
+          preis: 39
+        },
+        {
+          titel: 'Datenhaltung 2',
+          preis: 49
+        },
+        {
+          titel: 'Datenhaltung 3',
+          preis: 24
+        }
+      ],
+      strato: [
+        {
+          titel: 'Strato 1',
+          preis: 29
+        },
+        {
+          titel: 'Strato 2',
+          preis: 19
+        }
+      ],
+      server: [
+        {
+          titel: 'Server 1',
+          preis: 99
+        },
+        {
+          titel: 'Server 2',
+          preis: 149
+        },
+        {
+          titel: 'Server 3',
+          preis: 199
+        }
+      ]
     }
   },
   components: {
@@ -201,7 +375,7 @@ export default {
   border: #CBB26A 1px solid;
   background: linear-gradient(to bottom, black, #494747);
   border-radius: 20px;
-  height: 65vh;
+  height: 70vh;
 }
 
 .alert {
@@ -230,5 +404,15 @@ export default {
   width: 100vw;
   background-color: transparent;
   z-index: 100;
+}
+
+.gebuchtesPaketCard {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: white;
+  background: transparent;
+  border: #CBB26A 1px solid;
+  border-radius: 10px;
 }
 </style>
