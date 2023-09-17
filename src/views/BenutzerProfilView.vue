@@ -5,7 +5,15 @@
     <HeaderComponent class="pt-10"/>
   </div>
 
-  <div class="divOverBackground">
+  <div v-if="mobile" class="justify-center d-flex" style="width: 100vw; height: 100vh">
+    <div class=" align-center d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
+      <v-alert class="text-center text-black mt-2 mb-5" height="100" style="border-radius: 20px" type="warning">
+        Die von Ihnen benutze Bildschirmgröße wird nicht unterstützt. Bitte nutzen Sie die Desktop-Ansicht
+      </v-alert>
+    </div>
+  </div>
+
+  <div v-if="!mobile && !user.status == 'Admin'" class="divOverBackground">
     <v-card class="card">
       <v-tabs
           v-model="tab"
@@ -206,6 +214,106 @@
     </v-card>
   </div>
 
+  <div v-if="!mobile && user.status =='Admin'">
+    <div class="d-flex justify-center" style="width: 100vw; margin-top: 110px">
+      <v-card class="cardWebsite">
+        <v-tabs
+            v-model="tab"
+            align-tabs="center"
+            style="color: #e3dede">
+          <v-tab :value="0" color="#b69351">Projekte</v-tab>
+          <v-tab :value="1" color="#b69351">Benutzer</v-tab>
+          <v-tab :value="2" color="#b69351">Kurse</v-tab>
+        </v-tabs>
+        <v-window v-model="tab">
+          <v-window-item value="0">
+            1
+          </v-window-item>
+
+          <v-window-item value="1">
+            <v-row class="d-flex justify-center mx-0"
+                   style="width: 70vw; height: 70vh;">
+              <v-col class="my-5" cols="3">
+                <v-card style="height: 60vh; box-shadow: 0px 0px; background-color: transparent">
+                  <v-card-item>
+                    <div style="height: 60vh; overflow-y: scroll">
+                      <v-table fixed-header
+                               style="background-color: transparent;  padding-bottom: 10px">
+                        <tbody>
+                        <tr
+                            v-for="person in allUser"
+                            :key="person"
+                            class="tabelleneintrag "
+                            style="color: white;"
+                            @click="selectPerson(person)">
+                          <td>{{ person.email }}</td>
+                        </tr>
+                        </tbody>
+                      </v-table>
+                    </div>
+                  </v-card-item>
+                </v-card>
+              </v-col>
+              <v-col class="my-5" cols="7">
+
+                <v-card class="cardWebsite" style="height: 60vh">
+                  <v-card-item>
+                    <v-card-title class="text-center mt-2 pb-5">
+                      {{ selectedUser.username }}
+                    </v-card-title>
+                    <v-row class="justify-center d-flex">
+                      <v-col cols="10">
+                        <v-text-field v-model="name" label="name" variant="outlined"/>
+                      </v-col>
+
+                      <v-col cols="10">
+                        <v-text-field v-model="email" label="email" variant="outlined"/>
+                      </v-col>
+
+                      <v-col cols="5">
+                        <v-select label="kurse" variant="outlined"/>
+                      </v-col>
+
+                      <v-col cols="5">
+                        <v-select label="projekte" variant="outlined"/>
+                      </v-col>
+                    </v-row>
+                  </v-card-item>
+                  <v-card-actions class="d-flex justify-center">
+                    <div style="position:absolute; bottom: 20px">
+                      <v-btn v-if="!loadIcon" class="button" @click="leeren">
+                        Neu
+                      </v-btn>
+                      <v-btn v-if="!loadIcon" class="button" @click="userErstellen">
+                        Erstellen
+                      </v-btn>
+                      <v-btn v-if="!loadIcon" class="button" @click="userLöschen">
+                        Löschen
+                      </v-btn>
+                      <v-btn v-if="!loadIcon" class="button" @click="userBearbeiten">
+                        Bearbeiten
+                      </v-btn>
+                      <v-btn v-if="!loadIcon" class="button" @click="userPasswortGenerieren">
+                        Passwort generieren
+                      </v-btn>
+                      <Icon v-if="loadIcon" icon="svg-spinners:90-ring-with-bg" style="font-size: 40px;"/>
+                    </div>
+                  </v-card-actions>
+                </v-card>
+
+              </v-col>
+            </v-row>
+          </v-window-item>
+
+          <v-window-item value="2">
+            3
+          </v-window-item>
+        </v-window>
+
+      </v-card>
+    </div>
+  </div>
+
 </template>
 
 <script>
@@ -221,6 +329,18 @@ export default {
       tab: '1',
       url: 'https://leandro-graf.de',
       switchMe: false,
+
+      selectedUser: {username: 'Benutzer wählen'},
+
+      snackbar: true,
+      snackbarContent: '',
+      snackbarColor: 'green',
+      loadIcon: false,
+
+      allUser: [],
+
+      name: null,
+      email: null,
 
       webanwendung: [
         {
@@ -290,6 +410,9 @@ export default {
   computed: {
     ...mapGetters(['user']),
     ...mapGetters(['website']),
+    mobile: () => {
+      return window.innerWidth < 1300
+    },
     sortedTodos() {
       const todos = this.$store.state.website.todos;
       const trueTodos = todos.filter(todo => todo.isFinished);
@@ -299,8 +422,57 @@ export default {
   },
   mounted() {
     this.checkUser();
+    this.getAllUser();
   },
   methods: {
+    selectPerson(person) {
+      this.selectedUser = person;
+      this.name = person.username;
+      this.email = person.email
+    },
+    leeren() {
+      this.email = null
+      this.name = null
+      this.selectedUser = {username: 'Neue Person anlegen'}
+    },
+    async userLöschen() {
+      try {
+        await axios.delete('/user/all/' + this.selectedUser.nutzerId)
+        await this.getAllUser()
+        this.leeren()
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    activateSnackbar(content, color) {
+      this.loadIcon = true
+
+      setTimeout(() => {
+        this.snackbar = false
+        this.snackbarContent = content
+        this.snackbarColor = color
+        this.snackbar = true
+
+        this.loadIcon = false
+      }, 2000);
+    },
+    async userErstellen() {
+      try {
+        if (this.email != null && this.name != null) {
+          const response = await axios.post('/regist', {
+            username: this.name,
+            email: this.email,
+            password: 'test'
+          })
+
+          this.leeren()
+          await this.getAllUser()
+          console.log(response)
+        }
+      } catch (e) {
+        console.log(e)
+      }
+    },
     async logout() {
       localStorage.removeItem("token");
       this.$store.dispatch("user", null);
@@ -325,6 +497,11 @@ export default {
         console.log(error);
       }
     },
+    async getAllUser() {
+      const response = await axios.get('/user/all')
+      this.allUser = response.data
+      console.log('response: ' + response.data)
+    }
   },
 }
 
@@ -340,6 +517,12 @@ export default {
   border-radius: 20px;
   border: #CBB26A 3px solid;
 }
+
+.tabelleneintrag {
+  background-color: #494747;
+  border-radius: 100px !important;
+}
+
 
 .iframeTablet {
   /*height: 700px;
@@ -414,5 +597,9 @@ export default {
   background: transparent;
   border: #CBB26A 1px solid;
   border-radius: 10px;
+}
+
+.button {
+  border: #CBB26A 1px solid;
 }
 </style>
