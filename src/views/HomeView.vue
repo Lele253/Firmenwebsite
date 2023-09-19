@@ -161,14 +161,168 @@
         </v-row>
       </div>
 
-      <div v-if="mobile" class="d-flex justify-center" style="width: 100%">
-        <div class="justify-center align-center  d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
-          <v-alert class="text-center text-black mt-2 mb-5" height="100" style="border-radius: 20px" type="warning">
+
+
+      <!--   Mobile-->
+
+      <div v-if="mobile"  style="width: 100%">
+      <!---  <div class="justify-center align-center  d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
+          <v-alert class="text-center text-black mt-2 mb-5" height="130" style="border-radius: 20px" type="warning">
             Die von Ihnen benutze Bildschirmgröße wird NOCH nicht unterstützt. Bitte nutzen Sie die Desktop-Ansicht,
              bis die Smartphoneansicht vorhanden ist
           </v-alert>
-        </div>
+
+
+        </div> -->
+
+        <v-row style="width: 100%;" class="mx-0" >
+          <v-col class="d-flex justify-center" cols="12 ">
+            <div style="margin-top: 90px" class="downscale pl-0">
+
+              <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
+              <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
+                <br> Softwarelösung, SEO
+                oder eine Website?
+                <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
+              <v-btn class="routebutton mt-5 ">Zur Website</v-btn>
+              <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
+            </div>
+
+          </v-col>
+          <v-col class="d-flex justify-center" cols="12">
+            <div style="max-width: 350px; max-height: 300px">
+            <HexaComponent class="downscale-hexa"></HexaComponent>
+            </div>
+
+          </v-col>
+          <v-col class="d-flex justify-center" cols="12">
+             <div class="downscale mt-n16"  >
+               <v-row class="mx-0 " justify="center" style=" width: 100%;">
+                 <v-col cols="12" style="max-width: 350px">
+                   <v-card class="cart-curs-mobile">
+                     <v-card-title class="text-center">
+                       <b>
+                         Einsteiger
+                       </b>
+                     </v-card-title>
+                     <v-card-subtitle class="text-center">
+                       <b>
+                         Java oder Webentwicklung
+                       </b>
+                     </v-card-subtitle>
+                     <v-row class="mt-2 justify-center">
+                       <v-col>
+                         <p class="ml-7">- Java</p>
+                         <p class="ml-7">- HTML</p>
+                         <p class="ml-7">- CSS</p>
+                         <p class="ml-7">- Javascript</p>
+                       </v-col>
+                       <v-col>
+                         <h2>4 Stunden <br></h2>
+                         <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  160 Euro</h2>
+                       </v-col>
+                     </v-row>
+                   </v-card>
+                 </v-col>
+                 <v-col cols="8">
+                   <v-card class="cart-curs-green cart-curs-mobile">
+                     <v-card-title class="text-center">
+                       <b>
+                         Fortgeschritten
+                       </b>
+                     </v-card-title>
+                     <v-card-subtitle class="text-center">
+                       <b>
+                         Java oder Webentwicklung
+                       </b>
+                     </v-card-subtitle>
+                     <v-row class="mt-2 justify-center">
+                       <v-col>
+                         <p class="ml-7">- Java</p>
+                         <p class="ml-7">- HTML</p>
+                         <p class="ml-7">- CSS</p>
+                         <p class="ml-7">- Javascript</p>
+                       </v-col>
+                       <v-col>
+                         <h2>8 Stunden <br></h2>
+                         <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  300 Euro</h2>
+                       </v-col>
+                     </v-row>
+                   </v-card>
+                 </v-col>
+                 <v-col cols="5" style="max-width: 350px">
+                   <v-card class="cart-curs-mobile">
+                     <v-card-title class="text-center">
+                       <b>
+                         Einsteiger Framework
+                       </b>
+                     </v-card-title>
+                     <v-card-subtitle class="text-center">
+                       <b>
+                         Java oder Webentwicklung
+                       </b>
+                     </v-card-subtitle>
+                     <v-row class="mt-2 justify-center">
+                       <v-col>
+                         <p class="ml-7">- Springboot</p>
+                         <p class="ml-7">- Vue.js</p>
+                         <p class="ml-7">- Vuetify</p>
+                         <p class="ml-7">- Angular</p>
+                       </v-col>
+                       <v-col>
+                         <h2>4 Stunden <br></h2>
+                         <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  200 Euro</h2>
+                       </v-col>
+                     </v-row>
+
+                   </v-card>
+                 </v-col>
+                 <v-col cols="8">
+                   <v-card class="cart-curs-green cart-curs-mobile">
+                     <v-card-title class=" text-center">
+                       <b >
+                         Fortgeschritten Framework
+                       </b>
+                     </v-card-title>
+                     <v-card-subtitle class="text-center">
+                       <b>
+                         Java oder Webentwicklung
+                       </b>
+                     </v-card-subtitle>
+                     <v-row class="mt-2 justify-center">
+                       <v-col>
+                         <p class="ml-7">- Springboot</p>
+                         <p class="ml-7">- Vue.js</p>
+                         <p class="ml-7">- Vuetify</p>
+                         <p class="ml-7">- Angular</p>
+                       </v-col>
+                       <v-col>
+                         <h2>8 Stunden <br></h2>
+                         <h2  class=" text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  350 Euro</h2>
+                       </v-col>
+                     </v-row>
+                   </v-card>
+                   <div class="pt-2 " style="background-color: black; height: 35px; width: 340px ; border-radius: 5px;">
+                     <p class="text-center " style="color: #dabe6e">Best Price</p>
+                   </div>
+                 </v-col>
+               </v-row>
+               <div >
+                 <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
+                 <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
+                 <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du
+                   stehst.
+                 </p>
+               </div>
+             </div>
+          </v-col>
+        </v-row>
       </div>
+
+
+      <!--   Desktop-->
+
+
       <div v-if="!mobile">
         <div style="height: 95vh">
           <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
@@ -479,21 +633,21 @@
 
           </v-row>
         </div>
-        <div class="pt-6" style="height: 8vh; width: 100%;  background-color: black">
-          <v-row class="mx-0  justify-center" style="width: 100%">
-            <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-              <h3 class="text-center text-white">Impressum</h3>
-            </v-col>
-            <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-            <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-              <h3 class="text-center text-white">Datenschutz</h3>
-            </v-col>
-            <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-            <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-              <h3 class="text-center text-white">Kontakt</h3>
-            </v-col>
-          </v-row>
-        </div>
+      </div>
+      <div class="pt-6" style="height: 8vh; width: 100%;  background-color: black">
+        <v-row class="mx-0  justify-center" style="width: 100%">
+          <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+            <h3 class="text-center text-white">Impressum</h3>
+          </v-col>
+          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+            <h3 class="text-center text-white">Datenschutz</h3>
+          </v-col>
+          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+          <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+            <h3 class="text-center text-white">Kontakt</h3>
+          </v-col>
+        </v-row>
       </div>
 
     </div>
@@ -722,7 +876,16 @@ background-color: transparent;
   background-image: url("../assets/Monitor.png");
   background-size: cover;
 }
-
+.cart-curs-mobile{
+  height: 200px;
+  width: 340px;
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px) !important;
+  border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
+  border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
+  box-shadow: 3px 3px 5px black;
+  transition: ease-in-out 0.4s;
+}
 .cart-curs {
   margin-left: 90px;
   height: 200px;
@@ -733,6 +896,17 @@ background-color: transparent;
   border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
   box-shadow: 3px 3px 5px black;
   transition: ease-in-out 0.4s;
+}
+.cart-curs-mobile:hover {
+  cursor: pointer;
+  height: 200px;
+  width: 340px;
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(4px) !important;
+  border-left: rgba(255, 255, 255, 0.76) 1px solid !important;
+  border-top: rgba(255, 255, 255, 0.88) 1px solid !important;
+  box-shadow: 3px 3px 5px black;
+  transform: scale(1.16);
 }
 .cart-curs-green{
   background-color: rgba(83, 211, 40, 0.55);
@@ -774,5 +948,13 @@ background-color: transparent;
   margin-left: 50px;
 
 }
+.downscale{
+  transform: scale(0.75);
 
+}
+.downscale-hexa{
+  transform: scale(0.35);
+ margin-left: -305px;
+  margin-top: -200px;
+}
 </style>
