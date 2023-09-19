@@ -164,7 +164,8 @@
       <div v-if="mobile" class="d-flex justify-center" style="width: 100%">
         <div class="justify-center align-center  d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
           <v-alert class="text-center text-black mt-2 mb-5" height="100" style="border-radius: 20px" type="warning">
-            Die von Ihnen benutze Bildschirmgröße wird nicht unterstützt. Bitte nutzen Sie die Desktop-Ansicht
+            Die von Ihnen benutze Bildschirmgröße wird NOCH nicht unterstützt. Bitte nutzen Sie die Desktop-Ansicht,
+             bis die Smartphoneansicht vorhanden ist
           </v-alert>
         </div>
       </div>
