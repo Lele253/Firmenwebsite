@@ -166,7 +166,7 @@
       <div style="height: 95vh">
         <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
           <v-col class="d-flex  justify-center" cols="5">
-            <div :class="wide ? 'nonscale': 'scale' " class="mr-11 pl-0">
+            <div :class="!tabletHorizontal ? 'nonscale': 'scale' " class="mr-11 pl-0">
 
               <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
               <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
@@ -438,26 +438,26 @@
               <h1 v-if="tabletHorizontal" class="mb-6 text-white"> Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
 
               </h1>
-              <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">"Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
+              <h3 v-if="!tabletHorizontal" class="ml-12 mt-10 text-white">"Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
 
               </h3>
-              <p class="mt-10 text-white"> Verpassen Sie keine Entwicklungsschritte Ihrer Webseite! Mit unserem Live-Entwicklungs-Tracker halten wir Sie kontinuierlich auf dem Laufenden. Tauchen Sie in den Fortschritt ein, während Ihre Webseite Form annimmt – in einem beeindruckenden Zusammenspiel aus Kreativität und Technologie.</p>
+              <p class="mt-10 text-white ml-12"> Verpassen Sie keine Entwicklungsschritte Ihrer Webseite! Mit unserem Live-Entwicklungs-Tracker halten wir Sie kontinuierlich auf dem Laufenden. Tauchen Sie in den Fortschritt ein, während Ihre Webseite Form annimmt – in einem beeindruckenden Zusammenspiel aus Kreativität und Technologie.</p>
             </div>
           </v-col>
         </v-row>
       </div>
-      <div style="height: 55vh">
-        <v-row class="mx-0" justify="center" style="width: 100%">
-          <v-col class="d-flex align-center" style="padding-top: 150px" cols="5">
+      <div style="height: 55vh; width: 100%">
+        <v-row class="mx-0" justify="center" style="height: 100%; width: 100%">
+          <v-col class="d-flex justify-center align-center" style="padding-top: 150px" cols="5">
             <div class=" mt-n1" style=" max-width: 75%">
 
 
-              <h1 v-if="tabletHorizontal" class="mb-6 text-white"> Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
+              <h1 v-if="tabletHorizontal" class="mb-6  text-white"> Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
 
 
 
               </h1>
-              <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
+              <h3 v-if="!tabletHorizontal" class="mb-n6  text-white">Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
 
 
 
@@ -471,24 +471,24 @@
 
             </div>
           </v-col>
-          <v-col :cols="tabletHorizontal ? 5:6 ">
+          <v-col :cols="tabletHorizontal ? 6:7 ">
             <v-card class="websitebox4">
             </v-card>
           </v-col>
 
         </v-row>
       </div>
-      <div class="pt-6" style="height: 8vh; width: 100vw;  background-color: black">
+      <div class="pt-6" style="height: 8vh; width: 100%;  background-color: black">
         <v-row class="mx-0  justify-center" style="width: 100%">
-          <v-col @click="$router.push('/impressum')" style="cursor: pointer" cols="1">
+          <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
             <h3 class="text-center text-white">Impressum</h3>
           </v-col>
           <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" cols="1">
+          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
             <h3 class="text-center text-white">Datenschutz</h3>
           </v-col>
           <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-          <v-col style="cursor: pointer" cols="1">
+          <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
             <h3 class="text-center text-white">Kontakt</h3>
           </v-col>
         </v-row>
@@ -687,9 +687,8 @@ background-color: transparent;
   background-size: cover;
 }
 .websitebox4 {
-  width: 770px;
-  margin-left: -50px;
-  height: 440px;
+  width: 100%;
+  height: 100%;
   transition: ease-in-out 0.4s;
   background-color: transparent;
   box-shadow: 0px 0px 0px transparent;
@@ -770,6 +769,7 @@ background-color: transparent;
 }
 .nonscale{
   transform: scale(1.2);
+  margin-left: 50px;
 
 }
 
