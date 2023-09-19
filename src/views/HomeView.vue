@@ -161,337 +161,338 @@
         </v-row>
       </div>
 
-
-
-      <div style="height: 95vh">
-        <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
-          <v-col class="d-flex  justify-center" cols="5">
-            <div :class="!tabletHorizontal ? 'nonscale': 'scale' " class="mr-11 pl-0">
-
-              <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
-              <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
-                <br> Softwarelösung, SEO
-                oder eine Website?
-                <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
-              <v-btn class="routebutton mt-5 ">Zur Website</v-btn>
-              <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
-            </div>
-          </v-col>
-          <v-col cols="7" style=" margin-top: -200px">
-            <HexaComponent :class="tabletHorizontal? 'hexagon1':' hexagon2'"></HexaComponent>
-          </v-col>
-          <v-col cols="1"></v-col>
-        </v-row>
-        <v-row class="hidden-sm-and-down mx-0" style="width: 100%; margin-top: 150px">
-          <v-col :cols="tabletHorizontal ? 8 : 10">
-            <h3 class="text-white text-center">Auf unserer Website können Sie in Echtzeit verfolgen,<br>wie Ihr Design
-              entsteht und sich entwickelt.
-              Erleben Sie hautnah, <br> wie Ihre Webseite gestaltet wird.</h3>
-          </v-col>
-        </v-row>
-      </div>
-      <div id="Kurs" style="height: 15vh">
-
-      </div>
-      <div  style="height: 90vh">
-        <v-row class="mx-0 " style="padding-left: 110px; width: 100%;">
-          <v-col cols="6" style="max-width: 350px">
-            <v-card class="cart-curs">
-              <v-card-title class="text-center">
-             <b>
-                Einsteiger
-             </b>
-              </v-card-title>
-              <v-card-subtitle class="text-center">
-                <b>
-                Java oder Webentwicklung
-                </b>
-              </v-card-subtitle>
-              <v-row class="mt-2 justify-center">
-                <v-col>
-                  <p class="ml-7">- Java</p>
-                  <p class="ml-7">- HTML</p>
-                  <p class="ml-7">- CSS</p>
-                  <p class="ml-7">- Javascript</p>
-                </v-col>
-                <v-col>
-                  <h2>4 Stunden <br></h2>
-                  <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  160 Euro</h2>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-          <v-col cols="8">
-            <v-card class="cart-curs-green cart-curs">
-              <v-card-title class="text-center">
-                <b>
-                  Fortgeschritten
-                </b>
-              </v-card-title>
-              <v-card-subtitle class="text-center">
-                <b>
-                  Java oder Webentwicklung
-                </b>
-              </v-card-subtitle>
-              <v-row class="mt-2 justify-center">
-                <v-col>
-                  <p class="ml-7">- Java</p>
-                  <p class="ml-7">- HTML</p>
-                  <p class="ml-7">- CSS</p>
-                  <p class="ml-7">- Javascript</p>
-                </v-col>
-                <v-col>
-                  <h2>8 Stunden <br></h2>
-                  <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  300 Euro</h2>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-          <v-col cols="5" style="max-width: 350px">
-            <v-card class="cart-curs">
-              <v-card-title class="text-center">
-                <b>
-                  Einsteiger Framework
-                </b>
-              </v-card-title>
-              <v-card-subtitle class="text-center">
-                <b>
-                  Java oder Webentwicklung
-                </b>
-              </v-card-subtitle>
-              <v-row class="mt-2 justify-center">
-                <v-col>
-                  <p class="ml-7">- Springboot</p>
-                  <p class="ml-7">- Vue.js</p>
-                  <p class="ml-7">- Vuetify</p>
-                  <p class="ml-7">- Angular</p>
-                </v-col>
-                <v-col>
-                  <h2>4 Stunden <br></h2>
-                  <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  200 Euro</h2>
-                </v-col>
-              </v-row>
-
-            </v-card>
-          </v-col>
-          <v-col cols="8">
-            <v-card class="cart-curs-green cart-curs">
-              <v-card-title class=" text-center">
-                <b >
-                  Fortgeschritten Framework
-                </b>
-              </v-card-title>
-              <v-card-subtitle class="text-center">
-                <b>
-                  Java oder Webentwicklung
-                </b>
-              </v-card-subtitle>
-              <v-row class="mt-2 justify-center">
-                <v-col>
-                  <p class="ml-7">- Springboot</p>
-                  <p class="ml-7">- Vue.js</p>
-                  <p class="ml-7">- Vuetify</p>
-                  <p class="ml-7">- Angular</p>
-                </v-col>
-                <v-col>
-                  <h2>8 Stunden <br></h2>
-                  <h2  class=" text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  350 Euro</h2>
-                </v-col>
-              </v-row>
-            </v-card>
-            <div class="pt-2 " style="background-color: black; height: 35px; width: 340px ;margin-left: 90px; border-radius: 5px;">
-              <p class="text-center " style="color: #dabe6e">Best Price</p>
-            </div>
-          </v-col>
-        </v-row>
-        <div style="margin-left: 185px">
-          <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
-          <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
-          <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du
-            stehst.</p>
+      <div v-if="mobile" class="d-flex justify-center" style="width: 100%">
+        <div class="justify-center align-center  d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
+          <v-alert class="text-center text-black mt-2 mb-5" height="100" style="border-radius: 20px" type="warning">
+            Die von Ihnen benutze Bildschirmgröße wird nicht unterstützt. Bitte nutzen Sie die Desktop-Ansicht
+          </v-alert>
         </div>
       </div>
-      <div id="Website" style="height: 15vh"></div>
-      <div style="height: 55vh">
-        <v-row class="mx-0" justify="center" style="width: 100%">
-          <v-col :cols="tabletHorizontal ? 5:6 ">
-            <v-card class="websitebox">
-              <div v-if="websiteformular" class="websitebox-innerdiv">
-                <v-row class="ma-0" style="width: 100%">
-                  <h3 class=" my-4 text-white text-center" style="width: 100vh">Füllen SIe das Formular aus und wir
-                    melden uns bei zeitnah bei Ihnen.</h3>
-                  <v-col cols="6">
-                    <v-text-field base-color="white"
-                                  class="text-white"
-                                  color="white"
-                                  label="Name"
-                                  persistent-hint
-                                  required
-                                  variant="outlined">
+      <div v-if="!mobile">
+        <div style="height: 95vh">
+          <v-row class="mx-0 justify-center" style="width: 100%; height: 35vh; margin-top: 180px">
+            <v-col class="d-flex  justify-center" cols="5">
+              <div :class="!tabletHorizontal ? 'nonscale': 'scale' " class="mr-11 pl-0">
 
-                    </v-text-field>
+                <h1 class="text-white"> Dein IT-Dienstleister <br> des Vertrauens</h1>
+                <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
+                  <br> Softwarelösung, SEO
+                  oder eine Website?
+                  <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
+                <v-btn class="routebutton mt-5 ">Zur Website</v-btn>
+                <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
+              </div>
+            </v-col>
+            <v-col cols="7" style=" margin-top: -200px">
+              <HexaComponent :class="tabletHorizontal? 'hexagon1':' hexagon2'"></HexaComponent>
+            </v-col>
+            <v-col cols="1"></v-col>
+          </v-row>
+          <v-row class="hidden-sm-and-down mx-0" style="width: 100%; margin-top: 150px">
+            <v-col :cols="tabletHorizontal ? 8 : 10">
+              <h3 class="text-white text-center">Auf unserer Website können Sie in Echtzeit verfolgen,<br>wie Ihr Design
+                entsteht und sich entwickelt.
+                Erleben Sie hautnah, <br> wie Ihre Webseite gestaltet wird.</h3>
+            </v-col>
+          </v-row>
+        </div>
+        <div id="Kurs" style="height: 15vh">
+
+        </div>
+        <div  style="height: 90vh">
+          <v-row class="mx-0 " style="padding-left: 110px; width: 100%;">
+            <v-col cols="6" style="max-width: 350px">
+              <v-card class="cart-curs">
+                <v-card-title class="text-center">
+                  <b>
+                    Einsteiger
+                  </b>
+                </v-card-title>
+                <v-card-subtitle class="text-center">
+                  <b>
+                    Java oder Webentwicklung
+                  </b>
+                </v-card-subtitle>
+                <v-row class="mt-2 justify-center">
+                  <v-col>
+                    <p class="ml-7">- Java</p>
+                    <p class="ml-7">- HTML</p>
+                    <p class="ml-7">- CSS</p>
+                    <p class="ml-7">- Javascript</p>
                   </v-col>
-                  <v-col cols="6">
-                    <v-text-field base-color="white"
-                                  class="text-white"
-                                  color="white"
-                                  label="Firmenname"
-                                  persistent-hint
-                                  required
-                                  variant="outlined">
-
-                    </v-text-field>
-                  </v-col>
-                  <v-col cols="6">
-                    <v-text-field base-color="white"
-                                  class="text-white mt-n5"
-                                  color="white"
-                                  label="Telefonnummer"
-                                  persistent-hint
-                                  required
-                                  variant="outlined">
-
-                    </v-text-field>
-                  </v-col>
-                  <v-col cols="6">
-                    <v-text-field base-color="white"
-                                  class="text-white mt-n5"
-                                  color="white"
-                                  label="Email"
-                                  persistent-hint
-                                  required
-                                  variant="outlined">
-
-                    </v-text-field>
-                  </v-col>
-                  <v-col class="mt-n5" cols="12">
-                    <v-radio-group inline v-model="auswahl">
-                      <v-row>
-                        <v-col>
-                      <v-radio  style="color: white" label="Es besteht bereits eine Website"  value="Es besteht bereits eine Website"></v-radio>
-
-                        </v-col>
-                        <v-col>
-
-                          <v-radio style="color: white"  label="Es besteht keine Website"  value="Es besteht keine Website"></v-radio>
-                        </v-col>
-                      </v-row>
-                    </v-radio-group>
-                  </v-col>
-
-                  <v-col class=" d-flex justify-center" cols="12">
-                    <v-btn class="routebutton">
-                      Absenden
-                    </v-btn>
+                  <v-col>
+                    <h2>4 Stunden <br></h2>
+                    <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  160 Euro</h2>
                   </v-col>
                 </v-row>
+              </v-card>
+            </v-col>
+            <v-col cols="8">
+              <v-card class="cart-curs-green cart-curs">
+                <v-card-title class="text-center">
+                  <b>
+                    Fortgeschritten
+                  </b>
+                </v-card-title>
+                <v-card-subtitle class="text-center">
+                  <b>
+                    Java oder Webentwicklung
+                  </b>
+                </v-card-subtitle>
+                <v-row class="mt-2 justify-center">
+                  <v-col>
+                    <p class="ml-7">- Java</p>
+                    <p class="ml-7">- HTML</p>
+                    <p class="ml-7">- CSS</p>
+                    <p class="ml-7">- Javascript</p>
+                  </v-col>
+                  <v-col>
+                    <h2>8 Stunden <br></h2>
+                    <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  300 Euro</h2>
+                  </v-col>
+                </v-row>
+              </v-card>
+            </v-col>
+            <v-col cols="5" style="max-width: 350px">
+              <v-card class="cart-curs">
+                <v-card-title class="text-center">
+                  <b>
+                    Einsteiger Framework
+                  </b>
+                </v-card-title>
+                <v-card-subtitle class="text-center">
+                  <b>
+                    Java oder Webentwicklung
+                  </b>
+                </v-card-subtitle>
+                <v-row class="mt-2 justify-center">
+                  <v-col>
+                    <p class="ml-7">- Springboot</p>
+                    <p class="ml-7">- Vue.js</p>
+                    <p class="ml-7">- Vuetify</p>
+                    <p class="ml-7">- Angular</p>
+                  </v-col>
+                  <v-col>
+                    <h2>4 Stunden <br></h2>
+                    <h2  class="text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  200 Euro</h2>
+                  </v-col>
+                </v-row>
+
+              </v-card>
+            </v-col>
+            <v-col cols="8">
+              <v-card class="cart-curs-green cart-curs">
+                <v-card-title class=" text-center">
+                  <b >
+                    Fortgeschritten Framework
+                  </b>
+                </v-card-title>
+                <v-card-subtitle class="text-center">
+                  <b>
+                    Java oder Webentwicklung
+                  </b>
+                </v-card-subtitle>
+                <v-row class="mt-2 justify-center">
+                  <v-col>
+                    <p class="ml-7">- Springboot</p>
+                    <p class="ml-7">- Vue.js</p>
+                    <p class="ml-7">- Vuetify</p>
+                    <p class="ml-7">- Angular</p>
+                  </v-col>
+                  <v-col>
+                    <h2>8 Stunden <br></h2>
+                    <h2  class=" text-center mt-7" style="  text-shadow: 0px 0px  3px black; text-stroke: 1px black; color: #dabe6e">  350 Euro</h2>
+                  </v-col>
+                </v-row>
+              </v-card>
+              <div class="pt-2 " style="background-color: black; height: 35px; width: 340px ;margin-left: 90px; border-radius: 5px;">
+                <p class="text-center " style="color: #dabe6e">Best Price</p>
               </div>
-            </v-card>
-          </v-col>
-          <v-col class="d-flex justify-center align-center" cols="5">
-            <div class="ml-12 mt-n1" style="max-width: 80%">
+            </v-col>
+          </v-row>
+          <div style="margin-left: 185px">
+            <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
+            <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
+            <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du
+              stehst.</p>
+          </div>
+        </div>
+        <div id="Website" style="height: 15vh"></div>
+        <div style="height: 55vh">
+          <v-row class="mx-0" justify="center" style="width: 100%">
+            <v-col :cols="tabletHorizontal ? 5:6 ">
+              <v-card class="websitebox">
+                <div v-if="websiteformular" class="websitebox-innerdiv">
+                  <v-row class="ma-0" style="width: 100%">
+                    <h3 class=" my-4 text-white text-center" style="width: 100vh">Füllen SIe das Formular aus und wir
+                      melden uns bei zeitnah bei Ihnen.</h3>
+                    <v-col cols="6">
+                      <v-text-field base-color="white"
+                                    class="text-white"
+                                    color="white"
+                                    label="Name"
+                                    persistent-hint
+                                    required
+                                    variant="outlined">
 
-              <h1 v-if="tabletHorizontal" class="mb-6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
-              </h1>
-              <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
-              </h3>
-              <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten. Wir verwandeln Ideen
-                in ansprechende Online-Präsenzen, die Ihre Marke
-                zum Leuchten bringen.
-                Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden
-                zu lassen.</p>
+                      </v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field base-color="white"
+                                    class="text-white"
+                                    color="white"
+                                    label="Firmenname"
+                                    persistent-hint
+                                    required
+                                    variant="outlined">
 
-              <h4 class="mt-12 " style="color:#CBB26A;">Jetzt kostenlose Beratung sichern</h4>
-              <v-btn class="mt-8 routebutton" @click="websiteformular = !websiteformular">Beratung</v-btn>
-            </div>
-          </v-col>
-        </v-row>
-      </div>
+                      </v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field base-color="white"
+                                    class="text-white mt-n5"
+                                    color="white"
+                                    label="Telefonnummer"
+                                    persistent-hint
+                                    required
+                                    variant="outlined">
 
-      <div style="height: 55vh">
-        <v-row class="mx-0" justify="center" style="width: 100%">
-          <v-col class="d-flex align-center" cols="5">
-            <div class=" mt-n1" style="max-width: 60%">
+                      </v-text-field>
+                    </v-col>
+                    <v-col cols="6">
+                      <v-text-field base-color="white"
+                                    class="text-white mt-n5"
+                                    color="white"
+                                    label="Email"
+                                    persistent-hint
+                                    required
+                                    variant="outlined">
 
-              <h1 class="text-white">Warum wir?
-              </h1>
-              <p class="mt-10 text-white">Unsere Stärke liegt in maßgeschneidertem Webdesign, das Ästhetik und Funktionalität vereint. Wir optimieren für alle Geräte, integrieren modernste Technologien und sorgen für Sichtbarkeit durch SEO.</p>
+                      </v-text-field>
+                    </v-col>
+                    <v-col class="mt-n5" cols="12">
+                      <v-radio-group inline v-model="auswahl">
+                        <v-row>
+                          <v-col>
+                            <v-radio  style="color: white" label="Es besteht bereits eine Website"  value="Es besteht bereits eine Website"></v-radio>
 
-            </div>
-          </v-col>
-          <v-col :cols="tabletHorizontal ? 5:6 ">
-            <v-card class="websitebox1">
-            </v-card>
-          </v-col>
+                          </v-col>
+                          <v-col>
 
-        </v-row>
-      </div>
-      <div style="height: 50vh">
-        <v-row class="mx-0" justify="center" style="width: 100%">
-          <v-col :cols="tabletHorizontal ? 5:6 ">
-            <v-card class="websitebox3">
-            </v-card>
-          </v-col>
-          <v-col class="d-flex justify-center align-center" cols="5">
-            <div class="ml-12 mt-n1" style="max-width: 80%">
+                            <v-radio style="color: white"  label="Es besteht keine Website"  value="Es besteht keine Website"></v-radio>
+                          </v-col>
+                        </v-row>
+                      </v-radio-group>
+                    </v-col>
 
-              <h1 v-if="tabletHorizontal" class="mb-6 text-white"> Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
+                    <v-col class=" d-flex justify-center" cols="12">
+                      <v-btn class="routebutton">
+                        Absenden
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </div>
+              </v-card>
+            </v-col>
+            <v-col class="d-flex justify-center align-center" cols="5">
+              <div class="ml-12 mt-n1" style="max-width: 80%">
 
-              </h1>
-              <h3 v-if="!tabletHorizontal" class="ml-12 mt-10 text-white">"Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
+                <h1 v-if="tabletHorizontal" class="mb-6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+                </h1>
+                <h3 v-if="!tabletHorizontal" class="mb-n6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+                </h3>
+                <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten. Wir verwandeln Ideen
+                  in ansprechende Online-Präsenzen, die Ihre Marke
+                  zum Leuchten bringen.
+                  Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden
+                  zu lassen.</p>
 
-              </h3>
-              <p class="mt-10 text-white ml-12"> Verpassen Sie keine Entwicklungsschritte Ihrer Webseite! Mit unserem Live-Entwicklungs-Tracker halten wir Sie kontinuierlich auf dem Laufenden. Tauchen Sie in den Fortschritt ein, während Ihre Webseite Form annimmt – in einem beeindruckenden Zusammenspiel aus Kreativität und Technologie.</p>
-            </div>
-          </v-col>
-        </v-row>
-      </div>
-      <div style="height: 55vh; width: 100%">
-        <v-row class="mx-0" justify="center" style="height: 100%; width: 100%">
-          <v-col class="d-flex justify-center align-center" style="padding-top: 150px" cols="5">
-            <div class=" mt-n1" style=" max-width: 75%">
+                <h4 class="mt-12 " style="color:#CBB26A;">Jetzt kostenlose Beratung sichern</h4>
+                <v-btn class="mt-8 routebutton" @click="websiteformular = !websiteformular">Beratung</v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+        <div style="height: 55vh">
+          <v-row class="mx-0" justify="center" style="width: 100%">
+            <v-col class="d-flex align-center" cols="5">
+              <div class=" mt-n1" style="max-width: 60%">
 
+                <h1 class="text-white">Warum wir?
+                </h1>
+                <p class="mt-10 text-white">Unsere Stärke liegt in maßgeschneidertem Webdesign, das Ästhetik und Funktionalität vereint. Wir optimieren für alle Geräte, integrieren modernste Technologien und sorgen für Sichtbarkeit durch SEO.</p>
 
-              <h1 v-if="tabletHorizontal" class="mb-6  text-white"> Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
+              </div>
+            </v-col>
+            <v-col :cols="tabletHorizontal ? 5:6 ">
+              <v-card class="websitebox1">
+              </v-card>
+            </v-col>
 
+          </v-row>
+        </div>
+        <div style="height: 50vh">
+          <v-row class="mx-0" justify="center" style="width: 100%">
+            <v-col :cols="tabletHorizontal ? 5:6 ">
+              <v-card class="websitebox3">
+              </v-card>
+            </v-col>
+            <v-col class="d-flex justify-center align-center" cols="5">
+              <div class="ml-12 mt-n1" style="max-width: 80%">
 
+                <h1 v-if="tabletHorizontal" class="mb-6 text-white"> Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
 
-              </h1>
-              <h3 v-if="!tabletHorizontal" class="mb-n6  text-white">Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
+                </h1>
+                <h3 v-if="!tabletHorizontal" class="ml-12 mt-10 text-white">"Live-Entwicklungs-Tracker: <br> Sehen Sie Ihre Webseite wachsen!
 
+                </h3>
+                <p class="mt-10 text-white ml-12"> Verpassen Sie keine Entwicklungsschritte Ihrer Webseite! Mit unserem Live-Entwicklungs-Tracker halten wir Sie kontinuierlich auf dem Laufenden. Tauchen Sie in den Fortschritt ein, während Ihre Webseite Form annimmt – in einem beeindruckenden Zusammenspiel aus Kreativität und Technologie.</p>
+              </div>
+            </v-col>
+          </v-row>
+        </div>
+        <div style="height: 55vh; width: 100%">
+          <v-row class="mx-0" justify="center" style="height: 100%; width: 100%">
+            <v-col class="d-flex justify-center align-center" style="padding-top: 150px" cols="5">
+              <div class=" mt-n1" style=" max-width: 80%">
 
+                <h1 v-if="tabletHorizontal" class="mb-6  text-white"> Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
 
-              </h3>
-              <p class="mt-10 text-white">
-               - Kreative Webanwendungen <br>
-               - Maßgeschneiderte Softwarelösungen <br>
-               - Ansprechende Webseiten mit SEO-Optimierung <br>
-               - Inspirierende Kurse in HTML, CSS, Java, Vue.Js und Spring Boot
-              </p>
+                </h1>
+                <h3 v-if="!tabletHorizontal" class="mb-n6  text-white">Unsere vielfältigen Lösungen für Ihren digitalen Erfolg:
 
-            </div>
-          </v-col>
-          <v-col :cols="tabletHorizontal ? 6:7 ">
-            <v-card class="websitebox4">
-            </v-card>
-          </v-col>
+                </h3>
+                <p style="width: 100%" class="mt-10 text-white">
+                  - Kreative Webanwendungen <br>
+                  - Maßgeschneiderte Softwarelösungen <br>
+                  - Ansprechende Webseiten mit SEO-Optimierung <br>
+                  - Inspirierende Kurse in HTML, CSS, Java, Vue.Js und Spring Boot
+                </p>
 
-        </v-row>
-      </div>
-      <div class="pt-6" style="height: 8vh; width: 100%;  background-color: black">
-        <v-row class="mx-0  justify-center" style="width: 100%">
-          <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-            <h3 class="text-center text-white">Impressum</h3>
-          </v-col>
-          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-            <h3 class="text-center text-white">Datenschutz</h3>
-          </v-col>
-          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-          <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-            <h3 class="text-center text-white">Kontakt</h3>
-          </v-col>
-        </v-row>
+              </div>
+            </v-col>
+            <v-col :cols="tabletHorizontal ? 6:7 ">
+              <v-card class="websitebox4">
+              </v-card>
+            </v-col>
+
+          </v-row>
+        </div>
+        <div class="pt-6" style="height: 8vh; width: 100%;  background-color: black">
+          <v-row class="mx-0  justify-center" style="width: 100%">
+            <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+              <h3 class="text-center text-white">Impressum</h3>
+            </v-col>
+            <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+            <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+              <h3 class="text-center text-white">Datenschutz</h3>
+            </v-col>
+            <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+            <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+              <h3 class="text-center text-white">Kontakt</h3>
+            </v-col>
+          </v-row>
+        </div>
       </div>
 
     </div>
@@ -568,7 +569,7 @@ export default {
         this.$store.state.wide = false;
 
       }
-      if (window.innerWidth <= 850) {
+      if (window.innerWidth <= 1050) {
         this.mobile = true;
         this.$store.state.mobile = true;
       } else {
