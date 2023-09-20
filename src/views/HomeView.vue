@@ -730,16 +730,16 @@
           </v-row>
         </div>
       </div>
-      <div ref="footer"  style="height: 8vh; width: 100%;  background-color: black">
+      <div ref="footer"  :style="mobile ? 'height: 60px' : 'height: 8vh'" style=" width: 100%;  background-color: black">
         <v-row class="mx-0  justify-center" style="width: 100%">
           <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
             <h3 class="text-center text-white">Impressum</h3>
           </v-col>
-          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+          <v-divider class="border-opacity-50 mt-2" vertical="true" color="white"></v-divider>
           <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
             <h3 class="text-center ml-n2 text-white">Datenschutz</h3>
           </v-col>
-          <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
+          <v-divider class="border-opacity-50 mt-2" vertical="true" color="white"></v-divider>
           <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
             <h3 class="text-center text-white">Kontakt</h3>
           </v-col>
