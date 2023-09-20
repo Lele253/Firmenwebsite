@@ -20,7 +20,6 @@ export default {
 <style scoped>
 .background {
   filter: brightness(70%) blur(0px);;
-
   background-image: url("../assets/backgroundLogin.jpg");
   background-size: cover;
   height: 100vh;

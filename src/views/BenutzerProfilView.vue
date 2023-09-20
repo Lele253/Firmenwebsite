@@ -2,7 +2,7 @@
 
   <div class="img pt-10"/>
   <div class="pt-10">
-    <HeaderComponent class="pt-10"/>
+    <HeaderComponent  class="pt-10"/>
   </div>
 
   <div v-if="mobile" class="justify-center d-flex" style="width: 100vw; height: 100vh">
