@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div v-if="!mobile && !user.status == 'Admin'" class="divOverBackground">
+  <div v-if="!mobile && user.status == 'Admin'" class="divOverBackground">
     <v-card class="card">
       <v-tabs
           v-model="tab"
@@ -214,7 +214,7 @@
     </v-card>
   </div>
 
-  <div v-if="!mobile && user.status =='Admin'">
+  <div v-if="!mobile && !user.status =='Admin'">
     <div class="d-flex justify-center" style="width: 100vw; margin-top: 110px">
       <v-card class="cardWebsite">
         <v-tabs
@@ -234,19 +234,18 @@
             <v-row class="d-flex justify-center mx-0"
                    style="width: 70vw; height: 70vh;">
               <v-col class="my-5" cols="3">
-                <v-card style="height: 60vh; box-shadow: 0px 0px; background-color: transparent">
+                <v-card class="cardWebsite" style="height: 60vh; background-color: transparent">
                   <v-card-item>
                     <div style="height: 60vh; overflow-y: scroll">
                       <v-table fixed-header
-                               style="background-color: transparent;  padding-bottom: 10px">
+                               style="background-color: transparent;  padding-bottom: 30px">
                         <tbody>
                         <tr
                             v-for="person in allUser"
                             :key="person"
-                            class="tabelleneintrag "
                             style="color: white;"
                             @click="selectPerson(person)">
-                          <td>{{ person.email }}</td>
+                          <td class="tabelleneintrag">{{ person.email }}</td>
                         </tr>
                         </tbody>
                       </v-table>
@@ -281,19 +280,24 @@
                   </v-card-item>
                   <v-card-actions class="d-flex justify-center">
                     <div style="position:absolute; bottom: 20px">
-                      <v-btn v-if="!loadIcon" class="button" @click="leeren">
-                        Neu
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="leeren">
+                        Neue Person anlegen
                       </v-btn>
-                      <v-btn v-if="!loadIcon" class="button" @click="userErstellen">
+                      <v-btn v-if="!loadIcon && selectedUser.username === 'Neue Person anlegen' " class="button"
+                             @click="userErstellen">
                         Erstellen
                       </v-btn>
-                      <v-btn v-if="!loadIcon" class="button" @click="userLöschen">
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="userLöschen">
                         Löschen
                       </v-btn>
-                      <v-btn v-if="!loadIcon" class="button" @click="userBearbeiten">
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="userBearbeiten">
                         Bearbeiten
                       </v-btn>
-                      <v-btn v-if="!loadIcon" class="button" @click="userPasswortGenerieren">
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="userPasswortGenerieren">
                         Passwort generieren
                       </v-btn>
                       <Icon v-if="loadIcon" icon="svg-spinners:90-ring-with-bg" style="font-size: 40px;"/>
@@ -327,10 +331,10 @@ export default {
   data() {
     return {
       tab: '1',
-      url: 'https://leandro-graf.de',
+      url: 'https://bg-werl.de',
       switchMe: false,
 
-      selectedUser: {username: 'Benutzer wählen'},
+      selectedUser: {username: 'Neue Person anlegen'},
 
       snackbar: true,
       snackbarContent: '',
@@ -518,9 +522,9 @@ export default {
   border: #CBB26A 3px solid;
 }
 
-.tabelleneintrag {
+.tabelleneintrag:hover {
   background-color: #494747;
-  border-radius: 100px !important;
+  border-radius: 100px;
 }
 
 
