@@ -2,7 +2,7 @@
 
   <div class="img pt-10"/>
   <div class="pt-10">
-    <HeaderComponent  class="pt-10"/>
+    <HeaderComponent class="pt-10"/>
   </div>
 
   <div v-if="mobile" class="justify-center d-flex" style="width: 100vw; height: 100vh">
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div v-if="!mobile && user.status == 'Admin'" class="divOverBackground">
+  <div v-if="!mobile && user.status !== 'Admin'" class="divOverBackground">
     <v-card class="card">
       <v-tabs
           v-model="tab"
@@ -214,7 +214,7 @@
     </v-card>
   </div>
 
-  <div v-if="!mobile && !user.status =='Admin'">
+  <div v-if="!mobile && user.status =='Admin'">
     <div class="d-flex justify-center" style="width: 100vw; margin-top: 110px">
       <v-card class="cardWebsite">
         <v-tabs
@@ -227,7 +227,82 @@
         </v-tabs>
         <v-window v-model="tab">
           <v-window-item value="0">
-            1
+            <v-row class="d-flex justify-center mx-0"
+                   style="width: 70vw; height: 70vh;">
+              <v-col class="my-5" cols="3">
+                <v-card class="cardWebsite" style="height: 60vh; background-color: transparent">
+                  <v-card-item>
+                    <div style="height: 60vh; overflow-y: scroll">
+                      <v-table fixed-header
+                               style="background-color: transparent;  padding-bottom: 30px">
+                        <tbody>
+                        <tr
+                            v-for="person in allUser"
+                            :key="person"
+                            style="color: white;"
+                            @click="selectPerson(person)">
+                          <td class="tabelleneintrag">{{ person.email }}</td>
+                        </tr>
+                        </tbody>
+                      </v-table>
+                    </div>
+                  </v-card-item>
+                </v-card>
+              </v-col>
+              <v-col class="my-5" cols="7">
+
+                <v-card class="cardWebsite" style="height: 60vh">
+                  <v-card-item>
+                    <v-card-title class="text-center mt-2 pb-5">
+                      {{ selectedUser.username }}
+                    </v-card-title>
+                    <v-row class="justify-center d-flex">
+                      <v-col cols="10">
+                        <v-text-field v-model="name" label="name" variant="outlined"/>
+                      </v-col>
+
+                      <v-col cols="10">
+                        <v-text-field v-model="email" label="email" variant="outlined"/>
+                      </v-col>
+
+                      <v-col cols="5">
+                        <v-select label="kurse" variant="outlined"/>
+                      </v-col>
+
+                      <v-col cols="5">
+                        <v-select label="projekte" variant="outlined"/>
+                      </v-col>
+                    </v-row>
+                  </v-card-item>
+                  <v-card-actions class="d-flex justify-center">
+                    <div style="position:absolute; bottom: 20px">
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="leeren">
+                        Neue Person anlegen
+                      </v-btn>
+                      <v-btn v-if="!loadIcon && selectedUser.username === 'Neue Person anlegen' " class="button"
+                             @click="userErstellen">
+                        Erstellen
+                      </v-btn>
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="userLöschen">
+                        Löschen
+                      </v-btn>
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="userBearbeiten">
+                        Bearbeiten
+                      </v-btn>
+                      <v-btn v-if="!loadIcon && selectedUser.username !== 'Neue Person anlegen'" class="button"
+                             @click="userPasswortGenerieren">
+                        Passwort generieren
+                      </v-btn>
+                      <Icon v-if="loadIcon" icon="svg-spinners:90-ring-with-bg" style="font-size: 40px;"/>
+                    </div>
+                  </v-card-actions>
+                </v-card>
+
+              </v-col>
+            </v-row>
           </v-window-item>
 
           <v-window-item value="1">
