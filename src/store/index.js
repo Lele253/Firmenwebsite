@@ -10,10 +10,7 @@ export default createStore({
                 {name: 'Handyansicht', isFinished: false},
                 {name: 'Benutzer anlegen', isFinished: true},
                 {name: 'Aktuelles-Ansicht', isFinished: false},
-                {
-                    name: 'Beitrag anlegen, bearbeiten & Bild hinzufügen',
-                    isFinished: false
-                },
+                {name: 'Beitrag anlegen, bearbeiten & Bild hinzufügen', isFinished: false},
                 {name: 'Beitrag anlegen', isFinished: false},
                 {name: 'Responsive Design anpassen', isFinished: true},
                 {name: 'Datenbank-Schema entwerfen', isFinished: false},

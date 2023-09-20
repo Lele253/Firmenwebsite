@@ -1,7 +1,7 @@
 <template>
   <div class="img pb-0" style=" height: 100vh">
     <!--    <h1 style="position: fixed"> Test Höhe {{ $store.state.scrollwert }}</h1>-->
-    <div class="background pt-10 pb-0">
+    <div :style="mobile ? { maxHeight: höheFooter + 'px' } : {}" :class="mobile ? 'background-mobile' : 'background' + ''" class="pt-10 pb-0">
 
       <!--   Headder-->
       <div v-if="!mobile">
@@ -165,7 +165,7 @@
 
       <!--   Mobile-->
 
-      <div v-if="mobile"  style="width: 100%">
+      <div v-if="mobile"  style="max-height: 400vh; width: 100%">
       <!---  <div class="justify-center align-center  d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
           <v-alert class="text-center text-black mt-2 mb-5" height="130" style="border-radius: 20px" type="warning">
             Die von Ihnen benutze Bildschirmgröße wird NOCH nicht unterstützt. Bitte nutzen Sie die Desktop-Ansicht,
@@ -183,6 +183,7 @@
               <p class="mt-2 text-white">Du hast Interesse an einem Coding-Kurs <br> oder dein Unternehmen benötigt eine
                 <br> Softwarelösung, SEO
                 oder eine Website?
+
                 <br> dann Kontaktiere uns oder Trage dich <br> in einen Kurs ein.</p>
               <v-btn class="routebutton mt-5 ">Zur Website</v-btn>
               <v-btn class="routebutton mt-5 ml-16">Zum Kurs</v-btn>
@@ -308,14 +309,109 @@
                  </v-col>
                </v-row>
                <div >
-                 <h1 class="mt-16 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
-                 <p class="mt-4 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
-                 <p class="mt-4 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du
+                 <h1 class="mt-16 ml-5 text-white">Verschiedene Technologien mit <br>großem Lernerfolg.</h1>
+                 <p class="mt-4 ml-5 text-white">Melde dich zu einem Kurs an und wir vereinbaren schnell einen zeitnahen Termin.</p>
+                 <p class="mt-4 ml-5 text-white">Wir nehmen uns die Zeit, ermitteln deinen Kenntnisstand und setzen da an wo du
                    stehst.
                  </p>
                </div>
              </div>
           </v-col>
+
+          <v-col cols="12" class="mt-n16 d-flex justify-center">
+            <v-card class="websitebox-mobile">
+              <div v-if="websiteformular" class="websitebox-innerdiv">
+                <v-row class="ma-0" style="width: 100%">
+                  <h3 class=" my-4 text-white text-center" style="width: 100vh">Füllen SIe das Formular aus und wir
+                    melden uns bei zeitnah bei Ihnen.</h3>
+                  <v-col cols="6">
+                    <v-text-field base-color="white"
+                                  class="text-white"
+                                  color="white"
+                                  label="Name"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field base-color="white"
+                                  class="text-white"
+                                  color="white"
+                                  label="Firmenname"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field base-color="white"
+                                  class="text-white mt-n5"
+                                  color="white"
+                                  label="Telefonnummer"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="6">
+                    <v-text-field base-color="white"
+                                  class="text-white mt-n5"
+                                  color="white"
+                                  label="Email"
+                                  persistent-hint
+                                  required
+                                  variant="outlined">
+
+                    </v-text-field>
+                  </v-col>
+                  <v-col class="mt-n5" cols="12">
+                    <v-radio-group inline v-model="auswahl">
+                      <v-row>
+                        <v-col>
+                          <v-radio  style="color: white" label="Es besteht bereits eine Website"  value="Es besteht bereits eine Website"></v-radio>
+
+                        </v-col>
+                        <v-col>
+
+                          <v-radio style="color: white"  label="Es besteht keine Website"  value="Es besteht keine Website"></v-radio>
+                        </v-col>
+                      </v-row>
+                    </v-radio-group>
+                  </v-col>
+
+                  <v-col class=" d-flex justify-center" cols="12">
+                    <v-btn class="routebutton">
+                      Absenden
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-card>
+
+          </v-col>
+          <v-col cols="12" >
+          <div class="mt-n16 ml-5 downscale" style="max-width: 90%">
+
+            <h1 v-if="tabletHorizontal" class="mb-6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+            </h1>
+            <h2 v-if="!tabletHorizontal" class="mb-n6 text-white">Ihre Webseite, Ihr Erfolg: <br> Maßgeschneiderte Designs von Expertenhand
+            </h2>
+            <p class="mt-10 text-white"> FastGlobe IT - Ihr Partner für erstklassige Webseiten. Wir verwandeln Ideen
+              in ansprechende Online-Präsenzen, die Ihre Marke
+              zum Leuchten bringen.
+              Unser Team aus erfahrenen Designern und Entwicklern steht bereit, um Ihre Visionen Wirklichkeit werden
+              zu lassen.</p>
+
+            <h4 class="mt-12 " style="color:#CBB26A;">Jetzt kostenlose Beratung sichern</h4>
+            <v-btn class="mt-8 routebutton" @click="websiteformular = !websiteformular">Beratung</v-btn>
+          </div>
+
+        </v-col>
+
         </v-row>
       </div>
 
@@ -634,17 +730,17 @@
           </v-row>
         </div>
       </div>
-      <div class="pt-6" style="height: 8vh; width: 100%;  background-color: black">
+      <div ref="footer" class="pt-6"  style="height: 8vh; width: 100%;  background-color: black">
         <v-row class="mx-0  justify-center" style="width: 100%">
-          <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+          <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
             <h3 class="text-center text-white">Impressum</h3>
           </v-col>
           <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
-            <h3 class="text-center text-white">Datenschutz</h3>
+          <v-col @click="$router.push('/datenschutz')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
+            <h3 class="text-center ml-n2 text-white">Datenschutz</h3>
           </v-col>
           <v-divider class="border-opacity-50" vertical="true" color="white"></v-divider>
-          <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 2">
+          <v-col style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
             <h3 class="text-center text-white">Kontakt</h3>
           </v-col>
         </v-row>
@@ -677,6 +773,11 @@ export default {
     }
   },
   computed: {
+
+    höheFooter() {
+      return this.$refs.footer.offsetTop;
+    },
+
     initials: function () {
       try {
         const splitted = this.$store.state.user.username.split(' ')
@@ -693,11 +794,17 @@ export default {
 
     ...mapGetters(['user'])
   },
+  created() {
+    this.resize()
+  },
   mounted() {
     this.getUser()
     this.checkMobileView()
   },
   methods: {
+    resize() {
+      window.addEventListener('resize', this.checkMobileView);
+    },
     scrollDown(id) {
       const element = document.getElementById(id);
       if (element) {
@@ -811,7 +918,19 @@ export default {
   background-color: rgba(2, 2, 2, 0.9);
   backdrop-filter: blur(1px);
 }
-
+.websitebox-mobile {
+  transform: scale(0.7);
+  width: 100%;
+  height: 450px;
+  margin-top: -130px;
+  background-color: #7c7b7b;
+  box-shadow: 5px 5px 11px black;
+  transition: ease-in-out 0.4s;
+  border-left: 2px solid #CBB26A;
+  border-top: 2px solid #CBB26A;
+  background-image: url("../assets/websitebackground.jpg");
+  background-size: cover;
+}
 .websitebox {
   width: 100%;
   height: 50vh;
@@ -858,7 +977,11 @@ background-color: transparent;
   background-image: url("../assets/Hintergrund.png");
   background-size: cover;
 }
-
+.background-mobile {
+  width: 100vw;
+  background-image: url("../assets/Hintergrund.png");
+  background-size: cover;
+}
 .img {
   background-image: url("../assets/background.jpg");
   background-size: cover;
