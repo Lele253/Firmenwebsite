@@ -730,7 +730,7 @@
           </v-row>
         </div>
       </div>
-      <div ref="footer" class="pt-6"  style="height: 8vh; width: 100%;  background-color: black">
+      <div ref="footer"  style="height: 8vh; width: 100%;  background-color: black">
         <v-row class="mx-0  justify-center" style="width: 100%">
           <v-col @click="$router.push('/impressum')" style="cursor: pointer" :cols="tabletHorizontal ? 1: 4">
             <h3 class="text-center text-white">Impressum</h3>
@@ -775,7 +775,7 @@ export default {
   computed: {
 
     höheFooter() {
-      return this.$refs.footer.offsetTop;
+      return this.$refs.footer.offsetTop +100;
     },
 
     initials: function () {
