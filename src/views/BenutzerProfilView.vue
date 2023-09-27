@@ -539,7 +539,7 @@ export default {
       try {
         if (this.email != null && this.name != null) {
           const response = await axios.post('/regist', {
-            username: this.name,
+            name: this.name,
             email: this.email,
             password: 'test'
           })
