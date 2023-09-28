@@ -47,7 +47,7 @@
 
                 </h4></v-col>
                 <v-col class=" pt-0 d-flex justify-center"><h4 class="text-white">
-                  <button @click=" scrollDown('Website');">Webiste</button>
+                  <button @click=" scrollDown('Website');">Website</button>
                 </h4></v-col>
                 <v-col class=" pt-0 d-flex justify-center"><h4 class="text-white">
                   <button @click=" scrollDown();">Kurse</button>
