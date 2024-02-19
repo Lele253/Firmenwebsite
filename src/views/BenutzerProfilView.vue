@@ -6,7 +6,6 @@
   </div>
 
 
-
   <div v-if="mobile" class="justify-center d-flex" style="width: 100vw; height: 100vh">
     <div class=" align-center d-flex" style="width: 90vw; height: 100vh; max-width: 500px">
       <v-alert class="text-center text-black mt-2 mb-5" height="100" style="border-radius: 20px" type="warning">
@@ -15,7 +14,7 @@
     </div>
   </div>
 
-  <div v-if="!mobile && user.status == 'Admin'" class="divOverBackground">
+  <div v-if="!mobile && user.status !== 'Admin'" class="divOverBackground">
     <v-card class="card">
       <v-tabs
           v-model="tab"
@@ -216,7 +215,7 @@
     </v-card>
   </div>
 
-  <div v-if="!mobile && user.status !=='Admin'">
+  <div v-if="!mobile && user.status =='Admin'">
     <div class="d-flex justify-center" style="width: 100vw; margin-top: 110px">
       <v-card class="cardWebsite">
         <v-tabs
@@ -256,7 +255,7 @@
                 <v-card class="cardWebsite" style="height: 60vh">
                   <v-card-item>
                     <v-card-title class="text-center mt-2 pb-5">
-                      {{ selectedUser.username }}
+                      {{ selectedProjekt.name }}
                     </v-card-title>
                     <v-row class="justify-center d-flex">
                       <v-col cols="10">
@@ -407,11 +406,12 @@ export default {
   name: "BenutzerProfilView",
   data() {
     return {
-      tab: '1',
+      tab: '0',
       url: 'https://fastglobeit.de:8084',
       switchMe: false,
 
       selectedUser: {username: 'Neue Person anlegen'},
+      selectedProjekt: {username: 'Neues Projekt anlegen'},
 
       snackbar: true,
       snackbarContent: '',

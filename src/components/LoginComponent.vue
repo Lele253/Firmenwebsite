@@ -86,8 +86,6 @@ export default {
               email: this.email,
               password: this.password
             });
-        console.log(response.data.user)
-        console.log(response.data.token)
         this.$store.state.user = response.data.user
         await localStorage.setItem('token', response.data.token)
 
