@@ -4,6 +4,7 @@ import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
 import LoginView from "@/views/LoginView";
 import BenutzerProfilView from "@/views/BenutzerProfilView";
+import RechnungenView from "@/views/RechnungenView.vue";
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
     path: '/datenschutz',
     name: 'datenschutz',
     component: DatenschutzView
+  },{
+    path: '/rechnung',
+    name: 'rechnung',
+    component: RechnungenView
   },
   {
     path: '/login',
