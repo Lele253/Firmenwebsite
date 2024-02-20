@@ -77,7 +77,7 @@
             <tr v-for="item in bereinigtestLeistungsArray" :key="item.text">
               <td class="text-center">{{ item.text }}</td>
               <td class="text-center">{{ item.menge }}</td>
-              <td class="text-center">{{ calculateTotal(item.menge, item.preis) }}</td>
+              <td class="text-center">{{ calculateTotal(item.menge, item.preis) }} €</td>
               <td class="text-center">
                 <icon :icon="item.löschen" color="red" style="font-size: 30px" @click="deleteLeistung(item)"/>
               </td>
@@ -112,8 +112,8 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-col>
-          <h1 style="color:#0082c2 ">Rechnung</h1>
+        <v-col class="mt-n10">
+          <h1 style="color:#0082c2">Rechnung</h1>
         </v-col>
       </v-row>
       <v-row>
@@ -200,16 +200,15 @@
             Umsatzsteuerbefreiung nicht erhoben.)
           </p>
         </v-col>
-        <v-col class="mt-2" cols="12">
-          <v-divider></v-divider>
-        </v-col>
-        <v-col cols="7">
+        <v-col cols="6">
           <b class="ml-5">Zahlungsbedingungen: </b> <br>
           <p class="ml-5">Überweisung oder Paypal</p> <br>
           <p class="ml-5">Der Betrag ist bei Lieferung sofort fällig</p>
         </v-col>
+        <v-col class="mt-2" cols="12">
+          <v-divider></v-divider>
+        </v-col>
       </v-row>
-      <v-divider class="ma-5 "></v-divider>
       <v-row class="ml-2">
         <v-col cols="6" style="color: #0082c2">
           <p>Stefan Franke</p>
@@ -217,7 +216,7 @@
           <p class="mt-n7"> IBAN: DE47 5925 1020 0050 2240 13</p> <br>
           <p class="mt-n7"> BIC: SALADE51WND</p> <br>
         </v-col>
-        <v-col cols="7" style="color: #0082c2">
+        <v-col cols="6" style="color: #0082c2">
           <p>Paypal: stefanfausst@web.de</p></v-col>
       </v-row>
 
