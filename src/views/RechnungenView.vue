@@ -226,7 +226,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import html2pdf from 'html2pdf.js';
 import {mapGetters} from "vuex";
 import {Icon} from "@iconify/vue";
@@ -235,7 +234,6 @@ export default {
   data() {
     return {
       currentDate: null,
-      tab: null,
       name: '',
       vorname: '',
       straße: '',
@@ -269,18 +267,6 @@ export default {
       return gesamtPreis.toFixed(2);
     },
     ...mapGetters(['rechnungArray']),
-    bereinigtesRechnungsArray() {
-      return this.$store.state.rechnungArray.map(item => {
-        const newObj = Object.assign({
-          ...item,
-          löschen: 'fluent:delete-16-regular',
-          pdf: 'fluent:document-pdf-32-filled'
-        }, item);
-        delete newObj.bild;
-        delete newObj.text;
-        return newObj;
-      });
-    },
     bereinigtestLeistungsArray() {
       return this.leistungen.map(item => {
         const newObj = Object.assign({...item, löschen: 'fluent:delete-16-regular'}, item);
@@ -294,7 +280,7 @@ export default {
       html2pdf(element, {
         margin: 0,
         filename: this.name + '_' + this.formattedDate + '_Rechnung.pdf',
-        image: {type: 'png', quality: 2},
+        image: {type: 'pdf', quality: 2},
         html2canvas: {scale: 3},
         jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
       });
@@ -330,61 +316,6 @@ export default {
       this.text = ''
       this.menge = ''
     },
-    async create() {
-      try {
-        await axios.post('/rechnung', {
-          rechnung: {
-            name: this.name,
-            vorname: this.vorname,
-            straße: this.straße,
-            hausnummer: this.hausnummer,
-            plz: this.plz,
-            ort: this.ort,
-            preis: this.calculatedPreis + '€',
-            datum: this.formattedDate
-          },
-          leistungen: this.leistungen
-        }, {
-          headers: {
-            'Authorization': `Bearer${localStorage.getItem('token')}`
-          }
-        })
-
-        await this.get()
-
-        this.name = '';
-        this.vorname = '';
-        this.straße = '';
-        this.hausnummer = '';
-        this.plz = '';
-        this.ort = '';
-        this.leistungen = [];
-
-      } catch (e) {
-        alert("Bitte füllen Sie alle Felder aus.")
-      }
-      await this.get()
-    },
-    async deleteMethod(produkt) {
-      try {
-        await axios.delete('/rechnung/' + produkt.id, {
-          headers: {
-            'Authorization': `Bearer${localStorage.getItem('token')}`
-          }
-        })
-        await this.get()
-      } catch (e) {
-        alert("Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut. Falls das Problem weiterhin besteht, kontaktieren Sie Bitte den Administrator.")
-      }
-
-    },
-    async get() {
-      const response = await axios.get('/rechnung')
-
-      const rechnungArray = response.data;
-      Object.freeze(rechnungArray);
-      this.$store.state.rechnungArray = rechnungArray;
-    }
   },
   components: {
     Icon
