@@ -241,8 +241,6 @@ export default {
       ort: '',
       text: '',
       preis: '',
-      einheit: null,
-      einheiten: ['Menge', 'Stunde'],
       leistungen: [],
       menge: '',
       rechnungsnummer: '',
