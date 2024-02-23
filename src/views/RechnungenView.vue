@@ -40,7 +40,7 @@
               <v-text-field v-model="preis" label="Preis" variant="outlined" @input="updatePreis"/>
             </v-col>
             <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="menge" label="Menge" type="number" variant="outlined"/>
+              <v-text-field v-model="menge" label="Anzahl" type="number" variant="outlined"/>
             </v-col>
             <v-col class="d-flex justify-center" cols="3">
               <v-text-field v-model="calculatedPreis" disabled="true" label="Gesamtpreis" type="number"
@@ -89,7 +89,6 @@
     </v-row>
   </div>
 
-
   <div class="pdf-content pa-8" style="display: none">
     <div id="pdf-content" class="pa-8">
       <v-row justify="start">
@@ -129,7 +128,7 @@
           <p style="color: #f2f2f2; margin-bottom: 6px">LEISTUNG</p>
         </v-col>
         <v-col class="d-flex justify-end" cols="2">
-          <p style="color: #f2f2f2; margin-bottom: 6px">MENGE</p>
+          <p style="color: #f2f2f2; margin-bottom: 6px">MENGE/STUNDEN</p>
         </v-col>
         <v-col class="d-flex justify-end" cols="2">
           <p style="color: #f2f2f2; margin-bottom: 6px">EINZELPREIS</p>
@@ -242,6 +241,8 @@ export default {
       ort: '',
       text: '',
       preis: '',
+      einheit: null,
+      einheiten: ['Menge', 'Stunde'],
       leistungen: [],
       menge: '',
       rechnungsnummer: '',
