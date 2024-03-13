@@ -106,6 +106,7 @@
         </v-col>
         <v-col class="d-flex justify-end" cols="6">
           <p>
+
             Rechnungsdatum: {{ formattedDate }}
           </p>
         </v-col>
