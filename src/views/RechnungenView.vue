@@ -94,7 +94,7 @@
     </v-row>
   </div>
 
-  <div class="pa-8" >
+  <div class="pa-8" style="display: none">
     <div id="kostenvoranschlag-pdf" class="pa-8">
 
       <v-row justify="start">
