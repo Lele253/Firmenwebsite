@@ -414,55 +414,24 @@
 <script>
 import html2pdf from 'html2pdf.js';
 import {mapGetters} from "vuex";
+import {Icon} from "@iconify/vue";
 
 
 export default {
   data() {
     return {
       currentDate: null,
-      name: 'Müller',
-      vorname: 'Thomas',
-      straße: 'Musterstraße',
-      hausnummer: '23',
-      plz: '45432',
-      ort: 'Hagen',
+      name: '',
+      vorname: '',
+      straße: '',
+      hausnummer: '',
+      plz: '',
+      ort: '',
       text: '',
       preis: '',
-      leistungen: [{
-        preis: '23',
-        text: 'Leistung 1',
-        menge: '1'
-      }, {
-        preis: '23',
-        text: 'Leistung 2',
-        menge: '2'
-      }, {
-        preis: '23',
-        text: 'Leistung 3',
-        menge: '3'
-      }, {
-        preis: '23',
-        text: 'Leistung 4',
-        menge: '80'
-      }, {
-        preis: '23',
-        text: 'Leistung 5',
-        menge: '5'
-      }, {
-        preis: '23',
-        text: 'Leistung 6',
-        menge: '6'
-      }, {
-        preis: '23',
-        text: 'Leistung 7',
-        menge: '3'
-      }, {
-        preis: '23',
-        text: 'Leistung 8',
-        menge: '3'
-      }],
+      leistungen: [],
       menge: '',
-      rechnungsnummer: '2024/1303/22',
+      rechnungsnummer: '',
     }
   },
   computed: {
@@ -536,7 +505,7 @@ export default {
     },
   },
   components: {
-    /*Icon*/
+    Icon
   },
   mounted() {
     this.currentDate = Date.now();
