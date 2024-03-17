@@ -7,6 +7,7 @@ import RechnungenView from "@/views/RechnungenView.vue";
 import SkillsView from "@/views/SkillsView.vue";
 import WebsiteView from "@/views/WebsiteView.vue";
 import WebappView from "@/views/WebappView.vue";
+import EntwicklungView from "@/views/EntwicklungView.vue";
 
 const routes = [
 
@@ -19,6 +20,10 @@ const routes = [
     path: '/webapp',
     name: 'Webapp',
     component: WebappView
+  }, {
+    path: '/entwicklung',
+    name: 'Entwicklung',
+    component: EntwicklungView
   },
   {
     path: '/',

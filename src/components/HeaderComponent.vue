@@ -14,7 +14,7 @@
         <router-link class="mein-link" to="webapp">Webapp</router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link class="mein-link" to="impressum">Entwicklung</router-link>
+        <router-link class="mein-link" to="entwicklung">Entwicklung</router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
         <router-link class="mein-link" to="impressum">Service</router-link>

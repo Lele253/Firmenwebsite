@@ -43,10 +43,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.iframe{
-  border: none;
-  border-radius: 13px;
-  box-shadow: 4px 4px 8px black;
-}
+
 
 </style>
