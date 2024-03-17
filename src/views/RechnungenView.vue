@@ -233,7 +233,7 @@
       <v-row class=" align-content-end">
         <v-col cols="12">
           <p class="ml-5">
-            (Nach §191 gelte wir als Kleinunternehmer. Umsatzsteuer wird aufgrund der
+            (Nach §191 gelten wir als Kleinunternehmer. Umsatzsteuer wird aufgrund der
             Umsatzsteuerbefreiung nicht erhoben.)
           </p>
         </v-col>
@@ -383,7 +383,7 @@
       <v-row class=" align-content-end">
         <v-col cols="12">
           <p class="ml-5">
-            (Nach §191 gelte wir als Kleinunternehmer. Umsatzsteuer wird aufgrund der
+            (Nach §191 gelten wir als Kleinunternehmer. Umsatzsteuer wird aufgrund der
             Umsatzsteuerbefreiung nicht erhoben.)
           </p>
         </v-col>
