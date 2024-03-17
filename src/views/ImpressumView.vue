@@ -1,11 +1,6 @@
 <template>
-  <div class="hintergrundbild">
-    <div class="pa-5" style="background-color: #e3dede; height: 100vh">
-      <HeaderComponent/>
-      <v-row>
-        <v-col cols="12">
-          <v-card class="pa-5" style="margin-top: 90px">
-
+      <v-row class="mt-16">
+        <v-col cols="12" class="mt-16">
             <div class="pb-8 mx-5">
               <h2>Impressum</h2>
               <p>Name<br/>
@@ -74,25 +69,20 @@
                 Bekanntwerden von Rechtsverletzungen werde ich derartige Inhalte umgehend entfernen.</p>
 
             </div>
-
-          </v-card>
         </v-col>
       </v-row>
 
-    </div>
-  </div>
 </template>
 
 <script>
 
 
-import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
   name: "ImpressumView"
   ,
   components: {
-    HeaderComponent
+
   }
 }
 </script>

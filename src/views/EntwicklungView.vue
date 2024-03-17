@@ -3,7 +3,7 @@
   <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
     <v-col class="d-flex align-center justify-center">
       <div>
-        <h1 style="font-size: 2.5vw" class="headline"> Effiziente <br> Webentwicklung <br> für optimale Ergebnisse</h1>
+        <h1 style="font-size: 2.5vw ; text-shadow: 1px 1px black" class="headline"> Effiziente <br> Webentwicklung <br> für optimale Ergebnisse</h1>
         <p style="font-size: 1.1vw"  class="mt-16">
           Unser Ansatz zur effizienten Webentwicklung basiert <br>
           auf bewährten Methoden und modernsten Technologien. <br>
@@ -22,7 +22,7 @@
       </div>
     </v-col>
     <v-col style="max-height: 100%" class="d-flex align-center justify-center">
-      <v-img style="border-radius: 13px" cover height="90%" src="../assets/Entwicklung.png"></v-img>
+      <v-img style="border-radius: 13px; filter: drop-shadow(2px 2px 4px rgb(0,0,0));" height="100%" src="../assets/Entwicklung.png"></v-img>
     </v-col>
   </v-row>
 </template>

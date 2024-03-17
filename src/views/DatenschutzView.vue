@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div class="pa-5" style="background-color: #e3dede; height: 100vh;">
-      <HeaderComponent/>
-      <v-row>
-        <v-col cols="12">
-          <v-card class="pa-5" style="height: 85vh; overflow-y: scroll; margin-top: 90px">
+
+  <v-row >
+    <v-col cols="12" >
+          <v-card class="pa-5" style="background-color: transparent; height: 85vh; overflow-y: scroll; margin-top: 90px">
             <div>
               <div class="col-xs-12 col-lg-9">
 
@@ -421,14 +419,9 @@
           </v-card>
         </v-col>
       </v-row>
-
-    </div>
-  </div>
 </template>
 
 <script>
-
-import HeaderComponent from "@/components/HeaderComponent";
 
 export default {
   data() {
@@ -437,7 +430,7 @@ export default {
     }
   },
   components: {
-    HeaderComponent
+
   },
   created() {
     this.$store.state.routername = this.name

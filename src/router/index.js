@@ -8,6 +8,7 @@ import SkillsView from "@/views/SkillsView.vue";
 import WebsiteView from "@/views/WebsiteView.vue";
 import WebappView from "@/views/WebappView.vue";
 import EntwicklungView from "@/views/EntwicklungView.vue";
+import ServiceView from "@/views/ServiceView.vue";
 
 const routes = [
 
@@ -15,6 +16,10 @@ const routes = [
     path: '/impressum',
     name: 'impressum',
     component: ImpressumView
+  },  {
+    path: '/service',
+    name: 'Service',
+    component: ServiceView
   },
   {
     path: '/webapp',

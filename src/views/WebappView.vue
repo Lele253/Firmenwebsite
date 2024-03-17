@@ -3,7 +3,7 @@
   <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
     <v-col class="d-flex align-center justify-center">
       <div>
-        <h1 style="font-size: 3vw" class="headline"> Maßgeschneiderte <br>
+        <h1 style="font-size: 3vw; text-shadow: 1px 1px  black" class="headline"> Maßgeschneiderte <br>
           Webanwendungen</h1>
         <p style="font-size: 1.1vw"  class="mt-16">
           Wir sind erfahrene Entwickler, die sich auf die Erstellung <br>

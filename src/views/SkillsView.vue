@@ -2,7 +2,7 @@
     <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
       <v-col class="d-flex align-center justify-center">
         <div>
-          <h1 style="font-size: 3vw" class="headline">Auf dem <br> neusten Stand</h1>
+          <h1 style="font-size: 3vw; text-shadow: 1px 1px black" class="headline">Auf dem <br> neusten Stand</h1>
           <p style="font-size: 1.1vw"  class="mt-16">
             Wir setzen modernste Technologien ein, um Ihren <br>
             individuellen Anforderungen gerecht zu werden und <br>

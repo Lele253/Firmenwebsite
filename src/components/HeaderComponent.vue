@@ -17,7 +17,7 @@
         <router-link class="mein-link" to="entwicklung">Entwicklung</router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link class="mein-link" to="impressum">Service</router-link>
+        <router-link class="mein-link" to="service">Service</router-link>
       </v-col>
     </v-row>
   </div>
