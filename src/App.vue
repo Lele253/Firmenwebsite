@@ -1,17 +1,22 @@
 <template>
   <v-app id="home">
-    <v-main style="position: fixed; z-index: 9000">
-      <router-view  style="overflow-y: scroll"/>
+    <v-main>
+        <div class="home">
+          <HeaderComponent></HeaderComponent>
+          <router-view></router-view>
+        </div>
     </v-main>
   </v-app>
 </template>
 
 <script>
 
+import HeaderComponent from "@/components/HeaderComponent.vue";
+
 export default {
   name: 'App',
+  components: {HeaderComponent},
   methods: {
-
   },
 
   data: () => ({
@@ -24,7 +29,34 @@ export default {
   width: 0;
   background: transparent;
 }
-
+.button{
+  margin-top: 60px;
+  border: solid #969262 2px !important;
+  background-color: #080891 !important;
+  color: white !important;
+  box-shadow: 3px 3px 7px black !important;
+  width: 16vw;
+  height: 50px !important;
+  border-radius: 30px !important;
+}
+.button:active{
+  margin-top: 60px;
+  border: solid #969262 2px !important;
+  background-color: #080891 !important;
+  color: white !important;
+  box-shadow: 0px 0px 0px black !important;
+  width: 16vw;
+  height: 50px !important;
+  border-radius: 30px !important;
+}
+.home{
+  height: 100vh;
+  background-image: url("./assets/BackGround.png");
+  background-size: cover;
+}
+.headline{
+  color: #969262;
+}
 #home {
   font-family: 'Poppins', sans-serif;
 }
