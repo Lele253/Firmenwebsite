@@ -277,7 +277,7 @@
           <p>
             Rechnungsdatum: {{ formattedDate }} <br>
             Rechnungsnummer: {{rechnungsnummer}} <br>
-            Steuer-ID: 198/113/10193
+            Steuer-ID: folgt in kürze...
           </p>
         </v-col>
       </v-row>
