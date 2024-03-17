@@ -105,7 +105,7 @@
       <v-row>
         <v-col class="mt-16" cols="8">
           <p class="mt-n7">{{vorname}} {{name}}</p> <br>
-          <p class="mt-n7">{{straße}}</p> <br>
+          <p class="mt-n7">{{straße}} {{hausnummer}}</p> <br>
           <p class="mt-n7">{{plz}} {{ort}}</p> <br>
         </v-col>
         <v-col cols="4">
@@ -254,7 +254,7 @@
       <v-row>
         <v-col class="mt-13" cols="8">
           <p class="mt-n7">{{vorname}} {{name}}</p> <br>
-          <p class="mt-n7">{{straße}}</p> <br>
+          <p class="mt-n7">{{straße}} {{hausnummer}}</p> <br>
           <p class="mt-n7">{{plz}} {{ort}}</p> <br>
         </v-col>
         <v-col cols="4">
