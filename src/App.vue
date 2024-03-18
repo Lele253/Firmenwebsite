@@ -29,6 +29,118 @@ export default {
   width: 0;
   background: transparent;
 }
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-left {
+  animation: 1.2s ease-out 0s 1 slideInFromLeft;
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-right {
+  animation: 1.2s ease-out 0s 1 slideInFromRight;
+}
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-top {
+  animation: 1.2s ease-out 0s 1 slideInFromTop;
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-bottom {
+  animation: 1.2s ease-out 0s 1 slideInFromBottom;
+}
+@keyframes slideInFromTopRight {
+  0% {
+    transform: translate(100%, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-top-right {
+  animation: 1.2s ease-out 0s 1 slideInFromTopRight;
+}
+@keyframes slideInFromBottomLeft {
+  0% {
+    transform: translate(-100%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-bottom-left {
+  animation: 1.2s ease-out 0s 1 slideInFromBottomLeft;
+}
+@keyframes slideInFromTopLeft {
+  0% {
+    transform: translate(-100%, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-top-left {
+  animation: 1.2s ease-out 0s 1 slideInFromTopLeft;
+}
+@keyframes slideInFromBottomRight {
+  0% {
+    transform: translate(100%, 100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.fly-in-from-bottom-right {
+  animation: 1.2s ease-out 0s 1 slideInFromBottomRight;
+}
 .button{
   margin-top: 60px;
   border: solid #969262 2px !important;

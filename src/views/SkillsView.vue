@@ -1,7 +1,7 @@
 <template>
     <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
       <v-col class="d-flex align-center justify-center">
-        <div>
+        <div class="fly-in-from-bottom-right">
           <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 3vw'"  style=" text-shadow: 1px 1px black" class="headline">Auf dem <br> neusten Stand</h1>
           <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'"  class="mt-16">
             Wir setzen modernste Technologien ein, um Ihren <br>
@@ -22,7 +22,7 @@
           <TerminComponent></TerminComponent>
         </div>
       </v-col>
-      <v-col  v-if="!handy" >
+      <v-col class="fly-in-from-top-left"  v-if="!handy" >
         <v-row style="width: 100%; height: 60vh" class="ma-0 align-center justify-center">
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
             <v-img cover class="skills" src="../assets/java.png"></v-img>

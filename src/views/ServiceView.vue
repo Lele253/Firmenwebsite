@@ -2,7 +2,7 @@
 <template>
   <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
     <v-col class="d-flex align-center justify-center">
-      <div>
+      <div class="fly-in-from-left">
         <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 2.5vw'" style=" text-shadow: 1px 1px black" class="headline"> Effiziente <br> Webentwicklung <br> für optimale Ergebnisse</h1>
         <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'"  class="mt-16">
           Unsere Dienstleistungen umfassen die Gestaltung und <br>
@@ -17,7 +17,7 @@
         <TerminComponent></TerminComponent>
       </div>
     </v-col>
-    <v-col  v-if="!handy"  style="max-height: 100%" class="d-flex align-center justify-center">
+    <v-col  v-if="!handy"  style="max-height: 100%" class="d-flex align-center justify-center fly-in-from-right">
       <v-card class="card d-flex align-center">
       <p style="font-size: 18px"  >
         1. Webdesign <br><br>

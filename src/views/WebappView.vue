@@ -2,7 +2,7 @@
 <template>
   <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
     <v-col class="d-flex align-center justify-center">
-      <div>
+      <div class="fly-in-from-bottom">
         <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 3vw'" style=" text-shadow: 1px 1px  black" class="headline"> Maßgeschneiderte <br>
           Webanwendungen</h1>
         <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'"  class="mt-16">
@@ -19,7 +19,7 @@
         <TerminComponent></TerminComponent>
       </div>
     </v-col>
-    <v-col  v-if="!handy"  style="max-height: 100%" class="d-flex align-center justify-center">
+    <v-col  v-if="!handy"  style="max-height: 100%" class="d-flex align-center justify-center fly-in-from-top">
       <v-img height="100%" src="../assets/Webapp.png"></v-img>
     </v-col>
   </v-row>
