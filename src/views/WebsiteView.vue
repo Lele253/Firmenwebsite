@@ -1,11 +1,11 @@
 
 <template>
   <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
-    <v-col class="d-flex align-center justify-center">
+    <v-col :cols="handy ? 12: ''" class="d-flex align-center justify-center">
       <div>
-        <h1 style="font-size: 3vw; text-shadow: 1px 1px  black" class="headline">Webdesigner <br>
+        <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 3vw'"  style=" text-shadow: 1px 1px  black" class="headline">Webdesigner <br>
           aus Dortmund</h1>
-        <p style="font-size: 1.1vw"  class="mt-16">
+        <p :style="$store.state.handy ? 'font-size: 3.5vw' : 'font-size: 1.1vw'"  class="mt-16">
           Wir sind Ihr Sparringspartner für die Website-Entwicklung, <br>
           optimieren sämtliche Aspekte und bieten ein perfekt <br>
           abgestimmtes Setup. Dank unserer Methoden verläuft die <br>
@@ -20,7 +20,7 @@
         <TerminComponent></TerminComponent>
       </div>
     </v-col>
-    <v-col class="d-flex align-center justify-center">
+    <v-col v-if="!handy" class="d-flex align-center justify-center">
       <v-carousel style="width: 50%; height: 100%" class="iframe" show-arrows="hover" hide-delimiters>
         <v-carousel-item>
           <iframe  class="iframe" height="100%" width="100%" src="https://mpu-institut-saar.de">
@@ -42,12 +42,16 @@
 
 import {defineComponent} from "vue";
 import TerminComponent from "@/components/TerminComponent.vue";
+import {mapGetters} from "vuex";
 
 export default defineComponent({
   components: { TerminComponent},
   data(){
     return{
     }
+  },
+  computed:{
+    ...mapGetters(['user','handy'])
   },
   methods: {
   }

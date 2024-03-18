@@ -5,12 +5,11 @@ import {loadFonts} from './plugins/webfontloader'
 import router from './router'
 import store from './store'
 import './axios'
-import {QuillEditor} from '@vueup/vue-quill'
 import html2pdf from 'html2pdf.js'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 
 loadFonts()
-createApp(App).use(QuillEditor).use(store).use(router).use(html2pdf)
+createApp(App).use(store).use(router).use(html2pdf)
     .use(vuetify)
     .mount('#app')

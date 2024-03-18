@@ -2,8 +2,8 @@
     <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
       <v-col class="d-flex align-center justify-center">
         <div>
-          <h1 style="font-size: 3vw; text-shadow: 1px 1px black" class="headline">Auf dem <br> neusten Stand</h1>
-          <p style="font-size: 1.1vw"  class="mt-16">
+          <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 3vw'"  style=" text-shadow: 1px 1px black" class="headline">Auf dem <br> neusten Stand</h1>
+          <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'"  class="mt-16">
             Wir setzen modernste Technologien ein, um Ihren <br>
             individuellen Anforderungen gerecht zu werden und <br>
             innovative Lösungen zu entwickeln. Unser Fachwissen <br>
@@ -22,34 +22,34 @@
           <TerminComponent></TerminComponent>
         </div>
       </v-col>
-      <v-col>
+      <v-col  v-if="!handy" >
         <v-row style="width: 100%; height: 60vh" class="ma-0 align-center justify-center">
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true" class="skills" src="../assets/java.png"></v-img>
+            <v-img cover class="skills" src="../assets/java.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true"  class="skills" src="../assets/vue.png"></v-img>
+            <v-img cover  class="skills" src="../assets/vue.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true"  class="skills" src="../assets/Vuetify3.png"></v-img>
+            <v-img cover  class="skills" src="../assets/Vuetify3.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true" class="skills" src="../assets/Angular.png"></v-img>
+            <v-img cover class="skills" src="../assets/Angular.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true"  class="skills" src="../assets/Springboot.png"></v-img>
+            <v-img cover  class="skills" src="../assets/Springboot.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true"  class="skills" src="../assets/typescript.png"></v-img>
+            <v-img cover  class="skills" src="../assets/typescript.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true" class="skills" src="../assets/html.png"></v-img>
+            <v-img cover class="skills" src="../assets/html.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true"  class="skills" src="../assets/CSS.png"></v-img>
+            <v-img cover  class="skills" src="../assets/CSS.png"></v-img>
           </v-col>
           <v-col style="height: 40%; width: 40%" class="d-flex justify-center" cols="4">
-            <v-img cover="true"  class="skills" src="../assets/JavaScript.png"></v-img>
+            <v-img cover  class="skills" src="../assets/JavaScript.png"></v-img>
           </v-col>
         </v-row>
       </v-col>
@@ -59,12 +59,15 @@
 
 <script >
 
-import {defineComponent} from "vue";
 import TerminComponent from "@/components/TerminComponent.vue";
+import {mapGetters} from "vuex";
 
-export default defineComponent({
-  components: { TerminComponent}
-})
+export default {
+  components: { TerminComponent},
+  computed:{
+    ...mapGetters(['user','handy'])
+  },
+}
 </script>
 
 <style scoped>
