@@ -18,7 +18,7 @@ export default {
 
     async umleiung() {
       try {
-        const user = await axios.get('https://tier-gesundheitszentrum.com:8080/user')
+        const user = await axios.get('https://tier-gesundheitszentrum.com:8080/auth/user')
         this.$store.dispatch('user', user.data)
       } catch (error) {
         console.log(error)

@@ -476,7 +476,7 @@ export default {
     async umleitung() {
       console.log(this.$store.state.user)
       try {
-        const user = await axios.get('https://tier-gesundheitszentrum.com:8080/user')
+        const user = await axios.get('https://tier-gesundheitszentrum.com:8080/auth/user')
         console.log(user)
         this.$store.dispatch('user', user.data)
       } catch (error) {
