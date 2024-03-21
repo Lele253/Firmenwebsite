@@ -1,10 +1,10 @@
-
 <template>
-  <v-row style="width:100%; height: 70%" class="mx-0 mt-16">
+  <v-row class="mx-0 mt-16" style="width:100%; height: 70%">
     <v-col class="d-flex align-center justify-center">
       <div class="fly-in-from-bottom-left">
-        <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 2.5vw'" style=" text-shadow: 1px 1px black" class="headline"> Effiziente <br> Webentwicklung</h1>
-        <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'"  class="mt-16">
+        <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 2.5vw'" class="headline"
+            style=" text-shadow: 1px 1px black"> Effiziente <br> Webentwicklung</h1>
+        <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'" class="mt-16">
           Unser Ansatz zur effizienten Webentwicklung basiert <br>
           auf bewährten Methoden und modernsten Technologien. <br>
           Durch die Nutzung von agilen Entwicklungsmethoden <br>
@@ -18,33 +18,32 @@
           zu bieten, die ihre Anforderungen erfüllt und ihre <br>
           Ziele unterstützt.
         </p>
-        <TerminComponent></TerminComponent>
+        <TerminComponent class="mt-n4"></TerminComponent>
       </div>
     </v-col>
-    <v-col  v-if="!handy"  style="max-height: 100%" class="d-flex align-center justify-center fly-in-from-top-right">
-      <v-img style="border-radius: 13px; filter: drop-shadow(2px 2px 4px rgb(0,0,0));" height="100%" src="../assets/Entwicklung.png"></v-img>
+    <v-col v-if="!handy" class="d-flex align-center justify-center fly-in-from-top-right" style="max-height: 100%">
+      <v-img height="100%" src="../assets/Entwicklung.png"
+             style="border-radius: 13px; filter: drop-shadow(2px 2px 4px rgb(0,0,0));"></v-img>
     </v-col>
   </v-row>
 </template>
 
 
-<script >
+<script>
 
 import {defineComponent} from "vue";
 import TerminComponent from "@/components/TerminComponent.vue";
 import {mapGetters} from "vuex";
 
 export default defineComponent({
-  components: { TerminComponent},
-  data(){
-    return{
-    }
+  components: {TerminComponent},
+  data() {
+    return {}
   },
-  computed:{
-    ...mapGetters(['user','handy'])
+  computed: {
+    ...mapGetters(['user', 'handy'])
   },
-  methods: {
-  }
+  methods: {}
 })
 </script>
 

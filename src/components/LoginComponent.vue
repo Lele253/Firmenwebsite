@@ -83,7 +83,7 @@ export default {
   methods: {
     async login() {
       try {
-        const response = await axios.post('/login',
+        const response = await axios.post('https://tier-gesundheitszentrum.com:8080/login',
             {
               email: this.email,
               password: this.password
