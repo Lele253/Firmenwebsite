@@ -18,21 +18,8 @@
       </div>
     </v-col>
     <v-col v-if="!handy" class="d-flex align-center justify-center fly-in-from-right" style="max-height: 100%">
-      <v-card class="card d-flex align-center">
-        <p style="font-size: 18px">
-          1. Webdesign <br><br>
-          2. Webentwicklung <br><br>
-          3. Responsive Design <br><br>
-          4. Benutzerfreundlichkeit (Usability) Optimierung <br><br>
-          5. Content Management System (CMS) Integration <br><br>
-          6. Suchmaschinenoptimierung (SEO) <br><br>
-          7. Webanalyse und Tracking <br><br>
-          8. Sicherheitsüberprüfung und -optimierung <br><br>
-          9. Wartung und Support
-        </p>
-
-      </v-card>
-
+      <v-img alt="Webdesign und Entwicklung" height="100%" src="../assets/notizblock.webp"
+             style="height: 80vw"></v-img>
     </v-col>
   </v-row>
 </template>
