@@ -22,7 +22,7 @@
       </div>
     </v-col>
     <v-col v-if="!handy" class="d-flex align-center justify-center fly-in-from-top-right" style="max-height: 100%">
-      <v-img alt="Webdesign und Entwicklung" height="100%" src="../assets/Entwicklung.png"
+      <v-img alt="Webdesign und Entwicklung" height="100%" src="../assets/Entwicklung.webp"
              style="border-radius: 13px; filter: drop-shadow(2px 2px 4px rgb(0,0,0));"></v-img>
     </v-col>
   </v-row>

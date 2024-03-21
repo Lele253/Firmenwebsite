@@ -23,12 +23,15 @@
     <v-col v-if="!handy" class="d-flex align-center justify-center fly-in-from-bottom">
       <v-carousel class="iframe" hide-delimiters show-arrows="hover" style="width: 50%; height: 100%">
         <v-carousel-item>
-          <iframe class="iframe" height="100%" src="https://mpu-institut-saar.de" width="100%">
+          <iframe class="iframe" height="100%" src="https://mpu-institut-saar.de" title="Mpu-saar-institut.de"
+                  width="100%">
 
           </iframe>
         </v-carousel-item>
         <v-carousel-item>
-          <iframe class="iframe" height="100%" src="https://tier-gesundheitszentrum.com" width="100%">
+          <iframe class="iframe" height="100%" src="https://tier-gesundheitszentrum.com"
+                  title="Tier-Gesuindheitszentrum.com"
+                  width="100%">
 
           </iframe>
         </v-carousel-item>

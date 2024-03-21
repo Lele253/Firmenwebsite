@@ -233,7 +233,7 @@ export default {
 
 .home {
   height: 100vh;
-  background-image: url("./assets/BackGround.webp");
+  background-image: url("./assets/BackGround_1_11zon.webp");
   background-size: cover;
 }
 
