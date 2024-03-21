@@ -3,7 +3,7 @@
     <v-col class="d-flex align-center justify-center">
       <div class="fly-in-from-left">
         <h1 :style="$store.state.handy ? 'font-size: 8vw' : 'font-size: 2.5vw'" class="headline"
-            style=" text-shadow: 1px 1px black"> Effiziente <br> Webentwicklung <br> für optimale Ergebnisse</h1>
+            style=" text-shadow: 1px 1px black">Unser Service <br> im Überblick</h1>
         <p :style="$store.state.handy ? 'font-size: 3.2vw' : 'font-size: 1.1vw'" class="mt-16">
           Unsere Dienstleistungen umfassen die Gestaltung und <br>
           Entwicklung ansprechender und funktionaler Websites und <br>
