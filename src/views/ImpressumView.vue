@@ -5,7 +5,7 @@
               style="height: 80%; background-color: rgba(255,255,255,0.66); overflow-y: scroll; font-size: 1.7vw">
         <h2>
           Impressum</h2>
-        <p>Name FastGlobeIT Franke/Graf GBR<br/>
+        <p>Name FastGlobeIT Franke/Graf Gbr<br/>
 
 
           Straße: Wasserloses Tal 23

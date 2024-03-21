@@ -2,8 +2,8 @@
   <div class="header">
     <v-row v-if="!handy" class="ma-0" style="width: 100%">
       <v-col class="d-flex justify-center align-center">
-        <v-img alt="Logo FastGlobeIt" height="80" src="../assets/Logo.webp" style="cursor: pointer"
-               width="300" @click="$router.push('/')"></v-img>
+        <div class="logo" style="cursor: pointer"
+             @click="$router.push('/')"></div>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
         <router-link :class="$route.path === '/skills' ? 'mein-link-active':'mein-link'" to="skills">Skills

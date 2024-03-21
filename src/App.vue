@@ -220,6 +220,13 @@ export default {
   border-radius: 30px !important;
 }
 
+.logo {
+  height: 100px;
+  width: 300px;
+  background-size: cover;
+  background-image: url("./assets/Logo.webp");
+}
+
 .button-handy:active {
   margin-top: 60px;
   border: solid #969262 2px !important;
