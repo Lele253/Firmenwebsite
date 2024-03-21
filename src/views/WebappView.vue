@@ -20,7 +20,7 @@
       </div>
     </v-col>
     <v-col v-if="!handy" class="d-flex align-center justify-center fly-in-from-top" style="max-height: 100%">
-      <v-img height="100%" src="../assets/Webapp.png"></v-img>
+      <v-img alt="Webdesign und Entwicklung" height="100%" src="../assets/Webapp.png"></v-img>
     </v-col>
   </v-row>
 </template>

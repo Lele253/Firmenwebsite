@@ -26,31 +26,31 @@
     <v-col v-if="!handy" class="fly-in-from-top-left">
       <v-row class="ma-0 align-center justify-center" style="width: 100%; height: 60vh">
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/java.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/java.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/vue.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/vue.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/Vuetify3.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/Vuetify3.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/Angular.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/Angular.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/Springboot.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/Springboot.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/typescript.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/typescript.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/html.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/html.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/CSS.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/CSS.png"></v-img>
         </v-col>
         <v-col class="d-flex justify-center" cols="4" style="height: 40%; width: 40%">
-          <v-img class="skills" cover src="../assets/JavaScript.png"></v-img>
+          <v-img alt="Webdesign und Entwicklung" class="skills" cover src="../assets/JavaScript.png"></v-img>
         </v-col>
       </v-row>
     </v-col>

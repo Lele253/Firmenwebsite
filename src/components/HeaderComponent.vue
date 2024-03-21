@@ -29,7 +29,7 @@
     </v-row>
     <v-row v-if="handy" class="ma-0" style="width: 100%">
       <v-col class="d-flex justify-center mt-n8" cols="12">
-        <v-img height="80" src="../assets/Logo.webp" style="cursor: pointer" width="300"
+        <v-img alt="Webdesign und Entwicklung" height="80" src="../assets/Logo.webp" style="cursor: pointer" width="300"
                @click="$router.push('/')"></v-img>
       </v-col>
       <v-col class="d-flex justify-center align-center">
