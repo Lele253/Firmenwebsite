@@ -7,10 +7,10 @@
             Impressum
           </router-link>
         </span>
-        <span>
+        <span v-if="!handy">
               |
         </span>
-        <span>
+        <span v-if="!handy">
           <router-link class="link" to="/rechnung">
              Verwaltung
 
@@ -31,8 +31,14 @@
   </div>
 </template>
 
-<script setup>
+<script>
+import {mapGetters} from "vuex";
 
+export default {
+  computed: {
+    ...mapGetters(['handy'])
+  }
+}
 </script>
 
 
