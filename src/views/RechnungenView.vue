@@ -83,7 +83,7 @@
             <tr v-for="item in bereinigtestLeistungsArray" :key="item.text">
               <td class="text-center">{{ item.text }}</td>
               <td class="text-center">{{ item.menge }}</td>
-              <td class="text-center">{{ calculateTotal(item.menge, item.preis) }} </td>
+              <td class="text-center">{{ calculateTotal(item.menge, item.preis) }}</td>
               <td class="text-center">
                 <icon :icon="item.löschen" color="red" style="font-size: 30px" @click="deleteLeistung(item)"/>
               </td>
@@ -105,9 +105,9 @@
       </v-row>
       <v-row>
         <v-col class="mt-16" cols="8">
-          <p class="mt-n7">{{vorname}} {{name}}</p> <br>
-          <p class="mt-n7">{{straße}} {{hausnummer}}</p> <br>
-          <p class="mt-n7">{{plz}} {{ort}}</p> <br>
+          <p class="mt-n7">{{ vorname }} {{ name }}</p> <br>
+          <p class="mt-n7">{{ straße }} {{ hausnummer }}</p> <br>
+          <p class="mt-n7">{{ plz }} {{ ort }}</p> <br>
         </v-col>
         <v-col cols="4">
           <div class="d-flex justify-center">
@@ -209,7 +209,7 @@
                 {{ calculatedPreis }}
               </p>
             </v-col>
-            <v-col class="mt-n5"  cols="12">
+            <v-col class="mt-n5" cols="12">
               <v-divider></v-divider>
             </v-col>
           </v-row>
@@ -254,9 +254,9 @@
       </v-row>
       <v-row>
         <v-col class="mt-13" cols="8">
-          <p class="mt-n7">{{vorname}} {{name}}</p> <br>
-          <p class="mt-n7">{{straße}} {{hausnummer}}</p> <br>
-          <p class="mt-n7">{{plz}} {{ort}}</p> <br>
+          <p class="mt-n7">{{ vorname }} {{ name }}</p> <br>
+          <p class="mt-n7">{{ straße }} {{ hausnummer }}</p> <br>
+          <p class="mt-n7">{{ plz }} {{ ort }}</p> <br>
         </v-col>
         <v-col cols="4">
           <div class="d-flex justify-center">
@@ -277,7 +277,7 @@
         <v-col class="d-flex justify-end" cols="6">
           <p>
             Rechnungsdatum: {{ formattedDate }} <br>
-            Rechnungsnummer: {{rechnungsnummer}} <br>
+            Rechnungsnummer: {{ rechnungsnummer }} <br>
             Steuer-ID: folgt in kürze...
           </p>
         </v-col>
@@ -290,7 +290,8 @@
       <v-row>
         <v-col class="mt-n2">
           <p>Sehr geehrte Damen und Herren,</p>
-          <p>wir danken Ihnen für Ihren Auftrag und freuen uns, Ihnen die folgende Rechnung gemäß unserer Vereinbarung zu präsentieren:</p>
+          <p>wir danken Ihnen für Ihren Auftrag und freuen uns, Ihnen die folgende Rechnung gemäß unserer Vereinbarung
+            zu präsentieren:</p>
         </v-col>
       </v-row>
       <div style="height: 580px">
@@ -358,7 +359,7 @@
                 {{ calculatedPreis }}
               </p>
             </v-col>
-            <v-col class="mt-n5"  cols="12">
+            <v-col class="mt-n5" cols="12">
               <v-divider></v-divider>
             </v-col>
           </v-row>
@@ -368,10 +369,12 @@
       <v-row class="align-content-end">
         <v-col cols="12">
           <p class="ml-5 mt-16">
-            Wir hoffen, dass unsere Rechnung Ihren Erwartungen entspricht und bedanken uns für Ihr Vertrauen in unsere Dienstleistungen.
+            Wir hoffen, dass unsere Rechnung Ihren Erwartungen entspricht und bedanken uns für Ihr Vertrauen in unsere
+            Dienstleistungen.
           </p>
           <p class="ml-5">
-            Sollten Sie weitere Fragen haben oder zusätzliche Informationen benötigen, stehen wir Ihnen jederzeit gerne zur Verfügung.
+            Sollten Sie weitere Fragen haben oder zusätzliche Informationen benötigen, stehen wir Ihnen jederzeit gerne
+            zur Verfügung.
           </p>
           <br>
           <p class="ml-5">
@@ -454,9 +457,9 @@ export default {
         const menge = current.menge || 1;
         return accumulator + (preis * menge);
       }, 0);
-      return gesamtPreis.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+      return gesamtPreis.toLocaleString('de-DE', {style: 'currency', currency: 'EUR'});
     },
-    ...mapGetters(['rechnungArray','user','handy']),
+    ...mapGetters(['rechnungArray', 'user', 'handy']),
     bereinigtestLeistungsArray() {
       return this.leistungen.map(item => {
         const newObj = Object.assign({...item, löschen: 'fluent:delete-16-regular'}, item);
@@ -470,15 +473,16 @@ export default {
       this.$store.dispatch('user', false);
       this.$router.push('/')
     },
-   async umleitung(){
+    async umleitung() {
       console.log(this.$store.state.user)
       try {
-        const user = await axios.get('/user')
+        const user = await axios.get('https://tier-gesundheitszentrum.com:8080/user')
+        console.log(user)
         this.$store.dispatch('user', user.data)
       } catch (error) {
         console.log(error)
       }
-      if(!this.user){
+      if (!this.user) {
         this.$router.push('login')
       }
     },
@@ -495,7 +499,7 @@ export default {
     calculateTotal(quantity, priceWithEuro) {
       const price = parseFloat(priceWithEuro.replace(',', '.').replace('€', '').trim());
       const total = quantity * price;
-      return total.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+      return total.toLocaleString('de-DE', {style: 'currency', currency: 'EUR'});
     },
     deleteLeistung(item) {
       for (let i = 0; i < this.leistungen.length; i++) {
@@ -540,6 +544,7 @@ export default {
 p {
   font-size: 15px;
 }
+
 .v-row {
   width: 100%;
 }
