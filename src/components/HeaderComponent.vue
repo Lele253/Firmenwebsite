@@ -29,8 +29,8 @@
     </v-row>
     <v-row v-if="handy" class="ma-0" style="width: 100%">
       <v-col class="d-flex justify-center mt-n8" cols="12">
-        <v-img alt="Webdesign und Entwicklung" height="80" src="../assets/Logo.webp" style="cursor: pointer" width="360"
-               @click="$router.push('/')"></v-img>
+        <div class="logo" style="cursor: pointer"
+             @click="$router.push('/')"></div>
       </v-col>
       <v-col class="d-flex justify-center align-center">
         <router-link :class="$route.path === '/skills' ? 'mein-link-handy':'mein-link-handy-active'"
