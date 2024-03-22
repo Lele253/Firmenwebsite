@@ -398,13 +398,13 @@
       </v-row>
       <v-row class="ml-2">
         <v-col cols="6" style="color: #bb7448">
-          <p>Stefan Franke</p>
-          <p>Kreissparkasse WND</p> <br>
-          <p class="mt-n7"> IBAN: DE47 5925 1020 0050 2240 13</p> <br>
-          <p class="mt-n7"> BIC: SALADE51WND</p> <br>
+          <p>Fast Globe IT</p>
+          <p>Sparkasse an Volme und Ruhr</p> <br>
+          <p class="mt-n7"> IBAN: DE61 4505 0001 1000 5618 25</p> <br>
+          <p class="mt-n7"> BIC: WELADE3HXXX</p> <br>
         </v-col>
         <v-col cols="6" style="color: #bb7448">
-          <p>Paypal: stefanfausst@web.de</p></v-col>
+          <p>Paypal: fastglobeit@gmail.com</p></v-col>
       </v-row>
     </div>
   </div>
