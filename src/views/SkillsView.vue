@@ -18,7 +18,7 @@
           implementieren. Mit unserer Expertise bieten wir Ihnen nicht <br>
           nur eine erstklassige Nutzererfahrung, sondern auch die <br>
           Gewissheit, dass Ihre Anwendungen vor potenziellen <br>
-          Bedrohungen geschützt sind
+          Bedrohungen geschützt sind.
         </p>
         <TerminComponent class="mt-n4"></TerminComponent>
       </div>
