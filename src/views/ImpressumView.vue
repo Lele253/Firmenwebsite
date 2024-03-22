@@ -5,7 +5,7 @@
               style="height: 80%; background-color: rgba(255,255,255,0.66); overflow-y: scroll; font-size: 1.7vw">
         <h2>
           Impressum</h2>
-        <p>Name FastGlobeIT Franke/Graf Gbr<br/>
+        <p>Name FastGlobe IT Franke/Graf Gbr<br/>
 
 
           Straße: Wasserloses Tal 23
@@ -78,17 +78,16 @@
               style="height: 80%; background-color: rgba(255,255,255,0.66); overflow-y: scroll; font-size: 0.7vw">
         <h2>
           Impressum</h2>
-        <p>Name FastGlobeIT Franke/Graf GBR<br/>
+        <p>Name FastGlobe IT Franke/Graf Gbr<br/>
 
 
           Straße: Wasserloses Tal 23
           <br/>
           Ort: 58093 <br>
           Tel:
-          <a href="https://wa.me/message/SCZOXGKWSLF6M1" target="_blank">01786565122</a>
+          <a href="https://wa.me/message/SCZOXGKWSLF6M1" target="_blank">0178 6565122</a>
 
         </p>
-        <!--        Telefon: <a class="email" href="tel:+491635059366">+49 163 5059366</a> <br>-->
         E-Mail: <a class="email" href="mailto:email.de">FastGlobeIt@gmail.com</a> <br><br>
 
         <h2>Website created by</h2>

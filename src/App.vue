@@ -5,6 +5,7 @@
         <HeaderComponent></HeaderComponent>
         <router-view></router-view>
         <FooterComponent></FooterComponent>
+        <cookie-accept-decline element-id="id"/>
       </div>
     </v-main>
   </v-app>
@@ -14,10 +15,11 @@
 
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
+import cookieAcceptDecline from "@/views/Cookie-accept-decline.vue";
 
 export default {
   name: 'App',
-  components: {FooterComponent, HeaderComponent},
+  components: {FooterComponent, HeaderComponent, cookieAcceptDecline},
   methods: {},
 
   data: () => ({
