@@ -1,21 +1,49 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import ImpressumView from "@/views/ImpressumView";
 import DatenschutzView from "@/views/DatenschutzView";
 import LoginView from "@/views/LoginView";
-import BenutzerProfilView from "@/views/BenutzerProfilView";
+import HomeView from "@/views/HomeView";
 import RechnungenView from "@/views/RechnungenView.vue";
+import SkillsView from "@/views/SkillsView.vue";
+import WebsiteView from "@/views/WebsiteView.vue";
+import WebappView from "@/views/WebappView.vue";
+import EntwicklungView from "@/views/EntwicklungView.vue";
+import ServiceView from "@/views/ServiceView.vue";
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
+
   {
     path: '/impressum',
     name: 'impressum',
     component: ImpressumView
+  },  {
+    path: '/service',
+    name: 'Service',
+    component: ServiceView
+  },
+  {
+    path: '/webapp',
+    name: 'Webapp',
+    component: WebappView
+  }, {
+    path: '/entwicklung',
+    name: 'Entwicklung',
+    component: EntwicklungView
+  },
+  {
+    path: '/',
+    name: 'Homeview',
+    component: HomeView
+  },
+  {
+    path: '/website',
+    name: 'Website',
+    component: WebsiteView
+  },
+  {
+    path: '/skills',
+    name: 'SkillsView',
+    component: SkillsView
   },
   {
     path: '/datenschutz',
@@ -31,11 +59,7 @@ const routes = [
     name: 'login',
     component: LoginView
   },
-  {
-    path: '/benutzerprofil',
-    name: 'profile',
-    component: BenutzerProfilView
-  },
+
 
 
   {
