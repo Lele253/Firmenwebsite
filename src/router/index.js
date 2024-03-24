@@ -9,7 +9,6 @@ import WebsiteView from "@/views/WebsiteView.vue";
 import WebappView from "@/views/WebappView.vue";
 import EntwicklungView from "@/views/EntwicklungView.vue";
 import ServiceView from "@/views/ServiceView.vue";
-import FitForLifeView from "@/views/FitForLifeView.vue";
 
 const routes = [
 
@@ -59,11 +58,6 @@ const routes = [
         path: '/login',
         name: 'login',
         component: LoginView
-    },
-    {
-        path: '/fitforlife',
-        name: 'firforlife',
-        component: FitForLifeView
     },
 
 
