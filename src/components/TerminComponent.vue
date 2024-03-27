@@ -58,7 +58,7 @@
               </v-col>
               <v-col class="d-flex justify-center" cols="6">
                 <v-btn variant="text" @click="dialog = false">
-                  Abbrechen
+                  Schließen
                 </v-btn>
               </v-col>
             </v-row>
@@ -88,8 +88,8 @@
                 <v-text-field v-model="telefonnummer" label="Telefonnummer" variant="underlined"/>
               </v-col>
               <v-col class="d-flex justify-center mt-6" cols="10">
-                <v-textarea v-model="text" clearable counter
-                            label="Nachricht" no-resize variant="underlined"/>
+                <v-textarea v-model="text" clearable="true" counter
+                            label="Nachricht" no-resize="true" variant="underlined"/>
               </v-col>
             </v-row>
           </v-col>
@@ -123,7 +123,7 @@
               </v-col>
               <v-col class="d-flex justify-center" cols="6">
                 <v-btn variant="text" @click="dialog = false">
-                  Abbrechen
+                  Schließen
                 </v-btn>
               </v-col>
             </v-row>
@@ -199,11 +199,10 @@ export default {
              console.log(e)
            }*/
 
-          this.vorname = 'Vielen Dank für Ihre Anfrage.'
-          this.nachname = 'Benjamin Bodtländer wurde benachrichtigt.'
-          this.email = ''
-          this.telefonnummer = ''
-          this.nachricht = ''
+          this.name = null
+          this.email = null
+          this.telefonnummer = null
+          this.text = 'Vielen Dank für Ihre Anfrage. Sie können den Dialog jetzt schließen. Wir werden uns in kürze bei Ihnen melden.'
         } catch (e) {
           console.log(e)
         }
