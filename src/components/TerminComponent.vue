@@ -202,7 +202,7 @@ export default {
           this.name = null
           this.email = null
           this.telefonnummer = null
-          this.text = 'Vielen Dank für Ihre Anfrage. Sie können den Dialog jetzt schließen. Wir werden uns in kürze bei Ihnen melden.'
+          this.text = 'Vielen Dank für Ihre Anfrage. Sie können den Dialog jetzt schließen. Wir werden uns in Kürze bei Ihnen melden.'
         } catch (e) {
           console.log(e)
         }
