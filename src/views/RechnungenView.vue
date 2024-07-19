@@ -472,10 +472,14 @@ export default {
     }
   },
   methods: {
-    logout() {
-      localStorage.removeItem('token');
-      this.$store.dispatch('user', false);
-      this.$router.push('/')
+    async logout() {
+      try {
+        localStorage.removeItem('token');
+        await this.$store.dispatch('user', false);
+        this.$router.push('/');
+      } catch (error) {
+        console.error("Logout error: ", error);
+      }
     },
     async umleitung() {
       console.log(this.$store.state.user)
