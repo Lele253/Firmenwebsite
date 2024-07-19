@@ -29,10 +29,10 @@
               <v-text-field v-model="hausnummer" label="Hausnummer" variant="outlined"/>
             </v-col>
             <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="ort" label="Ort" variant="outlined"/>
+              <v-text-field v-model="plz" label="PLZ" type="number" variant="outlined"/>
             </v-col>
             <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="plz" label="PLZ" type="number" variant="outlined"/>
+              <v-text-field v-model="ort" label="Ort" variant="outlined"/>
             </v-col>
             <v-col class="d-flex justify-center" cols="3">
               <v-text-field v-model="text" label="Leistung" variant="outlined"/>
