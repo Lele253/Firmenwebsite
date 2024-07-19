@@ -100,7 +100,7 @@
 
       <v-row justify="start">
         <v-col cols="10">
-          FastGlobeIT Gbr Franke/Graf - Wasserloses Tal 23, 58093 Hagen
+          FastGlobeIT Gbr Franke/Graf - Roggenkamp 8, 58093 Hagen
         </v-col>
       </v-row>
       <v-row>
@@ -249,7 +249,7 @@
     <div id="rechnung-pdf" class="pa-8">
       <v-row justify="start">
         <v-col cols="10">
-          FastGlobeIT Gbr Franke/Graf - Wasserloses Tal 23, 58093 Hagen
+          FastGlobeIT Gbr Franke/Graf - Roggenkamp 8, 58093 Hagen
         </v-col>
       </v-row>
       <v-row>
@@ -278,7 +278,7 @@
           <p>
             Rechnungsdatum: {{ formattedDate }} <br>
             Rechnungsnummer: {{ rechnungsnummer }} <br>
-            Steuer-ID: folgt in kürze...
+            Steuer-ID: DE368719498
           </p>
         </v-col>
       </v-row>
