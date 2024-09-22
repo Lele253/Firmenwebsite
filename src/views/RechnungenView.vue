@@ -499,7 +499,7 @@ export default {
         console.log(error)
       }
       if (!this.user) {
-        this.$router.push('login')
+        this.$router.push('/login')
       }
     },
     generatePDF(contentId) {
