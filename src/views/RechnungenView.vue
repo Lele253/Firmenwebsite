@@ -33,6 +33,9 @@
             <v-col class="d-flex justify-center" cols="3">
               <v-text-field v-model="ort" label="Ort" variant="outlined"/>
             </v-col>
+            <v-col class="d-flex justify-center" cols="12">
+              <v-textarea v-model="infoText" label="Info Text" variant="outlined"/>
+            </v-col>
             <v-col class="d-flex justify-center" cols="3">
               <v-text-field v-model="text" label="Leistung" variant="outlined"/>
             </v-col>
@@ -376,6 +379,10 @@
             Wir hoffen, dass unsere Rechnung Ihren Erwartungen entspricht und bedanken uns für Ihr Vertrauen in unsere
             Dienstleistungen.
           </p>
+          <p v-if="infoText != null" class="ml-5">
+            <br> {{infoText}}
+          </p>
+          <br>
           <p class="ml-5">
             Sollten Sie weitere Fragen haben oder zusätzliche Informationen benötigen, stehen wir Ihnen jederzeit gerne
             zur Verfügung.
@@ -398,7 +405,7 @@
         <v-col cols="6">
           <b class="ml-5">Zahlungsbedingungen: </b> <br>
           <p class="ml-5">Überweisung oder Paypal</p> <br>
-          <p class="ml-5">Der Betrag ist bei Lieferung sofort fällig</p>
+          <p class="ml-5">Der Betrag ist bei Lieferung sofort fällig.</p>
         </v-col>
         <v-col class="mt-2" cols="12">
           <v-divider></v-divider>
@@ -441,6 +448,8 @@ export default {
       leistungen: [],
       menge: '',
       rechnungsnummer: '',
+
+      infoText: null
     }
   },
   computed: {
