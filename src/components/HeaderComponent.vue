@@ -6,24 +6,24 @@
              @click="$router.push('/')"></div>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/skills' ? 'mein-link-active':'mein-link'" to="skills">Skills
+        <router-link :class="$route.path === '/skills' ? 'mein-link-active':'mein-link'" to="/skills">Skills
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/website' ? 'mein-link-active':'mein-link'" to="website">Website
+        <router-link :class="$route.path === '/website' ? 'mein-link-active':'mein-link'" to="/website">Website
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/webapp' ? 'mein-link-active':'mein-link'" to="webapp">Webapp
+        <router-link :class="$route.path === '/webapp' ? 'mein-link-active':'mein-link'" to="/webapp">Webapp
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/entwicklung' ? 'mein-link-active':'mein-link'" to="entwicklung">
+        <router-link :class="$route.path === '/entwicklung' ? 'mein-link-active':'mein-link'" to="/entwicklung">
           Entwicklung
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/service' ? 'mein-link-active':'mein-link'" to="service">Service
+        <router-link :class="$route.path === '/service' ? 'mein-link-active':'mein-link'" to="/service">Service
         </router-link>
       </v-col>
     </v-row>
@@ -34,26 +34,26 @@
       </v-col>
       <v-col class="d-flex justify-center align-center">
         <router-link :class="$route.path === '/skills' ? 'mein-link-handy':'mein-link-handy-active'"
-                     to="skills">Skills
+                     to="/skills">Skills
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/website' ? 'mein-link-handy':'mein-link-handy-active'" to="website">
+        <router-link :class="$route.path === '/website' ? 'mein-link-handy':'mein-link-handy-active'" to="/website">
           Website
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/webapp' ? 'mein-link-handy':'mein-link-handy-active'" to="webapp">
+        <router-link :class="$route.path === '/webapp' ? 'mein-link-handy':'mein-link-handy-active'" to="/webapp">
           Webapp
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
         <router-link :class="$route.path === '/entwicklung' ? 'mein-link-handy':'mein-link-handy-active'"
-                     to="entwicklung">Entwicklung
+                     to="/entwicklung">Entwicklung
         </router-link>
       </v-col>
       <v-col class=" d-flex justify-center align-center">
-        <router-link :class="$route.path === '/service' ? 'mein-link-handy':'mein-link-handy-active'" to="service">
+        <router-link :class="$route.path === '/service' ? 'mein-link-handy':'mein-link-handy-active'" to="/service">
           Service
         </router-link>
       </v-col>
