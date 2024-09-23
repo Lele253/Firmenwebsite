@@ -380,8 +380,9 @@
             Dienstleistungen.
           </p>
           <p v-if="infoText != null" class="ml-5">
-            <br> {{infoText}}
+            <br> <span v-html="formattedInfoText"></span>
           </p>
+
           <br>
           <p class="ml-5">
             Sollten Sie weitere Fragen haben oder zusätzliche Informationen benötigen, stehen wir Ihnen jederzeit gerne
@@ -453,7 +454,11 @@ export default {
     }
   },
   computed: {
-
+    formattedInfoText() {
+      return this.infoText
+          .replace(/ /g, "&nbsp;")  // Leerzeichen zu &nbsp; umwandeln
+          .replace(/\n/g, "<br>");  // Zeilenumbrüche zu <br> umwandeln
+    },
     formattedDate() {
       if (!this.currentDate) return '';
 
