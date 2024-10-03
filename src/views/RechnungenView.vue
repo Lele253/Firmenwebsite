@@ -1,105 +1,173 @@
 <template>
-  <div v-if="user && !handy" class="d-flex justify-center mt-10">
-
-    <v-row class="justify-center mt-12 ma-3" style="overflow-y: scroll">
-      <v-col cols="6">
-        <v-card
-            class="mx-auto my-12 pa-5"
-            style="background-color: rgba(255,255,255,0.75)">
-          <v-row class="justify-center mt-3">
-            <v-col cols="12">
-              <h2 class="text-center">
-                Rechnung/Kostenvoranschlag erstellen
-              </h2>
+  <div v-if="user && !handy" class="d-flex justify-center pt-15">
+    <div >
+      <v-tabs
+          v-model="tab"
+          align-tabs="center"
+          color="white"
+      >
+        <v-tab :value="0">Erstellen</v-tab>
+        <v-tab :value="1">Löschen</v-tab>
+      </v-tabs>
+      <v-window  transition="none" class="mt-5 ma-3"  v-model="tab">
+        <v-window-item class="pa-0" value="0">
+          <v-row class="justify-center mt-n4  ma-3" >
+            <v-col cols="6">
+              <v-card
+                  theme="dark"
+                 >
+                <v-card-item>
+                  <v-row style="overflow-y: scroll; height: 580px"  class="justify-center mt-3">
+                    <v-col cols="12">
+                      <h2 class="text-center">
+                        Rechnung/Kostenvoranschlag erstellen
+                      </h2>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="4">
+                      <v-text-field v-model="vorname" label="Vorname" type="name" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="4">
+                      <v-text-field v-model="name" label="Name" type="name" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="straße" label="Straße" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="hausnummer" label="Hausnummer" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="plz" label="PLZ" type="number" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="ort" label="Ort" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="12">
+                      <v-textarea auto-grow v-model="infoText" label="Info Text" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="text" label="Leistung" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="preis" label="Preis" variant="outlined" @input="updatePreis"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="menge" label="Anzahl" type="number" variant="outlined"/>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="3">
+                      <v-text-field v-model="calculatedPreis" disabled label="Gesamtpreis"
+                                    variant="outlined"/>
+                    </v-col>
+                  </v-row>
+                </v-card-item>
+                <v-card-actions class="d-flex justify-center">
+                  <v-row style="width: 100%" class="justify-center pb-5">
+                    <v-col class=" d-flex justify-center" cols="4">
+                      <v-btn variant="outlined" @click="leistungSpeichern">
+                        Leistung Speichern
+                      </v-btn>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="2">
+                      <v-btn variant="outlined" :disabled="leistungen.length === 0" @click="generatePDF('rechnung-pdf')">
+                        Rechnung
+                      </v-btn>
+                    </v-col>
+                    <v-col class="d-flex justify-center" cols="4">
+                      <v-btn variant="outlined" :disabled="leistungen.length === 0" @click="generatePDF('kostenvoranschlag-pdf')">
+                        Kostenvoranschlag
+                      </v-btn>
+                    </v-col>
+                    <v-col cols="2">
+                      <v-btn variant="outlined" @click="logout">LOGOUT</v-btn>
+                    </v-col>
+                  </v-row>
+                </v-card-actions>
+              </v-card>
             </v-col>
-            <v-col class="d-flex justify-center" cols="4">
-              <v-text-field v-model="vorname" label="Vorname" type="name" variant="outlined"/>
+            <v-col cols="6">
+              <v-card
+                  theme="dark"
+                     >
+                <v-card-item>
+                  <v-table>
+                    <thead>
+                    <tr>
+                      <th class="text-center">ID</th>
+                      <th class="text-center">Leistung</th>
+                      <th class="text-center">Menge</th>
+                      <th class="text-center">Gesamtpreis</th>
+                      <th class="text-center">Aktionen</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(item, index) in bereinigtestLeistungsArray" :key="item.text">
+                      <td class="text-center">{{ item.id }}</td>
+                      <td class="text-center">{{ item.titel }}</td>
+                      <td class="text-center">{{ item.anzahl }}</td>
+                      <td class="text-center">{{ calculateTotal(item.anzahl, item.preis) }}</td>
+                      <td class="text-center">
+                        <icon :icon="item.löschen" color="red" style="font-size: 30px" @click="deleteLeistung(index)"/>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </v-table>
+                </v-card-item>
+              </v-card>
             </v-col>
-            <v-col class="d-flex justify-center" cols="4">
-              <v-text-field v-model="name" label="Name" type="name" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="4">
-              <v-text-field v-model="rechnungsnummer" label="Rechnungsnummer" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="straße" label="Straße" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="hausnummer" label="Hausnummer" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="plz" label="PLZ" type="number" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="ort" label="Ort" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="12">
-              <v-textarea v-model="infoText" label="Info Text" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="text" label="Leistung" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="preis" label="Preis" variant="outlined" @input="updatePreis"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="menge" label="Anzahl" type="number" variant="outlined"/>
-            </v-col>
-            <v-col class="d-flex justify-center" cols="3">
-              <v-text-field v-model="calculatedPreis" disabled="true" label="Gesamtpreis"
-                            variant="outlined"/>
-            </v-col>
-            <v-row>
-              <v-col class=" d-flex justify-center" cols="4">
-                <v-btn @click="leistungSpeichern">
-                  Leistung Speichern
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center" cols="2">
-                <v-btn :disabled="leistungen.length === 0 ? true: false" @click="generatePDF('rechnung-pdf')">
-                  Rechnung
-                </v-btn>
-              </v-col>
-              <v-col class="d-flex justify-center" cols="4">
-                <v-btn :disabled="leistungen.length === 0 ? true: false" @click="generatePDF('kostenvoranschlag-pdf')">
-                  Kostenvoranschlag
-                </v-btn>
-              </v-col>
-              <v-col cols="2">
-                <v-btn @click="logout">LOGOUT</v-btn>
-              </v-col>
-            </v-row>
           </v-row>
-        </v-card>
-      </v-col>
-      <v-col cols="6">
-        <v-card class="mx-auto my-12 pa-5"
-                style="background-color: rgba(255,255,255,0.75)">
-          <v-table>
-            <thead>
-            <tr>
-              <th class="text-center">ID</th>
-              <th class="text-center">Leistung</th>
-              <th class="text-center">Menge</th>
-              <th class="text-center">Gesamtpreis</th>
-              <th class="text-center">Aktionen</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="item in bereinigtestLeistungsArray" :key="item.text">
-              <td class="text-center">{{ item.id }}</td>
-              <td class="text-center">{{ item.text }}</td>
-              <td class="text-center">{{ item.menge }}</td>
-              <td class="text-center">{{ calculateTotal(item.menge, item.preis) }}</td>
-              <td class="text-center">
-                <icon :icon="item.löschen" color="red" style="font-size: 30px" @click="deleteLeistung(item)"/>
-              </td>
-            </tr>
-            </tbody>
-          </v-table>
-        </v-card>
-      </v-col>
-    </v-row>
+        </v-window-item>
+        <v-window-item  value="1">
+
+
+          <v-card border="10" theme="dark" flat title="Rechnungen">
+            <template v-slot:text>
+              <v-text-field
+                  clearable
+                  v-model="search"
+                  label="Search"
+                  prepend-inner-icon="mdi-magnify"
+                  variant="outlined"
+                  hide-details
+                  single-line
+              ></v-text-field>
+            </template>
+            <v-data-table-virtual
+                height="600"
+                fixed-header
+                :headers="headers"
+                :items="filteredRechnungen"
+                :items-per-page="-1"
+                class="elevation-1"
+            >
+
+
+            <template v-slot:item="{ item }">
+                <tr>
+                  <td>{{ item.rechnungsnummer }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.vorname }}</td>
+                  <td><input type="date" disabled v-model="item.datum"></td>
+                  <td>{{ item.preis }}</td>
+                  <td>
+                    <p v-for="leistung in item.leistungen" :key="leistung">
+                      {{ leistung.titel }}: {{ leistung.anzahl }}x{{ leistung.preis }} <br>
+                    </p>
+                  </td>
+                  <td>
+                    <v-icon @click="setVorlage(item)" color="green" style="font-size: 24px">
+                      mdi-content-copy
+                    </v-icon>
+                    <v-icon @click="downloadPDF('rechnung-pdf', item)" color="primary" style="font-size: 24px">mdi-file-pdf</v-icon>
+                    <v-icon @click="deleteRechnung(item)" color="red" style="font-size: 24px">mdi-delete</v-icon>
+                  </td>
+                </tr>
+              </template>
+            </v-data-table-virtual>
+          </v-card>
+
+
+        </v-window-item>
+      </v-window>
+    </div>
   </div>
 
   <div class="pa-8" style="display: none">
@@ -180,12 +248,12 @@
           </v-col>
           <v-col class="d-flex justify-start" cols="5">
             <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
-              {{ x.text }}
+              {{ x.titel }}
             </p>
           </v-col>
           <v-col class="d-flex justify-end" cols="2">
             <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
-              {{ x.menge }}
+              {{ x.anzahl }}
 
             </p>
           </v-col>
@@ -197,7 +265,7 @@
           </v-col>
           <v-col class="d-flex justify-end" cols="2">
             <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
-              {{ calculateTotal(x.menge, x.preis) }}
+              {{ calculateTotal(x.anzahl, x.preis) }}
             </p>
           </v-col>
         </v-row>
@@ -330,12 +398,12 @@
           </v-col>
           <v-col class="d-flex justify-start" cols="5">
             <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
-              {{ x.text }}
+              {{ x.titel }}
             </p>
           </v-col>
           <v-col class="d-flex justify-end" cols="2">
             <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
-              {{ x.menge }}
+              {{ x.anzahl }}
 
             </p>
           </v-col>
@@ -347,7 +415,7 @@
           </v-col>
           <v-col class="d-flex justify-end" cols="2">
             <p class="text-black" style="color: #f2f2f2; margin-bottom: 6px">
-              {{ calculateTotal(x.menge, x.preis) }}
+              {{ calculateTotal(x.anzahl, x.preis) }}
             </p>
           </v-col>
         </v-row>
@@ -450,9 +518,25 @@ export default {
       menge: '',
       rechnungsnummer: '',
 
-      infoText: null
+      tab: 0,
+      search: null,
+
+      infoText: null,
+
+      headers: [
+        { title: 'Rechnungsnummer', key: 'rechnungsnummer' },
+        { title: 'Name', key: 'name' },
+        { title: 'Vorname', key: 'vorname' },
+        { title: 'Datum', key: 'datum' },
+        { title: 'Preis', key: 'preis' },
+        { title: 'Leistungen', key: 'leistungen' },
+        { title: 'Aktionen', key: 'actions', sortable: false },
+      ],
+      rechnungen: [],
+      filteredRechnungen: []
     }
   },
+
   computed: {
     formattedInfoText() {
       return this.infoText
@@ -472,7 +556,7 @@ export default {
     calculatedPreis() {
       const gesamtPreis = this.leistungen.reduce((accumulator, current) => {
         const preis = parseFloat(current.preis.replace('€', '').replace(',', '.'));
-        const menge = current.menge || 1;
+        const menge = current.anzahl || 1;
         return accumulator + (preis * menge);
       }, 0);
       return gesamtPreis.toLocaleString('de-DE', {style: 'currency', currency: 'EUR'});
@@ -507,29 +591,52 @@ export default {
         this.$router.push('/login')
       }
     },
-    generatePDF(contentId) {
-      let element = document.getElementById(contentId);
-      html2pdf(element, {
-        margin: 0,
-        filename: contentId === 'rechnung-pdf' ? this.name + '_' + this.formattedDate + '_Rechnung.pdf' : this.name + '_' + this.formattedDate + '_Kostenvoranschlag.pdf',
-        image: {type: 'pdf', quality: 2},
-        html2canvas: {scale: 3},
-        jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
-      });
+    async generatePDF(contentId) {
+      // Rechnung speichern, bevor PDF generiert wird
+      const rechnung = {
+        name: this.name,
+        vorname: this.vorname,
+        straße: this.straße,
+        hausnummer: this.hausnummer,
+        plz: this.plz,
+        ort: this.ort,
+        leistungen: this.leistungen,
+        datum: new Date(),
+        preis: this.calculatedPreis,
+        rechnungsnummer: this.rechnungsnummer,
+        text: this.infoText,
+        rechnungen: []
+      };
+
+      try {
+        const response = await axios.post('http://localhost:8081/auth/rechnungen', rechnung);
+
+        // Nach erfolgreichem Speichern der Rechnung, PDF generieren
+        if (response.status === 200) {
+          let element = document.getElementById(contentId);
+          html2pdf(element, {
+            margin: 0,
+            filename: contentId === 'rechnung-pdf' ? this.name + '_' + this.formattedDate + '_Rechnung.pdf' : this.name + '_' + this.formattedDate + '_Kostenvoranschlag.pdf',
+            image: {type: 'pdf', quality: 2},
+            html2canvas: {scale: 3},
+            jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
+          });
+          this.tab = 1
+          await this.loadRechnungen()
+        }
+      } catch (error) {
+        console.error("Fehler beim Speichern der Rechnung: ", error);
+        alert("Fehler beim Speichern der Rechnung.");
+      }
     },
     calculateTotal(quantity, priceWithEuro) {
       const price = parseFloat(priceWithEuro.replace(',', '.').replace('€', '').trim());
       const total = quantity * price;
       return total.toLocaleString('de-DE', {style: 'currency', currency: 'EUR'});
     },
-    deleteLeistung(item) {
-      for (let i = 0; i < this.leistungen.length; i++) {
-        if (this.leistungen[i].leistung === item.leistung &&
-            this.leistungen[i].preis === item.preis &&
-            this.leistungen[i].menge === item.menge) {
-          this.leistungen.splice(i, 1);
-        }
-      }
+    deleteLeistung(index) {
+      // Entferne das Element an der spezifischen Position (Index)
+      this.leistungen.splice(index, 1);
     },
     updatePreis() {
       this.preis = this.preis.replace(/€/g, '');
@@ -540,8 +647,8 @@ export default {
     leistungSpeichern() {
       if (this.leistungen.length < 10) {
         this.leistungen.push({
-          text: this.text,
-          menge: this.menge,
+          titel: this.text,
+          anzahl: this.menge,
           preis: this.preis,
         })
 
@@ -551,14 +658,134 @@ export default {
       } else {
         alert("Es sind nur 10 Leistungen zulässig.")
       }
+    },
+    async loadRechnungen() {
+      try {
+        const response = await axios.get('http://localhost:8081/auth/rechnungen');
+        this.rechnungen = response.data;
+        this.filteredRechnungen = this.rechnungen;
+        console.log(response.data)
+      } catch (error) {
+        console.error('Fehler beim Laden der Rechnungen:', error);
+      }
+    },
+    // PDF-Download-Logik
+    async downloadPDF(contentId, item) {
+      try {
+        // Setze die Rechnungsnummer und andere Felder aus dem item
+        this.rechnungsnummer = item.rechnungsnummer
+        this.name = item.name;
+        this.vorname = item.vorname;
+        this.straße = item.straße;
+        this.hausnummer = item.hausnummer;
+        this.plz = item.plz;
+        this.ort = item.ort;
+        this.leistungen = item.leistungen;
+        this.infoText = item.text
+
+
+        let element = document.getElementById(contentId);
+        if (element) {
+          await html2pdf(element, {
+            margin: 0,
+            filename: `${item.name}_${this.formattedDate}_Rechnung_${this.rechnungsnummer}.pdf`,
+            image: { type: 'pdf', quality: 2 },
+            html2canvas: { scale: 3 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+          });
+        } else {
+          alert('Fehler: Element für die PDF-Erstellung nicht gefunden.');
+        }
+      } catch (error) {
+        console.error('Fehler beim Generieren der PDF: ', error);
+        alert('Fehler beim Generieren der PDF.');
+      }
+    },
+    // Rechnung löschen
+    async deleteRechnung(item) {
+      if (confirm('Möchtest du diese Rechnung '+item.rechnungsnummer+' von '+item.vorname+' '+item.name+' löschen?')) {
+        try {
+          await axios.delete(`http://localhost:8081/auth/rechnungen/${item.id}`);
+          await this.loadRechnungen(); // Neu laden nach dem Löschen
+        } catch (error) {
+          console.error('Fehler beim Löschen der Rechnung:', error);
+        }
+      }
+    },
+    setVorlage(item) {
+      // Setze die Felder in die data-Attribute
+      this.name = item.name;
+      this.vorname = item.vorname;
+      this.straße = item.straße;
+      this.hausnummer = item.hausnummer;
+      this.plz = item.plz;
+      this.ort = item.ort;
+      this.rechnungsnummer = item.rechnungsnummer;
+      this.infoText = item.text
+      this.leistungen = item.leistungen;
+
+      // Wechsle den Tab auf 0 (zum Bearbeiten)
+      this.tab = 0;
+    },
+    customFilter() {
+      if (!this.search) {
+        this.filteredRechnungen = this.rechnungen;
+        return;
+      }
+
+      // Suchbegriff normalisieren: Punkt durch Komma ersetzen
+      const searchLower = this.search.toLowerCase().replace('.', ',');
+
+      // Filtere Rechnungen basierend auf Hauptfeldern und `leistungen`
+      this.filteredRechnungen = this.rechnungen.filter(item => {
+        const hasMatchInMainItem = Object.keys(item).some(key => {
+          const fieldValue = item[key];
+
+          if (Array.isArray(fieldValue)) return false;
+          if (fieldValue == null) return false;
+
+          // Bereinige Preisangaben, entferne Euro-Zeichen, Leerzeichen und setze Komma
+          let fieldString = String(fieldValue).toLowerCase();
+          if (key === 'preis') {
+            fieldString = fieldString.replace(/[€,]/g, '').replace('.', ',').trim(); // Entferne € und , ersetze . durch ,
+          }
+
+          return fieldString.includes(searchLower);
+        });
+
+        // Suche in `leistungen`-Array, falls vorhanden
+        const hasMatchInLeistungen = Array.isArray(item.leistungen) && item.leistungen.some(leistung => {
+          return Object.keys(leistung).some(key => {
+            let fieldValue = leistung[key];
+            if (fieldValue == null) return false;
+
+            // Bereinige Preisangaben in `leistungen` ebenfalls
+            let fieldString = String(fieldValue).toLowerCase();
+            if (key === 'preis') {
+              fieldString = fieldString.replace(/[€,]/g, '').replace('.', ',').trim(); // Entferne € und , ersetze . durch ,
+            }
+
+            return fieldString.includes(searchLower);
+          });
+        });
+
+        return hasMatchInMainItem || hasMatchInLeistungen;
+      });
     }
   },
   components: {
     Icon
   },
+  watch: {
+    search() {
+      this.customFilter(); // Jedes Mal, wenn sich die Suche ändert, filtere die Rechnungen neu
+    }
+  },
   mounted() {
     this.umleitung()
+    this.loadRechnungen()
     this.currentDate = Date.now();
+
   },
   created() {
   }

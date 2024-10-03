@@ -2,7 +2,7 @@
   <v-app id="home">
     <v-main>
       <div class="home">
-        <HeaderComponent></HeaderComponent>
+        <HeaderComponent v-if="$router.path === '/rechnung'"></HeaderComponent>
         <router-view></router-view>
         <FooterComponent></FooterComponent>
         <cookie-accept-decline element-id="id"/>
