@@ -28,9 +28,6 @@
                     <v-col class="d-flex justify-center" cols="4">
                       <v-text-field v-model="name" label="Name" type="name" variant="outlined"/>
                     </v-col>
-                    <v-col cols="4">
-                      <input type="date" v-model="date">
-                    </v-col>
                     <v-col class="d-flex justify-center" cols="3">
                       <v-text-field v-model="straße" label="Straße" variant="outlined"/>
                     </v-col>
@@ -147,7 +144,7 @@
                   <td>{{ item.rechnungsnummer }}</td>
                   <td>{{ item.name }}</td>
                   <td>{{ item.vorname }}</td>
-                  <td><input type="date" disabled v-model="item.datum"></td>
+                  <td><input  style="color: white" type="date" disabled v-model="item.datum"></td>
                   <td>{{ item.preis }}</td>
                   <td>
                     <p v-for="leistung in item.leistungen" :key="leistung">
@@ -605,7 +602,7 @@ export default {
         plz: this.plz,
         ort: this.ort,
         leistungen: this.leistungen,
-        datum: this.date,
+        datum: new Date(),
         preis: this.calculatedPreis,
         rechnungsnummer: this.rechnungsnummer,
         text: this.infoText,
@@ -684,6 +681,7 @@ export default {
         this.straße = item.straße;
         this.hausnummer = item.hausnummer;
         this.plz = item.plz;
+        this.date = item.datum
         this.ort = item.ort;
         this.leistungen = item.leistungen;
         this.infoText = item.text
