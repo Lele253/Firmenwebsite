@@ -622,6 +622,7 @@ export default {
             jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
           });
           this.tab = 1
+          this.rechnungsnummer = response.data.rechnungsnummer
           await this.loadRechnungen()
         }
       } catch (error) {
