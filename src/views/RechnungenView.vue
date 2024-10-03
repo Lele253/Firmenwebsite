@@ -14,8 +14,7 @@
           <v-row class="justify-center mt-n4  ma-3" >
             <v-col cols="6">
               <v-card
-                  theme="dark"
-                 >
+                  theme="dark">
                 <v-card-item>
                   <v-row style="overflow-y: scroll; height: 580px"  class="justify-center mt-3">
                     <v-col cols="12">
@@ -28,6 +27,9 @@
                     </v-col>
                     <v-col class="d-flex justify-center" cols="4">
                       <v-text-field v-model="name" label="Name" type="name" variant="outlined"/>
+                    </v-col>
+                    <v-col cols="4">
+                      <input type="date" v-model="date">
                     </v-col>
                     <v-col class="d-flex justify-center" cols="3">
                       <v-text-field v-model="straße" label="Straße" variant="outlined"/>
@@ -518,6 +520,8 @@ export default {
       menge: '',
       rechnungsnummer: '',
 
+      date: null,
+
       tab: 0,
       search: null,
 
@@ -546,7 +550,7 @@ export default {
     formattedDate() {
       if (!this.currentDate) return '';
 
-      const date = new Date(this.currentDate);
+      const date = new Date(this.date);
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
@@ -601,7 +605,7 @@ export default {
         plz: this.plz,
         ort: this.ort,
         leistungen: this.leistungen,
-        datum: new Date(),
+        datum: this.date,
         preis: this.calculatedPreis,
         rechnungsnummer: this.rechnungsnummer,
         text: this.infoText,
@@ -609,7 +613,7 @@ export default {
       };
 
       try {
-        const response = await axios.post('http://localhost:8081/auth/rechnungen', rechnung);
+        const response = await axios.post('https://fastglobeit.de:8081/auth/rechnungen', rechnung);
 
         // Nach erfolgreichem Speichern der Rechnung, PDF generieren
         if (response.status === 200) {
@@ -662,7 +666,7 @@ export default {
     },
     async loadRechnungen() {
       try {
-        const response = await axios.get('http://localhost:8081/auth/rechnungen');
+        const response = await axios.get('https://fastglobeit.de:8081/auth/rechnungen');
         this.rechnungen = response.data;
         this.filteredRechnungen = this.rechnungen;
         console.log(response.data)
@@ -706,7 +710,7 @@ export default {
     async deleteRechnung(item) {
       if (confirm('Möchtest du diese Rechnung '+item.rechnungsnummer+' von '+item.vorname+' '+item.name+' löschen?')) {
         try {
-          await axios.delete(`http://localhost:8081/auth/rechnungen/${item.id}`);
+          await axios.delete(`https://fastglobeit.de:8081/auth/rechnungen/${item.id}`);
           await this.loadRechnungen(); // Neu laden nach dem Löschen
         } catch (error) {
           console.error('Fehler beim Löschen der Rechnung:', error);
