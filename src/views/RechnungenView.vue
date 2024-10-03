@@ -613,6 +613,7 @@ export default {
 
         // Nach erfolgreichem Speichern der Rechnung, PDF generieren
         if (response.status === 200) {
+          this.rechnungsnummer = response.data.rechnungsnummer
           let element = document.getElementById(contentId);
           html2pdf(element, {
             margin: 0,
@@ -622,7 +623,6 @@ export default {
             jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
           });
           this.tab = 1
-          this.rechnungsnummer = response.data.rechnungsnummer
           await this.loadRechnungen()
         }
       } catch (error) {
