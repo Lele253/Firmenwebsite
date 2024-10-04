@@ -536,7 +536,7 @@ export default {
 
       date: null,
 
-      tab: 1,
+      tab: 0,
       search: null,
 
       infoText: null,
