@@ -115,9 +115,21 @@
           </v-row>
         </v-window-item>
         <v-window-item  value="1">
-
-
           <v-card border="10" theme="dark" flat title="Rechnungen">
+            <v-row class="justify-center">
+              <v-col cols="2">
+                <input  type="date"  v-model="startDate"
+                        @change="calculateFilteredTotal">
+              </v-col>
+              <v-col cols="2">
+                <input  type="date"       v-model="endDate"
+                        @change="calculateFilteredTotal">
+              </v-col>
+              <v-col cols="3">
+                <p >Gesamtsumme im Zeitraum: {{ totalSum }} €</p>
+
+              </v-col>
+            </v-row>
             <template v-slot:text>
               <v-text-field
                   clearable
@@ -128,6 +140,7 @@
                   hide-details
                   single-line
               ></v-text-field>
+
             </template>
             <v-data-table-virtual
                 height="600"
@@ -137,8 +150,6 @@
                 :items-per-page="-1"
                 class="elevation-1"
             >
-
-
             <template v-slot:item="{ item }">
                 <tr>
                   <td>{{ item.rechnungsnummer }}</td>
@@ -519,7 +530,7 @@ export default {
 
       date: null,
 
-      tab: 0,
+      tab: 1,
       search: null,
 
       infoText: null,
@@ -534,7 +545,11 @@ export default {
         { title: 'Aktionen', key: 'actions', sortable: false },
       ],
       rechnungen: [],
-      filteredRechnungen: []
+      filteredRechnungen: [],
+
+      startDate: null,  // Startdatum vom Benutzer gewählt
+      endDate: null,    // Enddatum vom Benutzer gewählt
+      totalSum: 0       // Berechnete Gesamtsumme der gefilterten Rechnungen
     }
   },
 
@@ -593,6 +608,11 @@ export default {
       }
     },
     async generatePDF(contentId) {
+      const date = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+      });
       // Rechnung speichern, bevor PDF generiert wird
       const rechnung = {
         name: this.name,
@@ -602,7 +622,7 @@ export default {
         plz: this.plz,
         ort: this.ort,
         leistungen: this.leistungen,
-        datum: new Date(),
+        datum: date,
         preis: this.calculatedPreis,
         rechnungsnummer: this.rechnungsnummer,
         text: this.infoText,
@@ -731,16 +751,28 @@ export default {
       this.tab = 0;
     },
     customFilter() {
-      if (!this.search) {
+      // Falls kein Suchbegriff vorhanden ist und Start-/Enddatum nicht gesetzt sind, zeige alle Rechnungen
+      if (!this.search && (!this.startDate || !this.endDate)) {
         this.filteredRechnungen = this.rechnungen;
         return;
       }
 
       // Suchbegriff normalisieren: Punkt durch Komma ersetzen
-      const searchLower = this.search.toLowerCase().replace('.', ',');
+      const searchLower = this.search ? this.search.toLowerCase().replace('.', ',') : '';
 
-      // Filtere Rechnungen basierend auf Hauptfeldern und `leistungen`
+      // Konvertiere Start- und Enddatum zu Date-Objekten, falls gesetzt
+      const start = this.startDate ? new Date(this.startDate) : null;
+      const end = this.endDate ? new Date(this.endDate) : null;
+
+      // Filtere Rechnungen basierend auf Hauptfeldern, `leistungen` und Datum
       this.filteredRechnungen = this.rechnungen.filter(item => {
+        // Datum der Rechnung als Date-Objekt
+        const rechnungsDatum = new Date(item.datum);
+
+        // Filtere nach Datum, wenn Start- und Enddatum gesetzt sind
+        const isWithinDateRange = (!start || rechnungsDatum >= start) && (!end || rechnungsDatum <= end);
+
+        // Prüfe auf Übereinstimmung in den Hauptfeldern
         const hasMatchInMainItem = Object.keys(item).some(key => {
           const fieldValue = item[key];
 
@@ -756,7 +788,7 @@ export default {
           return fieldString.includes(searchLower);
         });
 
-        // Suche in `leistungen`-Array, falls vorhanden
+        // Prüfe auf Übereinstimmung in `leistungen`, falls vorhanden
         const hasMatchInLeistungen = Array.isArray(item.leistungen) && item.leistungen.some(leistung => {
           return Object.keys(leistung).some(key => {
             let fieldValue = leistung[key];
@@ -772,22 +804,92 @@ export default {
           });
         });
 
-        return hasMatchInMainItem || hasMatchInLeistungen;
+        // Es wird nur gefiltert, wenn die Rechnung im Datumsbereich liegt und eine Übereinstimmung gefunden wurde
+        return isWithinDateRange && (hasMatchInMainItem || hasMatchInLeistungen);
       });
+    },
+    calculateFilteredTotal() {
+      // Falls kein Start- oder Enddatum gesetzt ist, berechne die Gesamtsumme ohne Datumseinschränkung
+      if (!this.startDate || !this.endDate) {
+        const sum = this.filteredRechnungen.reduce((total, rechnung) => {
+          // Prüfe, ob die Rechnung eine Liste von Leistungen hat
+          if (rechnung.leistungen && rechnung.leistungen.length > 0) {
+            // Iteriere durch die Leistungen und berechne den Preis basierend auf der Menge
+            rechnung.leistungen.forEach(leistung => {
+              // Extrahiere den Preis der Leistung als Zahl (z.B. von "100€" zu 100.00)
+              const preis = parseFloat(leistung.preis.replace("€", "").trim().replace(",", "."));
+              const anzahl = parseInt(leistung.anzahl);
+
+              if (!isNaN(preis) && !isNaN(anzahl)) {
+                total += preis * anzahl; // Multipliziere Preis mit Menge
+              }
+            });
+          }
+          return total;
+        }, 0);
+
+        // Setze die berechnete Gesamtsumme und formatiere sie mit Tausendertrennzeichen
+        this.totalSum = sum.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
+        return;
+      }
+
+      // Konvertiere Start- und Enddatum zu Date-Objekten, wenn gesetzt
+      const start = new Date(this.startDate);
+      const end = new Date(this.endDate);
+
+      // Filtere die Rechnungen basierend auf dem Datum und berechne die Gesamtsumme
+      const sum = this.filteredRechnungen
+          .filter((rechnung) => {
+            const rechnungsDatum = new Date(rechnung.datum); // Rechnung hat ein String-Datum
+            return rechnungsDatum >= start && rechnungsDatum <= end;
+          })
+          .reduce((total, rechnung) => {
+            if (rechnung.leistungen && rechnung.leistungen.length > 0) {
+              rechnung.leistungen.forEach(leistung => {
+                const preis = parseFloat(leistung.preis.replace("€", "").trim().replace(",", "."));
+                const anzahl = parseInt(leistung.anzahl);
+
+                if (!isNaN(preis) && !isNaN(anzahl)) {
+                  total += preis * anzahl;
+                }
+              });
+            }
+            return total;
+          }, 0);
+
+      // Setze die berechnete Gesamtsumme und formatiere sie mit Tausendertrennzeichen
+      this.totalSum = sum.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
     }
+
+
+
   },
   components: {
     Icon
   },
   watch: {
     search() {
-      this.customFilter(); // Jedes Mal, wenn sich die Suche ändert, filtere die Rechnungen neu
+      this.customFilter();
+      this.calculateFilteredTotal();// Jedes Mal, wenn sich die Suche ändert, filtere die Rechnungen neu
+    },
+    startDate() {
+      this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn sich das Startdatum ändert
+    },
+    endDate() {
+      this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn sich das Enddatum ändert
+    },
+    filteredRechnungen: {
+      immediate: true, // Starte sofort bei der Initialisierung
+      handler() {
+        this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn das Array aktualisiert wird
+      }
     }
   },
   mounted() {
     this.umleitung()
     this.loadRechnungen()
     this.currentDate = Date.now();
+    this.calculateFilteredTotal()
 
   },
   created() {
