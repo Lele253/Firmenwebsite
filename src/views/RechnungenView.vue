@@ -115,18 +115,23 @@
           </v-row>
         </v-window-item>
         <v-window-item  value="1">
-          <v-card border="10" theme="dark" flat title="Rechnungen">
+          <v-card min-width="1000" border="10" theme="dark" flat title="Rechnungen">
             <v-row class="justify-center">
-              <v-col cols="2">
-                <input  type="date"  v-model="startDate"
+              <v-col cols="3">
+                <v-btn @click="resetFilter" variant="text">
+                zurücksetzen
+                </v-btn>
+              </v-col>
+              <v-col class="d-flex align-center" cols="2">
+                <input class="custom-date-input" type="date"  v-model="startDate"
                         @change="calculateFilteredTotal">
               </v-col>
-              <v-col cols="2">
-                <input  type="date"       v-model="endDate"
+              <v-col class="d-flex align-center" cols="2">
+                <input class="custom-date-input" type="date"       v-model="endDate"
                         @change="calculateFilteredTotal">
               </v-col>
               <v-col cols="3">
-                <p >Gesamtsumme im Zeitraum: {{ totalSum }} €</p>
+                <p >Gesamtsumme: {{ totalSum }}€</p>
 
               </v-col>
             </v-row>
@@ -144,6 +149,7 @@
             </template>
             <v-data-table-virtual
                 height="600"
+
                 fixed-header
                 :headers="headers"
                 :items="filteredRechnungen"
@@ -457,9 +463,9 @@
             Wir hoffen, dass unsere Rechnung Ihren Erwartungen entspricht und bedanken uns für Ihr Vertrauen in unsere
             Dienstleistungen.
           </p>
-          <p v-if="infoText != null" class="ml-5">
-            <br> <span v-html="formattedInfoText"></span>
-          </p>
+
+          <br v-if="infoText != null">
+          <p v-if="infoText != null" class="ml-5" v-html="formattedInfoText"/>
 
           <br>
           <p class="ml-5">
@@ -555,9 +561,10 @@ export default {
 
   computed: {
     formattedInfoText() {
-      return this.infoText
-          .replace(/ /g, "&nbsp;")  // Leerzeichen zu &nbsp; umwandeln
-          .replace(/\n/g, "<br>");  // Zeilenumbrüche zu <br> umwandeln
+      if (this.infoText) {
+        return this.infoText.replace(/\n/g, '<br>');
+      }
+      return '';
     },
     formattedDate() {
       if (!this.currentDate) return '';
@@ -608,11 +615,8 @@ export default {
       }
     },
     async generatePDF(contentId) {
-      const date = new Date().toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      });
+      const date = new Date().toISOString().split('T')[0];
+
       // Rechnung speichern, bevor PDF generiert wird
       const rechnung = {
         name: this.name,
@@ -643,8 +647,10 @@ export default {
             html2canvas: {scale: 3},
             jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
           });
-          this.tab = 1
+          this.endDate = new Date().toISOString().split('T')[0];
           await this.loadRechnungen()
+          await this.customFilter()
+          this.tab = 1
         }
       } catch (error) {
         console.error("Fehler beim Speichern der Rechnung: ", error);
@@ -730,6 +736,7 @@ export default {
         try {
           await axios.delete(`https://fastglobeit.de:8081/auth/rechnungen/${item.id}`);
           await this.loadRechnungen(); // Neu laden nach dem Löschen
+          await this.customFilter(); // Filter neu anwenden
         } catch (error) {
           console.error('Fehler beim Löschen der Rechnung:', error);
         }
@@ -752,7 +759,7 @@ export default {
     },
     customFilter() {
       // Falls kein Suchbegriff vorhanden ist und Start-/Enddatum nicht gesetzt sind, zeige alle Rechnungen
-      if (!this.search && (!this.startDate || !this.endDate)) {
+      if (!this.search && (!this.startDate && !this.endDate)) {
         this.filteredRechnungen = this.rechnungen;
         return;
       }
@@ -769,8 +776,18 @@ export default {
         // Datum der Rechnung als Date-Objekt
         const rechnungsDatum = new Date(item.datum);
 
-        // Filtere nach Datum, wenn Start- und Enddatum gesetzt sind
-        const isWithinDateRange = (!start || rechnungsDatum >= start) && (!end || rechnungsDatum <= end);
+        // Logik zur Filterung nach Datum
+        let isWithinDateRange = true;
+        if (start && !end) {
+          // Wenn nur Startdatum gesetzt ist, filtere alle Rechnungen ab dem Startdatum bis heute
+          isWithinDateRange = rechnungsDatum >= start;
+        } else if (!start && end) {
+          // Wenn nur Enddatum gesetzt ist, filtere nur Rechnungen, die exakt am Enddatum liegen
+          isWithinDateRange = rechnungsDatum.toISOString().split('T')[0] === end.toISOString().split('T')[0];
+        } else if (start && end) {
+          // Wenn beide gesetzt sind, filtere nach dem Datumsbereich
+          isWithinDateRange = rechnungsDatum >= start && rechnungsDatum <= end;
+        }
 
         // Prüfe auf Übereinstimmung in den Hauptfeldern
         const hasMatchInMainItem = Object.keys(item).some(key => {
@@ -804,10 +821,15 @@ export default {
           });
         });
 
+        // Suche nach Vor- und Nachname
+        const vornameNachname = `${item.vorname.toLowerCase()} ${item.name.toLowerCase()}`;
+        const hasMatchInNames = vornameNachname.includes(searchLower);
+
         // Es wird nur gefiltert, wenn die Rechnung im Datumsbereich liegt und eine Übereinstimmung gefunden wurde
-        return isWithinDateRange && (hasMatchInMainItem || hasMatchInLeistungen);
+        return isWithinDateRange && (hasMatchInMainItem || hasMatchInLeistungen || hasMatchInNames);
       });
-    },
+    }
+    ,
     calculateFilteredTotal() {
       // Falls kein Start- oder Enddatum gesetzt ist, berechne die Gesamtsumme ohne Datumseinschränkung
       if (!this.startDate || !this.endDate) {
@@ -859,6 +881,11 @@ export default {
 
       // Setze die berechnete Gesamtsumme und formatiere sie mit Tausendertrennzeichen
       this.totalSum = sum.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) ;
+    },
+    async resetFilter() {
+      this.startDate = null
+      this.endDate = null
+      await this.customFilter()
     }
 
 
@@ -870,13 +897,19 @@ export default {
   watch: {
     search() {
       this.customFilter();
-      this.calculateFilteredTotal();// Jedes Mal, wenn sich die Suche ändert, filtere die Rechnungen neu
+      this.calculateFilteredTotal(); // Jedes Mal, wenn sich die Suche ändert, filtere die Rechnungen neu
     },
-    startDate() {
-      this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn sich das Startdatum ändert
+    startDate(newVal) {
+      if (newVal || this.endDate) { // Filtere nur, wenn eines der beiden Felder gesetzt ist
+        this.customFilter();
+        this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn sich das Startdatum ändert
+      }
     },
-    endDate() {
-      this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn sich das Enddatum ändert
+    endDate(newVal) {
+      if (newVal || this.startDate) { // Filtere nur, wenn eines der beiden Felder gesetzt ist
+        this.customFilter();
+        this.calculateFilteredTotal(); // Berechne die Gesamtsumme neu, wenn sich das Enddatum ändert
+      }
     },
     filteredRechnungen: {
       immediate: true, // Starte sofort bei der Initialisierung
@@ -905,4 +938,14 @@ p {
 .v-row {
   width: 100%;
 }
+
+.custom-date-input {
+  width: 90px !important; /* Breite des Inputs anpassen */
+}
+
+.custom-date-input::-webkit-calendar-picker-indicator {
+  display: none; /* Kalender-Icon entfernen */
+}
+
+
 </style>
