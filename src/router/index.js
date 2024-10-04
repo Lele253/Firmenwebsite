@@ -65,20 +65,31 @@ const routes = [
         path: '/:catchAll(.*)', component: HomeView
     },
 ]
-
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    // Nutze process.env.BASE_URL oder '/' als Fallback, falls die Umgebungsvariable nicht gesetzt ist
+    history: createWebHistory(process.env.BASE_URL || '/'),
     routes,
-    scrollBehavior: function (to) {
+
+    // Konfiguriere das Scrollverhalten
+    scrollBehavior(to, from, savedPosition) {
+        // Wenn eine gespeicherte Position existiert (z.B. durch Zurücknavigieren), nutze diese Position
+        if (savedPosition) {
+            return savedPosition;
+        }
+        // Falls eine Ziel-Hash (Anker) im Ziel-Pfad vorhanden ist
         if (to.hash) {
             return {
                 el: to.hash,
                 behavior: 'smooth',
-            }
-        } else {
-            return {el: document.getElementById('home'), behavior: 'smooth'}
+            };
         }
+        // Standardverhalten: Scrolle zu einem Element mit der ID 'home'
+        return {
+            el: document.getElementById('home'),
+            behavior: 'smooth'
+        };
     }
-})
+});
+
 
 export default router
