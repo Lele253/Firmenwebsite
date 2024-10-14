@@ -567,13 +567,14 @@ export default {
       return '';
     },
     formattedDate() {
-      if (!this.currentDate) return '';
+      // Wenn `this.date` null oder undefined ist, wird das heutige Datum verwendet
+      const date = this.date ? new Date(this.date) : new Date();
 
-      const date = new Date(this.date);
       const day = date.getDate();
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
 
+      // Formatierung mit führender Null für Tag und Monat
       return `${day < 10 ? '0' + day : day}.${month < 10 ? '0' + month : month}.${year}`;
     },
     calculatedPreis() {
