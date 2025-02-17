@@ -312,6 +312,11 @@
           <p class="ml-5 mt-16">
             Wir freuen uns, wenn dieser Kostenvoranschlag Ihre Zustimmung findet.
           </p>
+
+          <br v-if="infoText != null">
+          <p v-if="infoText != null" class="ml-5" v-html="formattedInfoText"/>
+          <br>
+
           <p class="ml-5">
             Bei Rückfragen stehen wir Ihnen selbstverständlich jederzeit gerne zur Verfügung.
           </p>
