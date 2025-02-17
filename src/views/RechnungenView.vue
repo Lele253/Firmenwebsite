@@ -617,47 +617,59 @@ export default {
     },
     async generatePDF(contentId) {
       const date = new Date().toISOString().split('T')[0];
+      let rechnungsnummer = this.rechnungsnummer;
 
-      // Rechnung speichern, bevor PDF generiert wird
-      const rechnung = {
-        name: this.name,
-        vorname: this.vorname,
-        straße: this.straße,
-        hausnummer: this.hausnummer,
-        plz: this.plz,
-        ort: this.ort,
-        leistungen: this.leistungen,
-        datum: date,
-        preis: this.calculatedPreis,
-        rechnungsnummer: this.rechnungsnummer,
-        text: this.infoText,
-        rechnungen: []
-      };
+      // Nur Rechnungen speichern
+      if (contentId === 'rechnung-pdf') {
+        const rechnung = {
+          name: this.name,
+          vorname: this.vorname,
+          straße: this.straße,
+          hausnummer: this.hausnummer,
+          plz: this.plz,
+          ort: this.ort,
+          leistungen: this.leistungen,
+          datum: date,
+          preis: this.calculatedPreis,
+          rechnungsnummer: this.rechnungsnummer,
+          text: this.infoText,
+          rechnungen: []
+        };
 
-      try {
-        const response = await axios.post('https://fastglobeit.de:8081/auth/rechnungen', rechnung);
+        try {
+          const response = await axios.post('https://fastglobeit.de:8081/auth/rechnungen', rechnung);
 
-        // Nach erfolgreichem Speichern der Rechnung, PDF generieren
-        if (response.status === 200) {
-          this.rechnungsnummer = response.data.rechnungsnummer
-          let element = document.getElementById(contentId);
-          html2pdf(element, {
-            margin: 0,
-            filename: contentId === 'rechnung-pdf' ? this.name + '_' + this.formattedDate + '_Rechnung.pdf' : this.name + '_' + this.formattedDate + '_Kostenvoranschlag.pdf',
-            image: {type: 'pdf', quality: 2},
-            html2canvas: {scale: 3},
-            jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
-          });
-          this.endDate = new Date().toISOString().split('T')[0];
-          await this.loadRechnungen()
-          await this.customFilter()
-          this.tab = 1
+          if (response.status === 200) {
+            rechnungsnummer = response.data.rechnungsnummer;
+            this.rechnungsnummer = rechnungsnummer;
+          }
+        } catch (error) {
+          console.error("Fehler beim Speichern der Rechnung: ", error);
+          alert("Fehler beim Speichern der Rechnung.");
+          return; // Beende die Funktion bei Fehler
         }
-      } catch (error) {
-        console.error("Fehler beim Speichern der Rechnung: ", error);
-        alert("Fehler beim Speichern der Rechnung.");
       }
-    },
+
+      // PDF generieren (Rechnung oder Kostenvoranschlag)
+      let element = document.getElementById(contentId);
+      html2pdf(element, {
+        margin: 0,
+        filename: contentId === 'rechnung-pdf'
+            ? `${this.name}_${this.formattedDate}_Rechnung.pdf`
+            : `${this.name}_${this.formattedDate}_Kostenvoranschlag.pdf`,
+        image: { type: 'pdf', quality: 2 },
+        html2canvas: { scale: 3 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      });
+
+      if (contentId === 'rechnung-pdf') {
+        this.endDate = new Date().toISOString().split('T')[0];
+        await this.loadRechnungen();
+        await this.customFilter();
+        this.tab = 1;
+      }
+    }
+    ,
     calculateTotal(quantity, priceWithEuro) {
       const price = parseFloat(priceWithEuro.replace(',', '.').replace('€', '').trim());
       const total = quantity * price;
